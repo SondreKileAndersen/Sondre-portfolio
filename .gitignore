@@ -1,0 +1,20 @@
+# .NET
+bin/
+obj/
+
+# Node / Vite
+node_modules/
+dist/
+.vite/
+
+# Local configuration
+.env
+.env.*
+!.env.example
+
+# IDE and OS files
+.vs/
+.vscode/
+*.user
+Thumbs.db
+Desktop.ini
