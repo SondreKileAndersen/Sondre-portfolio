@@ -313,3 +313,18 @@ Do not activate a language until these steps are completed together:
 
 Norwegian remains the default and fallback language until another language is
 explicitly requested and fully implemented.
+
+## Shared layout controls
+
+The content width is controlled by `--main-content-max-width` at the top of
+`src/styles.css`. Main sections always span the full viewport so their
+background colors reach both screen edges. Their responsive inline padding
+centers and constrains only the content on wide screens. On screens narrower
+than the maximum, `--main-content-padding` supplies the small internal space
+between content and the viewport edge. These variables do not affect the
+header or navigation.
+
+`SplitBlock` follows the portfolio's alternating two-column pattern. Sections
+with the image on the right use the dark color variables in `src/styles.css`;
+sections with the image on the left use the light color variables. Keep
+alternating `imagePosition` values in page data to preserve this rhythm.
