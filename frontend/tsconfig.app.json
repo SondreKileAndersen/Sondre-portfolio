@@ -11,6 +11,9 @@
     "strict": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
+    "paths": {
+      "@teaching-resources/*": ["./src/data/teachingResources/*"]
+    },
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": false,

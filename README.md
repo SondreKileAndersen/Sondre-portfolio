@@ -8,12 +8,11 @@ Krever Node.js 20+ og .NET 8 SDK.
 
 ```powershell
 # Terminal 1: frontend
-cd frontend
-npm install
-npm run dev
+cd "F:\9. Utvikling\Portfolio-Website\frontend"
+npm.cmd run dev
 
 # Terminal 2: API
-cd backend/SondrePortfolio.Api
+cd "F:\9. Utvikling\Portfolio-Website\backend/SondrePortfolio.Api"
 dotnet run
 ```
 

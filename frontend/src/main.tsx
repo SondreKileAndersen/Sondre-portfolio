@@ -1,9 +1,11 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import './i18n/config'
+import { App } from './App'
 import './styles.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <main aria-label="Sondre Kile portfolio" />
+    <App />
   </StrictMode>,
 )
