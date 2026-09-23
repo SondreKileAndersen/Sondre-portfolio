@@ -61,6 +61,46 @@ The CSS decides how it looks.
 
 ## Current section types
 
+The pedagogikk page also uses reusable `learningJourneyIntro`,
+`learningJourneyStep`, and `learningJourneyClosing` sections. A step chooses a
+visual variant in shared structure, while Norwegian copy stays in `no.ts`:
+
+```ts
+{
+  id: 'authentic-exercises',
+  type: 'learningJourneyStep',
+  number: '03',
+  imagePosition: 'left',
+  visual: 'mosaic',
+  eyebrow: text('sections.authentic-exercises.eyebrow'),
+  heading: text('sections.authentic-exercises.heading'),
+  paragraphs: paragraphs('sections.authentic-exercises.paragraphs'),
+  images: [/* three stable image objects */],
+}
+```
+
+The other step visuals are `starterCards`, `image`, and `resourceScreen`.
+A `split` section can set `secondaryImageSrc` and `secondaryImageAlt` to place
+two images side by side. `FeatureImageMosaic` remains available for galleries
+with a large image and two smaller images.
+
+Pedagogikk's reusable `teachingInstitutionCards` section keeps institution
+logos and card order in `structure.ts`. The localized `role` appears directly
+under the title, while the `subjects` string list appears under a shared
+"Emner" label. Unlike the general `institutionCards` block, it has no
+description or icon highlights.
+
+Consecutive `learningJourneyStep` sections are grouped by the page renderer.
+The group measures the numbered markers and reveals one continuous dashed line
+as the visitor scrolls. Scrolling sets a destination, while the line travels
+at the fixed `--journey-line-speed` CSS value (pixels per second) in
+`frontend/src/styles.css`. Marker and content entrance animations run only
+after the visible line reaches each step, and respect reduced-motion preferences.
+As each new step appears, the full-length solid segment between it and the
+preceding number fades in, while the dashed scroll line continues onward.
+Legacy project-source sections may set `showOnPage: false` to preserve linked
+project detail pages without duplicating them in the visible page flow.
+
 The portfolio currently supports these content sections:
 
 ```ts
@@ -135,6 +175,28 @@ Each image requires a stable ID, descriptive alt text, and a visible caption:
 
 `TextBlock` and `GalleryBlock` render these types through `SectionRenderer`.
 
+Gallery structures may set `autoplay: true` and `interval: 4000` (milliseconds)
+to reuse `AutoImageCollage` instead of static images. The full `images` list
+cycles automatically, pauses on hover, and supports the shared arrow controls.
+Source images remain available to linked project detail pages.
+
+A gallery may also render a reusable visual process beneath its heading. The
+process accepts any number of stable items and inserts arrows between them; it
+is not tied to a particular project or pair of icons:
+
+```ts
+visualTransition: {
+  steps: [
+    { id: "source", src: sourceIcon, alt: "Source" },
+    { id: "result", src: resultIcon, alt: "Result" }
+  ]
+}
+```
+
+The `principles` text variant accepts an optional `leadImage` object. This is a
+generic image slot; a page may use a portrait, illustration, or other suitable
+image without adding page-specific media handling to `TextBlock`.
+
 Use `cardGrid` for repeated institution, project, or resource cards. A card may
 have an optional action label and link:
 
@@ -195,6 +257,36 @@ Visible labels, descriptions, titles, and accessible text belong in the
 language-specific page data. `YouTubePlaylistBlock` is registered once through
 `SectionRenderer`; do not embed playlist iframes directly in page JSX.
 
+Use `logoMarquee` for a low, full-content-width row of equally high logos that
+loops continuously. Define logos in page data; the component duplicates the
+rendered list only to create the seamless visual loop:
+
+```ts
+{
+  id: "suppliers",
+  type: "logoMarquee",
+  logos: [
+    { id: "supplier", src: supplierLogo, alt: "Supplier name" }
+  ]
+}
+```
+
+`LogoMarqueeBlock` owns the animation, edge fade, equal logo height, duplicated
+track, and reduced-motion behavior. The viewport center is the mouse anchor,
+with a 10px dead zone on either side; horizontal displacement sets signed speed
+in pixels per second. Moving right
+increases the usual right-to-left scrolling speed; moving left reverses it.
+`--logo-marquee-speed` controls automatic speed and
+`--logo-marquee-pointer-sensitivity` controls speed per pixel from the anchor.
+The shared `CarouselArrow` component supplies gallery controls. The marquee uses
+its gray pointing-hand hint, which fades in on hover.
+Do not duplicate logo entries in page data.
+
+Marquee logos use their source alpha channel as a CSS mask, filled with
+`--logo-marquee-gray` (also used by the mouse hint). Original RGB colors do not
+affect the output. Source assets must have transparent backgrounds; an opaque
+background is part of the mask. Edge antialiasing retains the source alpha.
+
 ### Teaching resources
 
 The `teachingResources` section renders the complete resource library grouped
@@ -244,77 +336,114 @@ any folder depth; do not count parent folders with relative `../` imports.
 
 ## Localization architecture
 
-The portfolio is Norwegian-first. Only Norwegian is currently enabled, but the
-content and UI layers are prepared for more languages.
+Each page has one shared structure and text-only locale files:
 
 ```txt
-src/
-  i18n/
-    config.ts
-    locales/
-      no.ts
-
-  data/
-    pages/
-      index.ts
-      no.ts
+src/data/pages/
+  index.ts
+  ressurskoordinering/
+    structure.ts
+    no.ts
+    en.ts
+  pedagogikk/
+    structure.ts
+    no.ts
+    en.ts
+src/lib/pageContent.ts
+src/i18n/locales/no.ts
+src/i18n/config.ts
 ```
 
-`src/i18n/locales/no.ts` contains short, reusable interface strings such as
-navigation labels, actions, errors, and accessibility text. React components
-read these strings through `useTranslation()`.
+`structure.ts` owns stable IDs, hierarchy, section types/order, image sources,
+icon choices, layout settings, and project source relationships. Localized
+fields use `text("key")` for strings and `paragraphs("key")` for string lists.
+Reference keys use stable item IDs, not array positions. Moving sections,
+cards or images requires editing only the shared structure.
 
-`src/data/pages/no.ts` contains localized page metadata, routes, headings, alt
-text, and portfolio content. Long content must remain in the page/section data
-rather than being embedded in components or translation calls.
+`no.ts` and `en.ts` contain strings/string lists only: localized slugs, paths,
+titles, paragraphs, captions, alt text, and link URLs. Both use `PageContent`,
+derived from the shared structure by `ContentFor<typeof structure>`. Complete
+translations use `satisfies PageContent`, rejecting missing/wrong text fields.
+Image imports and their `src` placement always belong in `structure.ts`, because
+the same media is shared by every language. Only localized image descriptions
+such as `alt` text and captions belong in `no.ts` and `en.ts`. The content test
+rejects runtime imports in page language files to enforce this boundary.
 
-### Stable identity and localized routes
-
-Every page has a stable `id` that is independent of language. The ID connects
-equivalent pages and page hierarchy. Slugs and paths are localized:
+Example shared structure:
 
 ```ts
-// Norwegian
-{
-  id: "about",
-  slug: "om-meg",
-  path: "/om-meg",
-  navTitle: "Om meg"
-}
+import { text, paragraphs } from "../../../lib/pageContent"
+import type { ContentFor, PageStructure } from "../../../lib/pageContent"
 
-// Possible future English equivalent
-{
-  id: "about",
-  slug: "about",
-  path: "/en/about",
-  navTitle: "About"
-}
+export const structure = {
+  id: "example",
+  slug: text("slug"), path: text("path"),
+  navTitle: text("navTitle"), title: text("title"),
+  sections: [{
+    id: "intro", type: "text",
+    heading: text("intro.heading"),
+    paragraphs: paragraphs("intro.paragraphs"),
+  }],
+} as const satisfies PageStructure
+
+export type PageContent = ContentFor<typeof structure>
 ```
 
-Child pages use `parentId`, never a localized parent slug:
+Example Norwegian content:
 
 ```ts
-{
-  id: "cosmic-anchor",
-  parentId: "projects"
-}
+import type { PageContent } from "./structure"
+
+export const no = {
+  slug: "eksempel", path: "/eksempel",
+  navTitle: "Eksempel", title: "Eksempel",
+  "intro.heading": "En overskrift",
+  "intro.paragraphs": ["Første avsnitt.", "Andre avsnitt."],
+} satisfies PageContent
 ```
 
-### Adding a future language
+`lib/pageContent.ts` composes references and checks invalid/missing text at
+runtime. The central `data/pages/index.ts` registry registers each structure
+once with `localizedContent(structure, { no })`, resolves the selected language,
+attaches language-specific teaching collections, and generates project pages.
+Components and SectionRenderer receive ordinary resolved props, not bilingual
+data. Shared UI strings remain in `i18n/locales/<language>.ts`.
 
-Do not activate a language until these steps are completed together:
+The section examples elsewhere in this document show the resolved component
+data shape. In authoring files, replace translated fields with references.
 
-1. Add `src/i18n/locales/<language>.ts` with all shared UI strings.
-2. Add `src/data/pages/<language>.ts` with the same stable page IDs.
-3. Register resources and the language code in `src/i18n/config.ts`.
-4. Register its pages in `src/data/pages/index.ts`.
-5. Add locale-aware routes and a language switcher that maps pages by `id`.
-6. Update `<html lang>`, page titles, metadata, canonical URLs, and `hreflang`.
+### English workspaces and activation
 
-Norwegian remains the default and fallback language until another language is
-explicitly requested and fully implemented.
+Only Norwegian is active. Each page has an empty `en.ts` translation workspace
+typed as `Partial<PageContent>`. It is not registered as a supported locale,
+and does not disguise Norwegian text as English. Complete the translations
+and change the export to `satisfies PageContent` before registration.
+
+Before enabling English:
+
+1. Complete every page locale and `i18n/locales/en.ts` shared UI resources.
+2. Provide English teaching-resource collections with recursive discovery.
+3. Add `en` to each existing `localizedContent` entry and `collectionsByLanguage`.
+   Never duplicate the structures, registry order, or rendering logic.
+4. Enable English in supportedLanguages and i18n resources together.
+5. Add language-switching links matched by stable page ID and update routing,
+   document language and language-specific metadata as appropriate.
+6. Run `npm.cmd run test:content` and `npm.cmd run build`.
+
+Norwegian remains the default/fallback. Page hierarchy uses `parentId`.
+Projects use `sourcePageId` and `sourceSectionId`, not localized slugs.
+Project paths are localized content, not a Norwegian prefix in the generator.
+See [EDITING_CONTENT.md](EDITING_CONTENT.md) for the practical editing guide.
 
 ## Shared layout controls
+
+Every logical page section alternates light/dark by its position in the shared
+`sections` array, starting with `startTone: 'light' | 'dark'` in that page's
+shared structure (light if omitted). `sectionTone.ts`, `App`, and `SectionRenderer`
+apply the one sequence across every block type and through sticky brand groups.
+Group wrappers and development tracing wrappers do not count as sections.
+Image/text positioning has its own case-study sequence and does not determine
+background color. Palette colors are controlled by `--palette-*` in styles.css.
 
 The content width is controlled by `--main-content-max-width` at the top of
 `src/styles.css`. Main sections always span the full viewport so their
@@ -324,7 +453,84 @@ than the maximum, `--main-content-padding` supplies the small internal space
 between content and the viewport edge. These variables do not affect the
 header or navigation.
 
+Heading typography uses one global two-level scale in `src/styles.css`: `h1`
+for page titles and `h2` for section titles. Components must not assign their
+own heading font sizes or introduce `h3`–`h6` for visual sizing. Smaller card
+names and labels use semantic `strong` or `span` elements instead.
+
+## Reusable section contract
+
+Every entry in a page's `sections` array is a reusable block. Its `type` is
+resolved only by `components/SectionRenderer.tsx`, and each renderer lives in
+`components/blocks/`. Page-specific text, media, item order, icons and links
+belong in `data/pages/<page>/structure.ts` and the matching language file.
+Block components must not test page IDs, slugs, institution names or section
+IDs to decide their layout. Named `variant` values are reusable visual choices,
+not aliases for a particular page.
+
+To use an existing section on another page, add another data object with a
+stable section ID and the same `type`; no JSX or renderer change is required.
+Only a genuinely new content shape requires a new section type, block component
+and `SectionRenderer` case.
+
 `SplitBlock` follows the portfolio's alternating two-column pattern. Sections
 with the image on the right use the dark color variables in `src/styles.css`;
-sections with the image on the left use the light color variables. Keep
-alternating `imagePosition` values in page data to preserve this rhythm.
+sections with the image on the left use the light color variables. Branded case studies receive alternating position and tone automatically
+from the renderer; do not duplicate those choices in locale files.
+
+## Editorial section variants
+
+Reusable blocks may expose a named visual `variant` while retaining their
+content-driven data shape. The resource-coordination page uses:
+
+- `TitleBlock` with `variant: "editorial"` for an introduction, image collage,
+  highlights, and handwritten-style note.
+- `TextBlock` with `variant: "principles"` for a dark feature strip with line
+  icons, and `variant: "cta"` for a closing section.
+- `GalleryBlock` and `SplitBlock` with `variant: "caseStudy"` for portfolio
+  cases. `tone`, `eyebrow`, `note`, and an optional `brand` remain page data.
+
+Line icons use stable names from `LineIconName` and render through the shared
+`components/ui/LineIcon.tsx` component. Consecutive cases with the same
+`brand.groupId` are grouped by `CaseStudyGroup`, giving them one sticky company
+logo that stops when the next brand group starts. Institution logos are stored
+in `src/media/Institusjoner logo/` and render without a frame, background, or visual
+effect. Add content in page data; do not duplicate these layouts inside page
+JSX.
+
+## Standard project detail pages
+
+`institutionCards` renders reusable institution experience cards with original
+logos, role summaries, descriptions, and icon highlights. Example:
+
+```ts
+{
+  id: 'institutions',
+  type: 'institutionCards',
+  cards: [{
+    id: 'institution', title: 'Institution', role: 'Role · Area',
+    description: 'Short summary', logoSrc: institutionLogo, logoAlt: 'Institution',
+    highlights: [{ id: 'equipment', label: 'Equipment', icon: 'camera' }]
+  }]
+}
+```
+
+Institution cards participate in the same automatic light/dark sequence as
+every other logical page section, without hardcoded page-data tones.
+
+Project detail pages use one typed `projectDetail` section rendered by the
+shared `ProjectDetailBlock`. It accepts an eyebrow, title, introduction,
+preview image, long-form paragraphs, optional gallery, and a stable metadata
+array. Metadata can contain organization, role, period, duration, tools, or
+other project-specific facts without changing component JSX.
+
+Resource-coordination project pages are generated by
+`data/projects/createProjectPage.ts`. Each definition points to an existing
+section by `sourceSectionId`; the generator reuses that section's paragraphs
+and images so overview and detail pages stay synchronized. Generated pages use
+`showInNav: false`, while overview cases link directly to their routes.
+
+Case-study sections may define short `paragraphs` for the overview and longer
+`detailParagraphs` for the generated detail page. The case-study overview
+variant intentionally renders only the first image and omits captions; all
+source images and their captions remain available to `ProjectDetailBlock`.

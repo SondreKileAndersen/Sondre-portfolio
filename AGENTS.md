@@ -195,7 +195,8 @@ Use this separation:
 
 ```txt
 src/i18n/locales/<language>.ts  -> short shared UI and accessibility text
-src/data/pages/<language>.ts   -> localized page metadata and portfolio content
+src/data/pages/<page>/structure.ts -> one shared page structure
+src/data/pages/<page>/<language>.ts -> text-only localized metadata and content
 src/i18n/config.ts             -> supported languages and fallback configuration
 ```
 
@@ -206,6 +207,12 @@ Rules:
   with `useTranslation()`.
 * Keep long portfolio content in typed language-specific page data, not in
   translation calls inside JSX.
+* Keep section types/order, stable IDs, hierarchy, images and icon choices in
+  one `structure.ts` per page. Never duplicate structure across languages.
+* Page folders contain `no.ts` and `en.ts` for strings/string lists only, using
+  `PageContent` derived from their shared structure. Compose through
+  `src/lib/pageContent.ts` and the central page registry. Components receive
+  one resolved language, not bilingual props.
 * Use stable, language-independent page `id` values for identity, React keys,
   hierarchy, and matching equivalent pages between languages.
 * Treat `slug`, `path`, `navTitle`, `title`, headings, paragraphs, alt text, and
@@ -215,7 +222,7 @@ Rules:
   requested otherwise.
 * Do not add or enable a language until its UI resources and page data exist.
 * When adding a language, update `supportedLanguages`, i18n resources,
-  `pagesByLanguage`, routing, the document `lang`, and language-switching links
+  the localized page registry and collections, routing, the document `lang`, and language-switching links
   together.
 
 ## Key rule
@@ -305,7 +312,10 @@ src/
   data/
     pages/
       index.ts
-      no.ts
+      <page>/
+        structure.ts
+        no.ts
+        en.ts
     projects.ts
     suppliers.ts
 

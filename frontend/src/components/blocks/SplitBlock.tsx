@@ -1,4 +1,5 @@
 import type { SplitSection } from '../../types/page'
+import { ToolLogoRow } from '../ui/ToolLogoRow'
 
 export function SplitBlock({
   heading,
@@ -6,23 +7,40 @@ export function SplitBlock({
   imageSrc,
   imageAlt,
   caption,
-  imagePosition,
+  imagePosition = 'left',
   imageFit = 'cover',
+  secondaryImageSrc,
+  secondaryImageAlt,
+  variant = 'default',
+  eyebrow,
+  tone,
+  note,
+  actionLabel,
+  actionHref,
+  toolLogos,
 }: SplitSection) {
+  const resolvedTone = tone ?? (imagePosition === 'right' ? 'dark' : 'light')
   return (
-    <section className={`split-block split-block--image-${imagePosition}`}>
-      <figure
+    <section className={`split-block split-block--image-${imagePosition} split-block--${variant} section-tone--${resolvedTone}`}>
+      {secondaryImageSrc ? <div className="split-block__media split-block__media--pair">
+        <img src={imageSrc} alt={imageAlt} loading="lazy" />
+        <img src={secondaryImageSrc} alt={secondaryImageAlt ?? ''} loading="lazy" />
+      </div> : <figure
         className={`split-block__media split-block__media--${imageFit}`}
       >
-        <img src={imageSrc} alt={imageAlt} />
-        {caption && <figcaption>{caption}</figcaption>}
-      </figure>
+        <img src={imageSrc} alt={imageAlt} loading="lazy" />
+        {caption && variant !== 'caseStudy' && <figcaption>{caption}</figcaption>}
+      </figure>}
       <div className="split-block__content">
-        {heading && <h3>{heading}</h3>}
+        {eyebrow && <p className="eyebrow">{eyebrow}</p>}
+        {heading && <h2>{heading}</h2>}
         {paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
+        {toolLogos && <ToolLogoRow logos={toolLogos} />}
+        {actionLabel && actionHref && <a className="case-study__action" href={actionHref}>{actionLabel} <span aria-hidden="true">→</span></a>}
       </div>
+      {note && <p className="case-study__note">{note}</p>}
     </section>
   )
 }

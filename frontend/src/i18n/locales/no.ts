@@ -10,6 +10,15 @@ export const no = {
     close: 'Lukk',
     open: 'Åpne',
   },
+  gallery: {
+    previous: 'Forrige bilde',
+    next: 'Neste bilde',
+  },
+  logoMarquee: {
+    mouseHint: 'Flytt musepekeren for å styre scrollingen av logoene',
+    previous: 'Bla mot venstre i leverandørlogoene',
+    next: 'Bla mot høyre i leverandørlogoene',
+  },
   errors: {
     notFound: 'Side ikke funnet',
   },

@@ -48,6 +48,14 @@ export const teachingTools = {
     sourceUrl:
       'https://commons.wikimedia.org/wiki/File:Adobe_After_Effects_CC_icon.svg',
   },
+  audition: {
+    id: 'audition',
+    name: 'Adobe Audition',
+    logoSrc:
+      'https://commons.wikimedia.org/wiki/Special:Redirect/file/Adobe_Audition_CC_2026_icon.svg',
+    sourceUrl:
+      'https://commons.wikimedia.org/wiki/File:Adobe_Audition_CC_2026_icon.svg',
+  },
   powerPoint: {
     id: 'microsoft-powerpoint',
     name: 'Microsoft PowerPoint',

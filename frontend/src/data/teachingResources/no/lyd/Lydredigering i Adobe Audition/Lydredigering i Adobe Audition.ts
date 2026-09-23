@@ -12,7 +12,7 @@ export default defineTeachingResource({
   typeLabel: 'Veiledning',
   thumbnailSrc: thumbnail,
   thumbnailAlt: 'Skjermbilde av Adobe Audition med bølgeformer og spektrogram, med røde markeringer rundt Waveform-fanen og redigeringsverktøyene.',
-  tools: [],
+  tools: [teachingTools.audition],
   files: [
     { id: 'guide', label: 'Veiledning (PowerPoint)', url: guideFile },
   ],

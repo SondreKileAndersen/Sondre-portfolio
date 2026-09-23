@@ -9,7 +9,7 @@ export function HeroBlock({
   return (
     <section className="hero" aria-labelledby="hero-heading">
       <figure className="hero-portrait">
-        <img src={imageSrc} alt={imageAlt} />
+        <img src={imageSrc} alt={imageAlt} loading="eager" fetchPriority="high" decoding="async" />
       </figure>
       <div className="hero-content">
         <h1 id="hero-heading">{heading}</h1>

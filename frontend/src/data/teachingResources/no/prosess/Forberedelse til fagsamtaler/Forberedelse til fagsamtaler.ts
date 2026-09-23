@@ -1,5 +1,4 @@
 import { defineTeachingResource } from '@teaching-resources/defineTeachingResource'
-import { teachingTools } from '@teaching-resources/no/toolCatalog'
 import assignmentFile from './Fagfelt og fagbegreper.pdf?url'
 import thumbnail from './thumbnail.png'
 
@@ -11,7 +10,7 @@ export default defineTeachingResource({
   typeLabel: 'Oppgave',
   thumbnailSrc: thumbnail,
   thumbnailAlt: 'Lys presentasjonsslide med tittelen «Oppgave – forberedelse til fagsamtaler», en blå instruksjonsboks og to nummererte oppgaver om fagområder og fagbegreper.',
-  tools: [teachingTools.powerPoint],
+  tools: [],
   files: [
     { id: 'assignment', label: 'Oppgave (PDF)', url: assignmentFile, download: true },
   ],

@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "test:content": "node scripts/test-page-content.cjs",
     "preview": "vite preview"
   },
   "dependencies": {

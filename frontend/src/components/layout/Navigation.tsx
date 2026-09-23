@@ -29,7 +29,7 @@ export function Navigation({ pages, currentPath, onNavigate }: NavigationProps) 
         onNavigate(page.path)
       }}
     >
-      <h5>{page.navTitle}</h5>
+      <span className="nav-label">{page.navTitle}</span>
     </a>
   )
 
@@ -38,7 +38,8 @@ export function Navigation({ pages, currentPath, onNavigate }: NavigationProps) 
       <ul>
         {topLevelPages.map((page) => {
           const childPages = pages.filter(
-            (candidate) => candidate.parentId === page.id,
+            (candidate) =>
+              candidate.parentId === page.id && candidate.showInNav !== false,
           )
 
           return (

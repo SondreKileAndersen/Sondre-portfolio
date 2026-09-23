@@ -1,6 +1,18 @@
 # Sondre Kile Portfolio
 
-Tomt startskjelett for en React-frontend og et .NET API.
+Innholdsbasert React/Vite-portfolio med et separat .NET API-skjellet.
+
+## Redigere innhold
+
+Hver side har én felles `structure.ts` og egne språkfiler under
+`frontend/src/data/pages/<side>/`. Norsk innhold ligger i `no.ts`; `en.ts` er
+foreløpig en uferdig oversettelseskladd. Engelsk er ikke aktivert.
+
+Se [redigeringsguiden](docs/EDITING_CONTENT.md) for å finne tekst, bilder og stil,
+og [innholdsarkitekturen](docs/CONTENT_ARCHITECTURE.md) for tekniske detaljer.
+
+Kontroller endringer fra `frontend/` med `npm.cmd run test:content` og
+`npm.cmd run build`.
 
 ## Lokal kjøring
 

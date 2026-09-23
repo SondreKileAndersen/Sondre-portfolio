@@ -53,65 +53,52 @@ function TeachingResourceCard({
 }) {
   const { t } = useTranslation()
   const files = getResourceFiles(resource)
-  const content = (
-    <>
+  const downloadIcon = <svg viewBox="0 0 24 24" fill="none" focusable="false" aria-hidden="true">
+    <path d="M12 3v11m-4-4 4 4 4-4M4 17v3h16v-3" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+
+  return (
+    <article className={`teaching-resource-card ${formatClassNames[resource.format]}`} data-category={resource.categoryId}>
       <div
         className="teaching-resource-card__media"
         data-category={resource.categoryId}
       >
-        <img src={resource.thumbnailSrc} alt={resource.thumbnailAlt} />
+        <img src={resource.thumbnailSrc} alt={resource.thumbnailAlt} loading="lazy" decoding="async" />
         <span className="teaching-resource-card__type">
           {resource.typeLabel}
         </span>
       </div>
       <div className="teaching-resource-card__content">
-        <h4>{resource.title}</h4>
+        <strong className="teaching-resource-card__title">{resource.title}</strong>
         <p>{resource.description}</p>
-        {resource.tools.length > 0 && (
-          <div className="teaching-resource-card__tool-row">
-            <span>{t('teachingResources.tools')}:</span>
-            <ul>
-              {resource.tools.map((tool) => (
-                <ToolBadge key={tool.id} tool={tool} />
-              ))}
-            </ul>
-          </div>
-        )}
+        <div className="teaching-resource-card__footer">
+          {resource.tools.length > 0 && (
+            <div className="teaching-resource-card__tool-row">
+              <ul>
+                {resource.tools.map((tool) => (
+                  <ToolBadge key={tool.id} tool={tool} />
+                ))}
+              </ul>
+            </div>
+          )}
+          {files.length === 1 && <a
+            className="teaching-resource-card__action-icon"
+            href={files[0].url}
+            target="_blank"
+            rel="noreferrer"
+            download={files[0].download || undefined}
+            aria-label={files[0].label}
+          >{downloadIcon}</a>}
+          {files.length > 1 && <button
+            className="teaching-resource-card__action-icon"
+            type="button"
+            aria-label={t('teachingResources.filesFor', { title: resource.title })}
+            onClick={() => onChooseFiles(resource)}
+          >{downloadIcon}</button>}
+        </div>
       </div>
-    </>
+    </article>
   )
-
-  const className = `teaching-resource-card ${formatClassNames[resource.format]}`
-
-  if (files.length === 1) {
-    const file = files[0]
-    return (
-    <a
-      className={className}
-      href={file.url}
-      target="_blank"
-      rel="noreferrer"
-      download={file.download || undefined}
-    >
-      {content}
-    </a>
-    )
-  }
-
-  if (files.length > 1) {
-    return (
-      <button
-        className={`${className} teaching-resource-card--button`}
-        type="button"
-        aria-label={t('teachingResources.filesFor', { title: resource.title })}
-        onClick={() => onChooseFiles(resource)}
-      >
-        {content}
-      </button>
-    )
-  }
-
-  return <article className={className}>{content}</article>
 }
 
 function ResourceFilesDialog({
@@ -146,7 +133,7 @@ function ResourceFilesDialog({
       {resource && (
         <div className="teaching-resource-files__panel">
           <header>
-            <h4>{resource.title}</h4>
+            <strong>{resource.title}</strong>
             <button
               type="button"
               aria-label={t('teachingResources.closeFiles')}
@@ -190,13 +177,13 @@ export function TeachingResourcesBlock({
   return (
     <section className="teaching-resources">
       <header className="teaching-resources__header">
-        <h3>{heading}</h3>
+        <h2>{heading}</h2>
         {introduction && <p>{introduction}</p>}
       </header>
       {populatedCategories.map((category) => (
         <section className="teaching-resources__category" key={category.id}>
           <header>
-            <h4>{category.title}</h4>
+            <h2>{category.title}</h2>
             {category.description && <p>{category.description}</p>}
           </header>
           <div className="teaching-resources__grid">

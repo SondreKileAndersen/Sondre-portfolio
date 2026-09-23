@@ -1,5 +1,4 @@
 import { defineTeachingResource } from '@teaching-resources/defineTeachingResource'
-import { teachingTools } from '@teaching-resources/no/toolCatalog'
 import presentationFile from './Spillutvikling MVP Oppgave.pptx?url'
 import thumbnail from './thumbnail.png'
 
@@ -11,7 +10,7 @@ export default defineTeachingResource({
   typeLabel: 'Oppgave',
   thumbnailSrc: thumbnail,
   thumbnailAlt: 'Et gamingoppsett med RGB-belyst tastatur, hodetelefoner, mus og spillkontroller på et mørkt skrivebord',
-  tools: [teachingTools.powerPoint],
+  tools: [],
   files: [
     { id: 'presentation', label: 'Oppgavepresentasjon', url: presentationFile },
   ],

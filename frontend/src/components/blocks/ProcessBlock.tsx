@@ -4,7 +4,7 @@ export function ProcessBlock({ heading, paragraphs, steps }: ProcessSection) {
   return (
     <section className="process-block">
       <div className="process-block__intro">
-        <h3>{heading}</h3>
+        <h2>{heading}</h2>
         {paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
@@ -12,7 +12,7 @@ export function ProcessBlock({ heading, paragraphs, steps }: ProcessSection) {
       <ol className="process-block__steps">
         {steps.map((step) => (
           <li key={step.id}>
-            <h4>{step.label}</h4>
+            <strong>{step.label}</strong>
             <p>{step.description}</p>
           </li>
         ))}

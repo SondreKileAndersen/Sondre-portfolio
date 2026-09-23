@@ -1,10 +1,11 @@
-import { useEffect, useId, useState } from 'react'
+import { useEffect, useId, useRef, useState } from 'react'
+import type { CSSProperties } from 'react'
 import type { YouTubePlaylistSection } from '../../types/page'
 
 type YouTubePlayer = {
   destroy: () => void
   getIframe: () => HTMLIFrameElement
-  getPlaylist: () => string[] | undefined
+  loadVideoById: (videoId: string) => void
 }
 
 type YouTubePlayerEvent = {
@@ -54,6 +55,7 @@ function loadYouTubeApi() {
 }
 
 export function YouTubePlaylistBlock({
+  eyebrow,
   heading,
   introduction,
   playlistId,
@@ -61,14 +63,32 @@ export function YouTubePlaylistBlock({
   iframeTitle,
   firstVideoId,
   firstVideoTitle,
-  listHeading,
   videoLabel,
+  categoryLabel,
   thumbnailAltPrefix,
   openPlaylistLabel,
+  videos,
 }: YouTubePlaylistSection) {
   const reactId = useId()
   const playerId = `youtube-playlist-${reactId.replace(/:/g, '')}`
-  const [videoIds, setVideoIds] = useState<string[]>([firstVideoId])
+  const playerRef = useRef<YouTubePlayer | null>(null)
+  const pendingVideoIdRef = useRef<string | null>(null)
+  const featuredRef = useRef<HTMLDivElement | null>(null)
+  const [selectedVideoId, setSelectedVideoId] = useState(firstVideoId)
+  const [featuredHeight, setFeaturedHeight] = useState<number>()
+  const selectedVideo = videos.find((video) => video.videoId === selectedVideoId) ?? videos[0]
+
+  useEffect(() => {
+    const featured = featuredRef.current
+    if (!featured) return
+
+    const updateHeight = () => setFeaturedHeight(featured.getBoundingClientRect().height)
+    const observer = new ResizeObserver(updateHeight)
+    observer.observe(featured)
+    updateHeight()
+
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
     let player: YouTubePlayer | undefined
@@ -86,9 +106,12 @@ export function YouTubePlaylistBlock({
         },
         events: {
           onReady: (event) => {
+            playerRef.current = event.target
             event.target.getIframe().title = iframeTitle
-            const playlistVideos = event.target.getPlaylist()
-            if (playlistVideos?.length) setVideoIds(playlistVideos)
+            if (pendingVideoIdRef.current) {
+              event.target.loadVideoById(pendingVideoIdRef.current)
+              pendingVideoIdRef.current = null
+            }
           },
         },
       })
@@ -96,51 +119,70 @@ export function YouTubePlaylistBlock({
 
     return () => {
       cancelled = true
+      playerRef.current = null
       player?.destroy()
     }
   }, [firstVideoId, iframeTitle, playerId, playlistId])
 
-  const remainingVideos = videoIds.filter((videoId) => videoId !== firstVideoId)
-
   return (
     <section className="youtube-playlist">
       <header className="youtube-playlist__header">
-        <h3>{heading}</h3>
+        <p className="youtube-playlist__eyebrow">{eyebrow}</p>
+        <h2>{heading}</h2>
         <p>{introduction}</p>
       </header>
       <div className="youtube-playlist__layout">
-        <div className="youtube-playlist__featured">
+        <div ref={featuredRef} className="youtube-playlist__featured">
           <div className="youtube-playlist__player">
             <div id={playerId} />
           </div>
-          <h4>{firstVideoTitle}</h4>
+          <strong>{selectedVideo?.title ?? firstVideoTitle}</strong>
+          <span>{categoryLabel}</span>
         </div>
-        <aside className="youtube-playlist__queue">
-          <h4>{listHeading}</h4>
+        <aside
+          className="youtube-playlist__queue"
+          style={{ '--youtube-featured-height': featuredHeight ? `${featuredHeight}px` : undefined } as CSSProperties}
+        >
+          <header>
+            <a
+              className="youtube-playlist__link"
+              href={playlistUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {openPlaylistLabel} <span aria-hidden="true">↗</span>
+            </a>
+          </header>
           <div className="youtube-playlist__videos">
-            {remainingVideos.map((videoId, index) => (
-              <a
-                key={videoId}
-                href={`https://www.youtube.com/watch?v=${videoId}&list=${playlistId}`}
-                target="_blank"
-                rel="noreferrer"
+            {videos.map((video, index) => (
+              <button
+                key={video.id}
+                className={`youtube-playlist__video${video.videoId === selectedVideoId ? ' youtube-playlist__video--featured' : ''}`}
+                type="button"
+                aria-pressed={video.videoId === selectedVideoId}
+                onClick={() => {
+                  setSelectedVideoId(video.videoId)
+                  if (playerRef.current) {
+                    playerRef.current.loadVideoById(video.videoId)
+                  } else {
+                    pendingVideoIdRef.current = video.videoId
+                  }
+                }}
               >
+                <span className="youtube-playlist__number">{String(index + 1).padStart(2, '0')}</span>
                 <img
-                  src={`https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`}
-                  alt={`${thumbnailAltPrefix} ${index + 2}`}
+                  src={`https://i.ytimg.com/vi/${video.videoId}/mqdefault.jpg`}
+                  alt={`${thumbnailAltPrefix} ${index + 1}`}
+                  loading="lazy"
+                  decoding="async"
                 />
-                <span>{videoLabel} {index + 2}</span>
-              </a>
+                <span className="youtube-playlist__video-copy">
+                  <strong>{video.title || `${videoLabel} ${index + 1}`}</strong>
+                  <small>{categoryLabel}</small>
+                </span>
+              </button>
             ))}
           </div>
-          <a
-            className="youtube-playlist__link"
-            href={playlistUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {openPlaylistLabel} <span aria-hidden="true">↗</span>
-          </a>
         </aside>
       </div>
     </section>
