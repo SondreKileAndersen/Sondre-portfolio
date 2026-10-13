@@ -13,6 +13,7 @@ export default defineTeachingResource({
   thumbnailSrc: thumbnail,
   thumbnailAlt: 'Illustrasjon som sammenligner typografi og font, med ulike ordstiler i en sirkel og ordet «CALIBRI» markert.',
   tools: [],
+  previewUrl: 'https://1drv.ms/p/c/4b988e222d7a9cdf/IQDpO-JYCQgpR72jC51fLTlNAecFNKa1653T3p3uimb0_2s?e=7dkGpq',
   files: [
     { id: 'presentation-assignment', label: 'Presentasjon og oppgave (PowerPoint)', url: presentationFile, download: true },
   ],

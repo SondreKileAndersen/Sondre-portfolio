@@ -12,6 +12,7 @@ export default defineTeachingResource({
   thumbnailSrc: thumbnail,
   thumbnailAlt: 'Filmplakat med et nærbilde av en mann i fargerik neonbelysning og tittelen Good Time',
   tools: [],
+  previewUrl: 'https://1drv.ms/p/c/4b988e222d7a9cdf/IQBAGEm_opzJTY7OuMcKKXcyAanYivFAZscOlvtqQ2KewQs?e=rvFOMl',
   files: [
     { id: 'presentation', label: 'Presentasjon (ODP)', url: presentationFile, download: true },
   ],

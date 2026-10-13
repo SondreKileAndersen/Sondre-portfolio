@@ -15,5 +15,6 @@ export default defineTeachingResource({
   thumbnailAlt:
     'Server med IP-adressen 195.88.55.16 og et eksempel på nettstedet som ligger på serveren',
   tools: [teachingTools.commandPrompt],
+  previewUrl: 'https://1drv.ms/p/c/4b988e222d7a9cdf/IQBzkYncjm-JQb-lTectJAv0AaQ2NT2IXUBfRsyqcbCu5Cs?e=2GWsR2',
   resourceUrl: presentationFile,
 })

@@ -534,3 +534,55 @@ Case-study sections may define short `paragraphs` for the overview and longer
 `detailParagraphs` for the generated detail page. The case-study overview
 variant intentionally renders only the first image and omits captions; all
 source images and their captions remain available to `ProjectDetailBlock`.
+
+### Linked floating teaching-resource cards
+
+A `learningJourneyStep` with `visual: 'starterCards'` can resolve its cards
+from the localized teaching-resource collection. Each card's `resourceId`
+references a resource document; its stable `id` matches an example's `id`:
+
+```ts
+resources: collection('teachingResources'),
+cards: [
+  { id: 'premiere', resourceId: 'adobe-premiere-pro-101-nasa-trailer', /* shared visual settings */ },
+],
+examples: [
+  { id: 'premiere', categoryId: 'film', label: text('example.label'), description: text('example.description') },
+],
+```
+
+`LearningJourneyStepBlock` owns hover and expansion state. Both the library
+and floating collection render `TeachingResourceCard` and use the same
+`ResourceFilesDialog`. Hover or keyboard focus brings the matching card
+forward and stops its floating animation. Clicking an example or card title
+toggles the resource description and file actions; preview and download
+controls retain their own behavior. Resource text and attachments come from
+the resource document, rather than duplicated page content.
+A `learningJourneyStep` may set `variant: 'accented'` for a short gold rule
+under its heading, a gold rule beside highlight labels, and matching image
+and marker borders. Example shared settings: `variant: 'accented',
+spacingBefore: 'relaxed', imageFit: 'contain'`. The heading uses the shared
+`--section-title-font-size` scale; localized text remains in the page locale.
+Floating journey cards may contain only `id`, `resourceId`, and `categoryId`;
+thumbnail, title, description, tools and files resolve from the resource
+collection. Four stack positions are shared across steps rather than tied
+to resource IDs. A final journey step may set
+`footerImage: { src: studentImage, alt: text('image.alt') }` to retain an image
+below the complete group of numbered steps. The group renders this image
+from shared structure and resolved localized alt text.
+### Three and four institution cards
+
+`teachingInstitutionCards` accepts `variant: 'three' | 'four'`. Omitting it
+keeps the original three-card layout and all its viewport breakpoints.
+Use `variant: 'four'` for four equal columns, two columns, or one column.
+The four-card variant uses named container queries: 72.5rem fits four
+17rem cards plus three 1.5rem gaps; 35.5rem fits two cards plus one gap.
+Card headers and subject sections align through grid subgrid.
+
+```ts
+{ id: 'schools', type: 'teachingInstitutionCards', variant: 'four',
+  subjectsLabel: text('schools.subjectsLabel'), cards: [/* four cards */] }
+```
+
+Institution logos belong in shared structure; school names, periods, roles,
+subject lists and logo alt text belong in language-specific page content.

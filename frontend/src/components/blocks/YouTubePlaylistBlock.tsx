@@ -127,7 +127,7 @@ export function YouTubePlaylistBlock({
   return (
     <section className="youtube-playlist">
       <header className="youtube-playlist__header">
-        <p className="youtube-playlist__eyebrow">{eyebrow}</p>
+        {eyebrow && <p className="youtube-playlist__eyebrow">{eyebrow}</p>}
         <h2>{heading}</h2>
         <p>{introduction}</p>
       </header>

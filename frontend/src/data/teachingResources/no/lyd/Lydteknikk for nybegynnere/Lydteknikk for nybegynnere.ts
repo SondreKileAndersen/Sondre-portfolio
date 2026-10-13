@@ -13,5 +13,6 @@ export default defineTeachingResource({
   thumbnailSrc: thumbnail,
   thumbnailAlt: 'Diagrammer som viser opptaksmønstrene for omnidireksjonell, subkardioid, kardioid, superkardioid, hyperkardioid, toveis og shotgun-mikrofon',
   tools: [teachingTools.premierePro],
+  previewUrl: 'https://1drv.ms/p/c/4b988e222d7a9cdf/IQCPNcPmeSQmQ4sYHEp4KZuMASkFOloQzMjHEGthifCmOAU?e=cgDayl',
   resourceUrl: resourceFile,
 })

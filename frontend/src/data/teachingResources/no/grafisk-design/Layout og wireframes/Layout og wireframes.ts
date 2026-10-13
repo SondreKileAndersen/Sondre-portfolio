@@ -12,6 +12,7 @@ export default defineTeachingResource({
   thumbnailSrc: thumbnail,
   thumbnailAlt: 'Fire håndtegnede wireframe-skisser til venstre og en enkel digital plakatskisse med logo, bildeplass og figur til høyre.',
   tools: [],
+  previewUrl: 'https://1drv.ms/w/c/4b988e222d7a9cdf/IQAh4U0PyiQ-Srtbq7AhR2LGAap4zdJesL06ssZJxIHI0ck?e=mspF32',
   files: [
     { id: 'assignment', label: 'Oppgave (Word)', url: assignmentFile, download: true },
   ],

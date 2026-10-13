@@ -13,5 +13,6 @@ export default defineTeachingResource({
   thumbnailSrc: thumbnail,
   thumbnailAlt: 'Mørk presentasjonsslide med tittelen Prosjektgang, en liste over seks prosjektfaser og et utsnitt av en kalender til høyre',
   tools: [],
+  previewUrl: 'https://1drv.ms/p/c/4b988e222d7a9cdf/IQAreQgM1LviSaHPf9PLIDtNAacihO6dY6clglVVlk6J8po?e=mARlKr',
   resourceUrl: resourceFile,
 })

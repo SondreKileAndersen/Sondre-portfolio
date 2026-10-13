@@ -12,7 +12,7 @@ export function ProjectDetailBlock({
   return (
     <article className="project-detail">
       <header className="project-detail__header">
-        <p className="eyebrow">{eyebrow}</p>
+        {eyebrow && <p className="eyebrow">{eyebrow}</p>}
         <h1>{heading}</h1>
         {introduction && <p className="project-detail__lead">{introduction}</p>}
       </header>

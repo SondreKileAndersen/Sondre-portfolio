@@ -13,6 +13,7 @@ export default defineTeachingResource({
   thumbnailSrc: thumbnail,
   thumbnailAlt: 'Sammenligning av konkrete og abstrakte symbol-logoer med kjente merkeeksempler i to sirkler.',
   tools: [teachingTools.illustrator],
+  previewUrl: 'https://1drv.ms/p/c/4b988e222d7a9cdf/IQAxVEKtPqZwT6oJ4Zq0c6bSAYcs0S8Er0Y7b1yBPCxJclg?e=Msplbf',
   files: [
     { id: 'assignment', label: 'Oppgave (PowerPoint)', url: assignmentFile, download: true },
   ],

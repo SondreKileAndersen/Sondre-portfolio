@@ -12,6 +12,7 @@ export default defineTeachingResource({
   thumbnailSrc: thumbnail,
   thumbnailAlt: 'Matannonse med grønne piler og norske merkelapper som peker ut logo, foto, rammer, kontrast, brødtekst, sitat og fargevariasjon.',
   tools: [],
+  previewUrl: 'https://1drv.ms/p/c/4b988e222d7a9cdf/IQB-8-TjkmqtTaSeARY4qePLAbEpxl5CfriWbfQlNW4FUuY?e=geQWab',
   files: [
     { id: 'presentation-assignment', label: 'Presentasjon og oppgave (ODP)', url: presentationFile, download: true },
   ],

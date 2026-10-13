@@ -11,6 +11,8 @@ type Props = {
 
 export function LearningJourneyGroup({ sections, startIndex, startTone }: Props) {
   const groupRef = useRef<HTMLDivElement>(null)
+  const heading = sections[0]?.groupHeading
+  const footerImage = sections.at(-1)?.footerImage
 
   useLayoutEffect(() => {
     const group = groupRef.current
@@ -86,15 +88,30 @@ export function LearningJourneyGroup({ sections, startIndex, startTone }: Props)
         }
         const cardStack = step.querySelector<HTMLElement>('.learning-journey__starter-cards-stack')
         if (cardStack) {
-          cardStack.querySelectorAll<HTMLElement>('.learning-journey__starter-card').forEach((card) => {
-            const cardCenterX = cardStack.offsetLeft + card.offsetLeft + card.offsetWidth / 2
-            const cardCenterY = cardStack.offsetTop + card.offsetTop + card.offsetHeight / 2
-            card.style.setProperty('--journey-card-origin-x', `${centerX - cardCenterX}px`)
-            card.style.setProperty('--journey-card-origin-y', `${centerY - cardCenterY}px`)
+          cardStack.querySelectorAll<HTMLElement>('[data-starter-card]').forEach((card) => {
+            // Cards now rotate and scale around their top-left corner. Sum
+            // layout offsets in the step's coordinate system, then undo the
+            // individual rotation applied before the entrance translation.
+            let cardX = 0
+            let cardY = 0
+            let element: HTMLElement | null = card
+            while (element && element !== step) {
+              cardX += element.offsetLeft
+              cardY += element.offsetTop
+              element = element.offsetParent as HTMLElement | null
+            }
+            const angle = Number.parseFloat(getComputedStyle(card).getPropertyValue('--card-rotation')) || 0
+            const radians = angle * Math.PI / 180
+            const dx = centerX - cardX
+            const dy = centerY - cardY
+            card.style.setProperty('--journey-card-origin-x', `${dx * Math.cos(radians) + dy * Math.sin(radians)}px`)
+            card.style.setProperty('--journey-card-origin-y', `${-dx * Math.sin(radians) + dy * Math.cos(radians)}px`)
           })
         }
       })
       const groupRect = group.getBoundingClientRect()
+      const headingRect = group.querySelector<HTMLElement>('.learning-journey-group__heading')?.getBoundingClientRect()
+      const lineStartOffset = headingRect ? headingRect.bottom - groupRect.top - 1 : 0
       const centers = markers.map((marker) => {
         const rect = marker!.getBoundingClientRect()
         return rect.top + rect.height / 2
@@ -104,13 +121,13 @@ export function LearningJourneyGroup({ sections, startIndex, startTone }: Props)
       const firstMarker = markers[0]?.getBoundingClientRect()
       if (first === undefined || last === undefined || !firstMarker) return
 
-      lineLength = Math.max(0, last - groupRect.top)
-      lineStartViewportY = groupRect.top
-      markerOffsets = centers.map((center) => center - groupRect.top)
+      lineLength = Math.max(0, last - groupRect.top - lineStartOffset)
+      lineStartViewportY = groupRect.top + lineStartOffset
+      markerOffsets = centers.map((center) => center - groupRect.top - lineStartOffset)
       const initialProgress = (markerOffsets[0] ?? 0) * 0.25
       const cursor = window.innerHeight * 0.74
       displayedProgress = Math.min(lineLength, Math.max(displayedProgress, initialProgress))
-      targetProgress = Math.min(lineLength, Math.max(targetProgress, initialProgress, cursor - groupRect.top, 0))
+      targetProgress = Math.min(lineLength, Math.max(targetProgress, initialProgress, cursor - lineStartViewportY, 0))
 
       solidSegments.forEach((segment, index) => {
         const start = index === 0 ? 0 : markerOffsets[index - 1]
@@ -120,7 +137,7 @@ export function LearningJourneyGroup({ sections, startIndex, startTone }: Props)
         segment.style.height = `${Math.max(0, end - start)}px`
       })
 
-      group.style.setProperty('--journey-line-top', '0px')
+      group.style.setProperty('--journey-line-top', `${lineStartOffset}px`)
       group.style.setProperty('--journey-line-left', `${firstMarker.left + firstMarker.width / 2 - groupRect.left}px`)
       group.style.setProperty('--journey-line-length', `${lineLength}px`)
 
@@ -143,6 +160,8 @@ export function LearningJourneyGroup({ sections, startIndex, startTone }: Props)
     }
     const observer = new ResizeObserver(scheduleUpdate)
     observer.observe(group)
+    const headingElement = group.querySelector<HTMLElement>('.learning-journey-group__heading')
+    if (headingElement) observer.observe(headingElement)
     markers.forEach((marker) => marker && observer.observe(marker))
     window.addEventListener('scroll', scheduleUpdate, { passive: true })
     window.addEventListener('resize', scheduleUpdate)
@@ -158,6 +177,7 @@ export function LearningJourneyGroup({ sections, startIndex, startTone }: Props)
   }, [sections])
 
   return <div ref={groupRef} className="learning-journey-group">
+    {heading && <h2 className="learning-journey-group__heading">{heading}</h2>}
     <span className="learning-journey-group__line" aria-hidden="true">
       {sections.map((section) => <span key={section.id} className="learning-journey-group__solid" />)}
     </span>
@@ -166,5 +186,8 @@ export function LearningJourneyGroup({ sections, startIndex, startTone }: Props)
       section={section}
       tone={sectionTone(startIndex + index, startTone)}
     />)}
+    {footerImage && <figure className="learning-journey-group__footer-image">
+      <img src={footerImage.src} alt={footerImage.alt} loading="lazy" decoding="async" />
+    </figure>}
   </div>
 }

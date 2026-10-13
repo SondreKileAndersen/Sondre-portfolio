@@ -11,6 +11,7 @@ export default defineTeachingResource({
   thumbnailSrc: thumbnail,
   thumbnailAlt: 'Blått og rosa blekk som blander seg på grå bakgrunn, med teksten Grafisk Design Virkemidler i midten og rosa grafiske former til høyre',
   tools: [],
+  previewUrl: 'https://1drv.ms/p/c/4b988e222d7a9cdf/IQDZcCjPW-CVQ6n0cKtWi1C6AZ5Xx4325ru0xXSA0sYQI3E?e=A6HWny',
   files: [
     { id: 'presentation', label: 'Presentasjon og oppgave', url: resourceFile },
   ],

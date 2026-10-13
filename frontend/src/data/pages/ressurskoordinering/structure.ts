@@ -387,16 +387,6 @@ export const structure = {
         },
       ],
     },
-    {
-      id: "resource-coordination-closing",
-      type: "text",
-      variant: "cta",
-      eyebrow: text("sections.resource-coordination-closing.eyebrow"),
-      heading: text("sections.resource-coordination-closing.heading"),
-      paragraphs: paragraphs("sections.resource-coordination-closing.paragraphs"),
-      actionLabel: text("sections.resource-coordination-closing.actionLabel"),
-      actionHref: text("sections.resource-coordination-closing.actionHref"),
-    },
   ],
 } as const satisfies PageStructure
 

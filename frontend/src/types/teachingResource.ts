@@ -40,6 +40,7 @@ export type TeachingResource = {
   thumbnailSrc: string
   thumbnailAlt: string
   tools: TeachingResourceTool[]
+  previewUrl?: string
   files?: TeachingResourceFile[]
   /** @deprecated Use `files` for new and updated resources. */
   resourceUrl?: string

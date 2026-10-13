@@ -12,6 +12,7 @@ export default defineTeachingResource({
   thumbnailSrc: thumbnail,
   thumbnailAlt: 'Lysbilde med teksten «Portefolio vs. CV», forklaringer av forskjellen og fargede grafiske former på en uskarp bakgrunn.',
   tools: [],
+  previewUrl: 'https://1drv.ms/p/c/4b988e222d7a9cdf/IQAreQgM1LviSaHPf9PLIDtNAacihO6dY6clglVVlk6J8po?e=0fWsjI',
   files: [
     { id: 'presentation', label: 'Presentasjon (ODP)', url: presentationFile, download: true },
   ],

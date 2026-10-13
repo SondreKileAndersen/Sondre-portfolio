@@ -12,6 +12,7 @@ export default defineTeachingResource({
   thumbnailSrc: thumbnail,
   thumbnailAlt: 'Skjermbilde fra et klassisk pikselspill med en rød figur på et grønt rør, murblokker, en spørsmålstegnblokk og to små fiender mot blå himmel.',
   tools: [],
+  previewUrl: 'https://1drv.ms/p/c/4b988e222d7a9cdf/IQCWLkZzaWuwQqOGzJtnWwO7AT0Uxfo_w8iKzsgwwSTgEyY?e=qif9VV',
   files: [
     { id: 'presentation', label: 'Presentasjon', url: presentationFile },
   ],

@@ -13,6 +13,7 @@ export default defineTeachingResource({
   thumbnailSrc: thumbnail,
   thumbnailAlt: 'Presentasjonsslide med overskriften «Printe for coverdesign» og et utsnitt av oppgaven Cover Design på høyre side.',
   tools: [teachingTools.photoshop],
+  previewUrl: 'https://1drv.ms/p/c/4b988e222d7a9cdf/IQA_feSMkBJCRIx2SnOYuRDQAZA2uqouJ6IMh262qS7ztmA?e=5q9mMt',
   files: [
     { id: 'presentation', label: 'Presentasjon (PowerPoint)', url: presentationFile, download: true },
   ],

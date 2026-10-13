@@ -13,5 +13,6 @@ export default defineTeachingResource({
   thumbnailSrc: thumbnail,
   thumbnailAlt: 'Illustrasjon av det elektromagnetiske spekteret, med synlig lys forstørret som et fargebånd fra omtrent 400 til 700 nanometer',
   tools: [],
+  previewUrl: 'https://1drv.ms/p/c/4b988e222d7a9cdf/IQDj2SPmfJtET5MVKT-nyjopAS-QYUMH59SCIVzi5jPQBVo?e=gH7zID',
   resourceUrl: resourceFile,
 })

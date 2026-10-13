@@ -150,7 +150,7 @@ export type ProjectMetadataItem = {
 export type ProjectDetailSection = {
   id: string
   type: 'projectDetail'
-  eyebrow: string
+  eyebrow?: string
   heading: string
   introduction?: string
   metadata: ProjectMetadataItem[]
@@ -195,12 +195,14 @@ export type InstitutionCardsSection = {
 export type TeachingInstitutionCardsSection = {
   id: string
   type: 'teachingInstitutionCards'
+  variant?: 'three' | 'four'
   preserveNextTone?: boolean
   subjectsLabel: string
   cards: Array<{
     id: string
     title: string
-    role: string
+    period: string
+    roles: string[]
     logoSrc: string
     logoAlt: string
     subjects: string[]
@@ -210,7 +212,7 @@ export type TeachingInstitutionCardsSection = {
 export type LearningJourneyIntroSection = {
   id: string
   type: 'learningJourneyIntro'
-  eyebrow: string
+  eyebrow?: string
   heading: string
   paragraphs: string[]
   imageSrc: string
@@ -220,29 +222,60 @@ export type LearningJourneyIntroSection = {
 export type LearningJourneyStepSection = {
   id: string
   type: 'learningJourneyStep'
+  groupHeading?: string
   number: string
-  eyebrow: string
-  heading: string
-  paragraphs: string[]
+  spacingBefore?: 'default' | 'relaxed'
+  spacingAfter?: 'default' | 'compact' | 'relaxed' | 'spacious'
+  variant?: 'default' | 'accented'
+  inlineParagraphs?: Array<{ id: string; parts: Array<{ id: string; text: string; categoryId?: string }> }>
+  eyebrow?: string
+  heading?: string
+  paragraphs?: string[]
+  lead?: string
+  body?: string
+  examplesLabel?: string
+  examples?: Array<{ id: string; categoryId: string; prefix?: string; label: string; description: string }>
+  ctaLabel?: string
   imagePosition: 'left' | 'right'
   visual: 'starterCards' | 'image' | 'mosaic' | 'resourceScreen'
   imageSrc?: string
   imageAlt?: string
   imageFit?: 'cover' | 'contain'
   images?: GalleryImage[]
-  cards?: Array<{ id: string; title: string; label: string; imageSrc: string; categoryId: string; logoSrc?: string }>
-  highlights?: Array<{ id: string; heading: string; description: string }>
+  resources?: TeachingResource[]
+  previewResourceId?: string
+  cards?: Array<{
+    id: string
+    resourceId?: string
+    title?: string
+    label?: string
+    imageSrc?: string
+    imageAlt?: string
+    categoryId: string
+    logoSrc?: string
+    plainMedia?: boolean
+    stackZ?: number
+    enterDelay?: number
+  }>
+  footerImage?: { src: string; alt: string }
+  highlights?: Array<{
+    id: string
+    heading: string
+    description?: string
+    descriptionParts?: Array<{ id: string; text: string; resourceId?: string }>
+  }>
   screenItems?: Array<{ id: string; title: string; label: string; icon: LineIconName }>
 }
 
 export type LearningJourneyClosingSection = {
   id: string
   type: 'learningJourneyClosing'
+  showOnPage?: boolean
   tone?: 'light' | 'dark'
   preserveNextTone?: boolean
-  eyebrow: string
+  eyebrow?: string
   quote: string
-  footer: string
+  footer?: string
   imageSrc: string
   imageAlt: string
 }
@@ -278,7 +311,8 @@ export type TeachingResourcesSection = {
   type: 'teachingResources'
   tone?: 'light' | 'dark'
   heading: string
-  introduction?: string
+  introduction?: string[]
+  notice?: string
   categories: TeachingResourceCategory[]
   resources: TeachingResource[]
 }
@@ -287,7 +321,7 @@ export type YouTubePlaylistSection = {
   id: string
   type: 'youtubePlaylist'
   tone?: 'light' | 'dark'
-  eyebrow: string
+  eyebrow?: string
   heading: string
   introduction: string
   playlistId: string

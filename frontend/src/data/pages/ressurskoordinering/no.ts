@@ -126,9 +126,4 @@ export const no = {
   "sections.resource-coordination-suppliers.logos.thaugland.alt": "Thaugland",
   "sections.resource-coordination-suppliers.logos.thomann.alt": "Thomann",
   "sections.resource-coordination-suppliers.logos.videoutstyr.alt": "Videoutstyr Norge AS",
-  "sections.resource-coordination-closing.eyebrow": "Flere prosjekter",
-  "sections.resource-coordination-closing.heading": "Utforsk flere prosjekter",
-  "sections.resource-coordination-closing.paragraphs": [],
-  "sections.resource-coordination-closing.actionLabel": "Se alle prosjekter",
-  "sections.resource-coordination-closing.actionHref": "/prosjekter"
 } satisfies PageContent

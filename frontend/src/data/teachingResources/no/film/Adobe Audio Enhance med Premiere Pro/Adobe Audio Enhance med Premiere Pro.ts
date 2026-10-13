@@ -6,7 +6,7 @@ import thumbnail from './thumbnail.png'
 export default defineTeachingResource({
   id: 'adobe-audio-enhance-with-premiere-pro',
   categoryId: 'film',
-  title: 'Adobe Audio Enhance med Premiere Pro',
+  title: 'Premiere Pro - Adobe Audio Enhance',
   description: 'Trinnvis veiledning der eleven eksporterer lyd fra Premiere Pro som en WAV-fil, forbedrer talen med Adobe Audio Enhance og legger den bearbeidede lyden tilbake i prosjektet for sammenligning.',
   format: 'pdf',
   typeLabel: 'Veiledning',

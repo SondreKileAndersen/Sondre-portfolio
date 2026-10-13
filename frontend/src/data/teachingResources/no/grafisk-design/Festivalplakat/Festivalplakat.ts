@@ -13,5 +13,6 @@ export default defineTeachingResource({
   thumbnailSrc: thumbnail,
   thumbnailAlt: 'Kollasj av flere fargerike Øyafestivalen-plakater med artistnavn, illustrasjoner og variert typografi',
   tools: [teachingTools.illustrator],
+  previewUrl: 'https://1drv.ms/p/c/4b988e222d7a9cdf/IQCdia-bXpGoSp1Mzf8Mp1DoAeMhbF6EY45AWH-3MDD45tA?e=H1hgxz',
   resourceUrl: resourceFile,
 })

@@ -13,6 +13,7 @@ export default defineTeachingResource({
   thumbnailSrc: thumbnail,
   thumbnailAlt: 'Nærbilde av en svart makak med brune øyne og synlige tenner foran grønn skog',
   tools: [],
+  previewUrl: 'https://1drv.ms/p/c/4b988e222d7a9cdf/IQB6l7AdPqowS4K_i6zjHjZpAd2bpMTxfp5hFYn7qilPUyY?e=fMtFII',
   files: [
     { id: 'presentation', label: 'Presentasjon', url: presentationFile },
   ],

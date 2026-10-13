@@ -12,6 +12,7 @@ export default defineTeachingResource({
   thumbnailSrc: thumbnail,
   thumbnailAlt: 'Lys presentasjonsslide med svart tittelfelt merket «Åpen oppgave» og tre bokser om egen oppgave, eksamensforberedelse og prosjektperioden uke 19–21.',
   tools: [],
+  previewUrl: 'https://1drv.ms/p/c/4b988e222d7a9cdf/IQBtEDHft7xSQ4DJLey9bD3tAcTwYWwc0l0sVtfcsgpL3Kw?e=Ose1yW',
   files: [
     { id: 'presentation', label: 'Presentasjon', url: presentationFile },
   ],

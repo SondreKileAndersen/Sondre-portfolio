@@ -144,5 +144,29 @@ const cards = composeContent(changed, content, collections).sections.find(sectio
 assert.equal(cards[0].id, 'kuben-experience')
 assert.equal(cards[0].title, 'Kuben VGS')
 
+// Floating examples must link to real resource documents by stable ID.
+const resourceIds = new Set()
+function discoverResourceIds(directory) {
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const file = path.join(directory, entry.name)
+    if (entry.isDirectory()) discoverResourceIds(file)
+    else if (entry.name.endsWith('.ts') && !['index.ts', 'toolCatalog.ts', 'TEMPLATE.resource.ts'].includes(entry.name)) {
+      const id = fs.readFileSync(file, 'utf8').match(/\bid:\s*['"]([^'"]+)['"]/)?.[1]
+      if (id) resourceIds.add(id)
+    }
+  }
+}
+discoverResourceIds(path.join(root, 'src/data/teachingResources/no'))
+for (const page of pages) {
+  for (const section of page.sections) {
+    if (section.type !== 'learningJourneyStep' || section.visual !== 'starterCards') continue
+    for (const example of section.examples ?? []) {
+      const card = section.cards.find(candidate => candidate.id === example.id)
+      assert.ok(card, `Example ${example.id} must have a matching floating card`)
+      assert.ok(resourceIds.has(card.resourceId), `Floating card ${card.id} must reference an existing resource`)
+    }
+  }
+}
+
 if (process.argv.includes('--snapshot')) process.stdout.write(JSON.stringify(pages))
 else console.log(`PASS: ${pages.length} pages; translation validation, stable IDs, routes, project reuse, text-only locale files, shared reordering`)

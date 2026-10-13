@@ -24,6 +24,7 @@ export const no = {
   },
   teachingResources: {
     tools: 'Verktøy',
+    previewResource: 'Forhåndsvis {{title}}',
     chooseFile: 'Velg filen du vil åpne eller laste ned.',
     filesFor: 'Filer for {{title}}',
     closeFiles: 'Lukk filoversikten',
