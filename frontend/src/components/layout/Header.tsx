@@ -29,7 +29,7 @@ export function Header({
     window.setTimeout(() => {
       setContactOpen(false)
       setContactClosing(false)
-    }, 260)
+    }, 320)
   }
 
   useEffect(() => {

@@ -26,7 +26,7 @@ export function CaseStudyGroup({ sections, startIndex, startSectionIndex, startT
         const sequenceIndex = startIndex + sectionIndex
         const position: 'left' | 'right' = sequenceIndex % 2 === 0 ? 'left' : 'right'
         const sharedOverrides = {
-          tone: sectionTone(startSectionIndex + sectionIndex, startTone),
+          tone: section.tone ?? sectionTone(startSectionIndex + sectionIndex, startTone),
         }
         const positionedSection = section.type === 'split'
           ? { ...section, ...sharedOverrides, imagePosition: position }

@@ -212,15 +212,16 @@ h2 {
   box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 38%);
 }
 
-.contact-dialog::backdrop { background: rgb(0 0 0 / 48%); }
+.contact-dialog::backdrop {
+  background-color: rgb(0 0 0 / 0%);
+  transition: background-color 320ms ease;
+}
 .contact-dialog[open] { animation: contact-dialog-enter 260ms cubic-bezier(0.22, 1, 0.36, 1) both; }
-.contact-dialog[open]::backdrop { animation: contact-dialog-backdrop-enter 260ms ease-out both; }
+.contact-dialog[open]::backdrop { background-color: rgb(0 0 0 / 48%); }
 .contact-dialog--closing { animation: contact-dialog-exit 260ms ease-in both !important; }
-.contact-dialog--closing::backdrop { animation: contact-dialog-backdrop-exit 260ms ease-in both; }
+.contact-dialog--closing::backdrop { background-color: rgb(0 0 0 / 0%); }
 @keyframes contact-dialog-enter { from { opacity: 0; transform: translateY(calc(-100% - 2rem)); } to { opacity: 1; transform: translateY(0); } }
 @keyframes contact-dialog-exit { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(calc(-100% - 2rem)); } }
-@keyframes contact-dialog-backdrop-enter { from { background-color: rgb(0 0 0 / 0%); } to { background-color: rgb(0 0 0 / 48%); } }
-@keyframes contact-dialog-backdrop-exit { from { background-color: rgb(0 0 0 / 48%); } to { background-color: rgb(0 0 0 / 0%); } }
 .contact-dialog h2 { margin: 0 2rem 1.25rem 0; font-size: 1.35rem; }
 .contact-dialog p { color: inherit; }
 .contact-dialog a { width: fit-content; color: inherit; text-underline-offset: 0.2em; }

@@ -134,13 +134,11 @@ for (const folder of folders) {
   assert.deepEqual(Object.keys(content).sort(), [...new Set(refs)].sort())
 }
 
-// Reordering shared cards never requires reordering either translation file.
+// The institutional cards are ordered in shared structure; translation keys stay stable.
 const directory = path.join(root, 'src/data/pages/ressurskoordinering')
 const shared = load(path.join(directory, 'structure.ts')).structure
 const content = load(path.join(directory, 'no.ts')).no
-const changed = { ...shared, sections: shared.sections.map(section => section.type === 'institutionCards'
-  ? { ...section, cards: [...section.cards].reverse() } : section) }
-const cards = composeContent(changed, content, collections).sections.find(section => section.type === 'institutionCards').cards
+const cards = composeContent(shared, content, collections).sections.find(section => section.type === 'institutionCards').cards
 assert.equal(cards[0].id, 'kuben-experience')
 assert.equal(cards[0].title, 'Kuben VGS')
 

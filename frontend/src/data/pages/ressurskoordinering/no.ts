@@ -40,7 +40,7 @@ export const no = {
   "sections.equipment-for-learning.actionHref": "/prosjekter/utstyr-for-laering",
   "sections.equipment-for-learning.heading": "Utstyr valgt ut fra hvordan elevene skulle lære",
   "sections.equipment-for-learning.paragraphs": [
-    "Jeg vurderte behov, valgte ut og kjøpte inn utstyr til medieproduksjon på Vg2, med vekt på praktisk bruk og pedagogisk verdi."
+    "Kuben vgs skulle utvide studietilbudet til medieproduksjon vg2. Jeg kartla behov, valgte ut og kjøpte inn utstyr, med vekt på praktisk bruk og pedagogisk verdi."
   ],
   "sections.equipment-for-learning.detailParagraphs": [
     "Ved utvidelsen av medieproduksjon deltok jeg også i vurdering og innkjøp av nytt produksjonsutstyr. Budsjettet måtte fordeles mellom flere behov, og det var derfor viktig å skille mellom utstyr som var interessant, og utstyr som faktisk kunne gi pedagogisk verdi.",
@@ -73,7 +73,7 @@ export const no = {
   "sections.equipment-loan-gallery.actionHref": "/prosjekter/sporbart-utlanssystem",
   "sections.equipment-loan-gallery.heading": "Fra spredt utstyr til et organisert lager- og utlånssystem",
   "sections.equipment-loan-gallery.paragraphs": [
-    "Jeg bygde opp og organiserte lageret, etablerte faste plasser for utstyret og koordinerte hyller, strøm og tilpasninger av rommet. Deretter innførte jeg AssetTiger for å gjøre utstyr og utlån enkelt å finne, følge opp og holde oversikt over."
+    "Jeg bygde opp og etablerte systemet på det nye lageret. Jeg innførte AssetTiger som digitalt utstyrssystem, slik at utlån skulle være minst mulig belastende for andre lærere i en travel hverdag."
   ],
   "sections.equipment-loan-gallery.toolLogos.assettiger.alt": "AssetTiger",
   "sections.equipment-loan-gallery.toolLogos.tampermonkey.alt": "Tampermonkey",

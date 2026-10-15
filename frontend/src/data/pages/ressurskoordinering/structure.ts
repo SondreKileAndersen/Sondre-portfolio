@@ -85,32 +85,6 @@ export const structure = {
       type: "institutionCards",
       cards: [
         {
-          id: "oslomet-experience",
-          title: text("sections.resource-coordination-institutions.cards.oslomet-experience.title"),
-          period: text("sections.resource-coordination-institutions.cards.oslomet-experience.period"),
-          role: text("sections.resource-coordination-institutions.cards.oslomet-experience.role"),
-          description: text("sections.resource-coordination-institutions.cards.oslomet-experience.description"),
-          logoSrc: oslometLogo,
-          logoAlt: text("sections.resource-coordination-institutions.cards.oslomet-experience.logoAlt"),
-          highlights: [
-            {
-              id: "purchasing",
-              label: text("sections.resource-coordination-institutions.cards.oslomet-experience.highlights.purchasing.label"),
-              icon: "cube",
-            },
-            {
-              id: "ordering",
-              label: text("sections.resource-coordination-institutions.cards.oslomet-experience.highlights.ordering.label"),
-              icon: "workflow",
-            },
-            {
-              id: "suppliers",
-              label: text("sections.resource-coordination-institutions.cards.oslomet-experience.highlights.suppliers.label"),
-              icon: "people",
-            },
-          ],
-        },
-        {
           id: "kuben-experience",
           title: text("sections.resource-coordination-institutions.cards.kuben-experience.title"),
           period: text("sections.resource-coordination-institutions.cards.kuben-experience.period"),
@@ -136,6 +110,32 @@ export const structure = {
             },
           ],
         },
+        {
+          id: "oslomet-experience",
+          title: text("sections.resource-coordination-institutions.cards.oslomet-experience.title"),
+          period: text("sections.resource-coordination-institutions.cards.oslomet-experience.period"),
+          role: text("sections.resource-coordination-institutions.cards.oslomet-experience.role"),
+          description: text("sections.resource-coordination-institutions.cards.oslomet-experience.description"),
+          logoSrc: oslometLogo,
+          logoAlt: text("sections.resource-coordination-institutions.cards.oslomet-experience.logoAlt"),
+          highlights: [
+            {
+              id: "purchasing",
+              label: text("sections.resource-coordination-institutions.cards.oslomet-experience.highlights.purchasing.label"),
+              icon: "cube",
+            },
+            {
+              id: "ordering",
+              label: text("sections.resource-coordination-institutions.cards.oslomet-experience.highlights.ordering.label"),
+              icon: "workflow",
+            },
+            {
+              id: "suppliers",
+              label: text("sections.resource-coordination-institutions.cards.oslomet-experience.highlights.suppliers.label"),
+              icon: "people",
+            },
+          ],
+        },
       ],
     },
     {
@@ -157,38 +157,6 @@ export const structure = {
       imageSrc: multiCameraStudioImage,
       imageAlt: text("sections.equipment-for-learning.imageAlt"),
       caption: text("sections.equipment-for-learning.caption"),
-    },
-    {
-      id: "teaching-studio",
-      type: "gallery",
-      variant: "caseStudy",
-      eyebrow: text("sections.teaching-studio.eyebrow"),
-      brand: {
-        groupId: "kuben",
-        src: kubenLogo,
-        alt: text("sections.teaching-studio.brand.alt"),
-      },
-      actionLabel: text("sections.teaching-studio.actionLabel"),
-      actionHref: text("sections.teaching-studio.actionHref"),
-      heading: text("sections.teaching-studio.heading"),
-      paragraphs: paragraphs("sections.teaching-studio.paragraphs"),
-      detailParagraphs: paragraphs("sections.teaching-studio.detailParagraphs"),
-      outcome: text('sections.teaching-studio.outcome'),
-      images: [
-        {
-          id: "teaching-studio-overview",
-          src: studioImage,
-          alt: text("sections.teaching-studio.images.teaching-studio-overview.alt"),
-          caption: text("sections.teaching-studio.images.teaching-studio-overview.caption"),
-        },
-        {
-          id: "yamaha-mixer-guide",
-          src: yamahaMixerGuide,
-          alt: text("sections.teaching-studio.images.yamaha-mixer-guide.alt"),
-          caption: text("sections.teaching-studio.images.yamaha-mixer-guide.caption"),
-          imageFit: "contain",
-        },
-      ],
     },
     {
       id: "equipment-loan-gallery",
@@ -263,6 +231,38 @@ export const structure = {
           src: assetTigerImage,
           alt: text('sections.equipment-loan-gallery.images.asset-tiger-system.alt'),
           caption: text('sections.equipment-loan-gallery.images.asset-tiger-system.caption'),
+        },
+      ],
+    },
+    {
+      id: "teaching-studio",
+      type: "gallery",
+      variant: "caseStudy",
+      eyebrow: text("sections.teaching-studio.eyebrow"),
+      brand: {
+        groupId: "kuben",
+        src: kubenLogo,
+        alt: text("sections.teaching-studio.brand.alt"),
+      },
+      actionLabel: text("sections.teaching-studio.actionLabel"),
+      actionHref: text("sections.teaching-studio.actionHref"),
+      heading: text("sections.teaching-studio.heading"),
+      paragraphs: paragraphs("sections.teaching-studio.paragraphs"),
+      detailParagraphs: paragraphs("sections.teaching-studio.detailParagraphs"),
+      outcome: text('sections.teaching-studio.outcome'),
+      images: [
+        {
+          id: "teaching-studio-overview",
+          src: studioImage,
+          alt: text("sections.teaching-studio.images.teaching-studio-overview.alt"),
+          caption: text("sections.teaching-studio.images.teaching-studio-overview.caption"),
+        },
+        {
+          id: "yamaha-mixer-guide",
+          src: yamahaMixerGuide,
+          alt: text("sections.teaching-studio.images.yamaha-mixer-guide.alt"),
+          caption: text("sections.teaching-studio.images.yamaha-mixer-guide.caption"),
+          imageFit: "contain",
         },
       ],
     },
