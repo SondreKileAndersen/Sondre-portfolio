@@ -19,6 +19,7 @@ export const no = {
   "sections.resource-coordination-intro.features.traceable.heading": "Laget for å vare",
   "sections.resource-coordination-intro.features.traceable.description": "Løsninger som fungerer også når behov og rammer endrer seg.",
   "sections.resource-coordination-institutions.cards.oslomet-experience.title": "OsloMet",
+  "sections.resource-coordination-institutions.cards.oslomet-experience.period": "2025–2026",
   "sections.resource-coordination-institutions.cards.oslomet-experience.role": "Høyskolelærer · Bestiller",
   "sections.resource-coordination-institutions.cards.oslomet-experience.description": "Innkjøp, bestillinger og leverandøroppfølging for undervisning og estetiske fag.",
   "sections.resource-coordination-institutions.cards.oslomet-experience.logoAlt": "OsloMet",
@@ -26,6 +27,7 @@ export const no = {
   "sections.resource-coordination-institutions.cards.oslomet-experience.highlights.ordering.label": "Bestillingsflyt",
   "sections.resource-coordination-institutions.cards.oslomet-experience.highlights.suppliers.label": "Leverandørdialog",
   "sections.resource-coordination-institutions.cards.kuben-experience.title": "Kuben VGS",
+  "sections.resource-coordination-institutions.cards.kuben-experience.period": "2025",
   "sections.resource-coordination-institutions.cards.kuben-experience.role": "AV-konsulent · Medieproduksjon",
   "sections.resource-coordination-institutions.cards.kuben-experience.description": "Planlegging av utstyr, utlånssystem og teknisk tilrettelegging for elever og lærere.",
   "sections.resource-coordination-institutions.cards.kuben-experience.logoAlt": "Kuben videregående skole",
@@ -126,4 +128,8 @@ export const no = {
   "sections.resource-coordination-suppliers.logos.thaugland.alt": "Thaugland",
   "sections.resource-coordination-suppliers.logos.thomann.alt": "Thomann",
   "sections.resource-coordination-suppliers.logos.videoutstyr.alt": "Videoutstyr Norge AS",
-} satisfies PageContent
+  'sections.equipment-for-learning.outcome': 'Utstyret ble planlagt for utvidelsen av medieproduksjon på Vg2. Samtidig fikk linjen tilgang til hele etasjen, og jeg var med på å koordinere hvordan de nye rommene skulle legges opp, blant annet nytt fotostudio, lydstudio og lager.',
+  'sections.teaching-studio.outcome': 'Studioet er lagt opp for flere typer bruk: opptak av podcast og lyd, musikkproduksjon, miksing, miksing av lyd til film og generell lydredigering.',
+  'sections.equipment-loan-gallery.outcome': 'Lærere og elever ble lagt inn i systemet, så det er lett å se hvem som har hva, når det ble levert inn og hvem som hadde det sist, hvis noe mangler eller er ødelagt. Utlån og innlevering skjer ved scanning, og systemet er lagt til rette for booking. Å gå fra papir til digitalt gjorde utlån raskere og mer nøyaktig, og det var viktig for lærere som har mye annet å gjøre. Oppsettet var også laget for at lærlinger skulle kunne ha ansvar for utlånet. Jeg hadde ansvar for det nye lageret: oppsett, HMS-sikring og utstyrssystem.',
+  'sections.oslomet-purchasing.outcome': 'Jeg var én av flere som bestilte, og hadde ansvar for de jevnlige bestillingene til undervisningen, blant annet malesett og kamerautstyr. Høsten 2025 kom det midler til å utvide tilbudet, og da var flere med på bestillingene.',} satisfies PageContent
+

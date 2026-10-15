@@ -5,12 +5,16 @@ import { LineIcon } from '../ui/LineIcon'
 import { TeachingResourceCard, ResourceFilesDialog } from './TeachingResourcesBlock'
 import type { TeachingResource } from '../../types/teachingResource'
 
-export function LearningJourneyIntroBlock({ eyebrow, heading, paragraphs, imageSrc, imageAlt }: LearningJourneyIntroSection) {
+export function LearningJourneyIntroBlock({ eyebrow, heading, paragraphs, specializationsLabel, specializations, imageSrc, imageAlt }: LearningJourneyIntroSection) {
   return <section className="learning-journey-intro">
     <div className="learning-journey-intro__copy">
       {eyebrow && <p className="learning-journey__eyebrow">{eyebrow}</p>}
       <h1>{heading}</h1>
       {paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+      {specializationsLabel && specializations && specializations.length > 0 && <div className="learning-journey-intro__specializations">
+        <p>{specializationsLabel}</p>
+        <ul>{specializations.map((specialization) => <li key={specialization}>{specialization}</li>)}</ul>
+      </div>}
     </div>
     <img src={imageSrc} alt={imageAlt} loading="eager" fetchPriority="high" decoding="async" />
   </section>

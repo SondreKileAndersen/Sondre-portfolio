@@ -18,6 +18,7 @@ export function SplitBlock({
   actionLabel,
   actionHref,
   toolLogos,
+  outcome,
 }: SplitSection) {
   const resolvedTone = tone ?? (imagePosition === 'right' ? 'dark' : 'light')
   return (

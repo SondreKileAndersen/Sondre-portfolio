@@ -49,6 +49,7 @@ export function createProjectPage(
     metadata: definition.metadata,
     previewImage,
     paragraphs: source.detailParagraphs ?? source.paragraphs,
+    outcome: source.outcome,
     gallery: isGallery ? source.images.slice(1) : undefined,
   }
 

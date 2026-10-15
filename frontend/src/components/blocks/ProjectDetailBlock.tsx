@@ -8,6 +8,7 @@ export function ProjectDetailBlock({
   previewImage,
   paragraphs,
   gallery,
+  outcome,
 }: ProjectDetailSection) {
   return (
     <article className="project-detail">
@@ -32,7 +33,7 @@ export function ProjectDetailBlock({
       </figure>
 
       <div className="project-detail__body">
-        {paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        {[...paragraphs, ...(outcome ? [outcome] : [])].map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
       </div>
 
       {gallery && gallery.length > 0 && (

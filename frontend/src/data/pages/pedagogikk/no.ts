@@ -1,9 +1,11 @@
 import type { PageContent } from './structure'
 
 export const no = {
-  slug: 'pedagogikk', path: '/pedagogikk', navTitle: 'Pedagogikk', title: 'Lærer i medieproduksjon på høyskole og videregående',
+  slug: 'pedagogikk', path: '/pedagogikk', navTitle: 'Undervisning', title: 'Lærer i medieproduksjon på høyskole og videregående',
   'sections.pedagogy-intro.heading': 'Lærer i medieproduksjon på videregående og høyskole',
   'sections.pedagogy-intro.paragraphs': ['Jeg tror på å ta utgangspunkt i det studentene allerede kan. Gjennom virkelighetsnære oppgaver og tett oppfølging utfordrer jeg dem videre, så de opplever mestring.'],
+  'sections.pedagogy-intro.specializationsLabel': 'Undervisningsspesialisering innen:',
+  'sections.pedagogy-intro.specializations': ['Lydproduksjon', 'Grafisk design', 'Interaksjonsdesign', 'Videoredigering'],
   'sections.pedagogy-intro.imageAlt': 'Meg sammen med elever i medieproduksjonsstudio',
   'sections.teaching-institutions.subjectsLabel': 'Emner',
   'sections.teaching-institutions.cards.ntnu.title': 'Norges teknisk-naturvitenskapelige universitet',

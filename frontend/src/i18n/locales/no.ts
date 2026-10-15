@@ -1,4 +1,11 @@
 export const no = {
+  footer: {
+    contact: 'Kontakt',
+    location: 'Agder',
+    email: 'sondre.kile[at]hotmail.com',
+    cv: 'Last ned CV (PDF)',
+    references: 'Referanser oppgis ved forespørsel.',
+  },
   accessibility: {
     goHome: 'Gå til forsiden',
     mainContent: 'Hovedinnhold',

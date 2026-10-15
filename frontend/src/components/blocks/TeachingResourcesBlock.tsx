@@ -245,7 +245,7 @@ export function TeachingResourcesBlock({
   )
 
   return (
-    <section className="teaching-resources" id={id}>
+    <section className="teaching-resources teaching-resources--library" id={id}>
       <header className="teaching-resources__header">
         <h2>{heading}</h2>
         {introduction && <div className="teaching-resources__intro-copy">

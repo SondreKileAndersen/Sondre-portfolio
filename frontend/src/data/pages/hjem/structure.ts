@@ -1,4 +1,6 @@
 import profileImage from "../../../media/hjem/Sondre_Caps.jpg"
+import gameDevelopmentImage from '../../../media/pedagogikk/F21-Green-screen.png'
+import resourceCoordinationImage from '../../../media/ressurskoordinering/Lager 1.jpg'
 import { text, paragraphs } from '../../../lib/pageContent'
 import type { ContentFor, PageStructure } from '../../../lib/pageContent'
 
@@ -15,9 +17,17 @@ export const structure = {
       id: "home-hero",
       type: "hero",
       heading: text("sections.home-hero.heading"),
+      headingHighlight: text("sections.home-hero.headingHighlight"),
       imageSrc: profileImage,
       imageAlt: text("sections.home-hero.imageAlt"),
       paragraphs: paragraphs("sections.home-hero.paragraphs"),
+    },
+    {
+      id: 'home-navigation', type: 'navigationCards', tone: 'light',
+      cards: [
+        { id: 'teaching', imageSrc: gameDevelopmentImage, title: text('sections.home-navigation.cards.teaching.title'), description: text('sections.home-navigation.cards.teaching.description'), href: text('sections.home-navigation.cards.teaching.href') },
+        { id: 'resource-coordination', imageSrc: resourceCoordinationImage, title: text('sections.home-navigation.cards.resource-coordination.title'), description: text('sections.home-navigation.cards.resource-coordination.description'), href: text('sections.home-navigation.cards.resource-coordination.href') },
+      ],
     },
   ],
 } as const satisfies PageStructure

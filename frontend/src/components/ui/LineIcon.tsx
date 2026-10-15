@@ -20,7 +20,7 @@ export function LineIcon({ name }: LineIconProps) {
   }
 
   if (name === 'workflow') {
-    return <svg {...commonProps}><circle cx="12" cy="5" r="2" /><circle cx="6" cy="18" r="2" /><circle cx="18" cy="18" r="2" /><path d="M12 7v4M6 16v-2h12v2" /></svg>
+    return <svg {...commonProps}><circle cx="12" cy="5" r="2" /><circle cx="6" cy="18" r="2" /><circle cx="18" cy="18" r="2" /><path d="M12 7v5M6 16v-4h12v4" /></svg>
   }
 
   if (name === 'database') {
@@ -33,6 +33,10 @@ export function LineIcon({ name }: LineIconProps) {
 
   if (name === 'people') {
     return <svg {...commonProps}><circle cx="9" cy="8" r="3" /><circle cx="17" cy="9" r="2" /><path d="M3 20v-2c0-3 2.7-5 6-5s6 2 6 5v2M15 14c3 0 5 1.6 5 4v2" /></svg>
+  }
+
+  if (name === 'monitor') {
+    return <svg {...commonProps}><rect x="3" y="4" width="18" height="12" rx="1.5" /><path d="M8 20h8M12 16v4" /></svg>
   }
 
   if (name === 'camera') {

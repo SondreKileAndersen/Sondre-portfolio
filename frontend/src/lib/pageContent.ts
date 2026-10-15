@@ -5,11 +5,12 @@ import type { TeachingResource, TeachingResourceCategory } from '../types/teachi
 import { recordContentSource } from './contentSource'
 
 type LocalizedField =
-  | 'slug' | 'path' | 'navTitle' | 'title' | 'heading' | 'groupHeading' | 'eyebrow'
+  | 'slug' | 'path' | 'navTitle' | 'title' | 'heading' | 'headingHighlight' | 'groupHeading' | 'eyebrow'
   | 'introduction' | 'paragraphs' | 'detailParagraphs' | 'items' | 'note' | 'notice'
   | 'alt' | 'imageAlt' | 'secondaryImageAlt' | 'logoAlt' | 'caption' | 'label' | 'text'
   | 'role' | 'roles' | 'period' | 'lead' | 'body' | 'prefix' | 'examplesLabel' | 'description' | 'value' | 'actionLabel' | 'actionHref' | 'ctaLabel' | 'href'
-  | 'subjectsLabel' | 'subjects'
+  | 'subjectsLabel' | 'subjects' | 'outcome'
+  | 'specializationsLabel' | 'specializations'
   | 'iframeTitle' | 'firstVideoTitle' | 'videoLabel'
   | 'categoryLabel' | 'typeLabel' | 'thumbnailAltPrefix' | 'openPlaylistLabel' | 'playlistUrl'
   | 'quote' | 'footer'

@@ -23,7 +23,10 @@ export const structure = {
     {
       id: 'pedagogy-intro', type: 'learningJourneyIntro',
       heading: text('sections.pedagogy-intro.heading'),
-      paragraphs: paragraphs('sections.pedagogy-intro.paragraphs'), imageSrc: heroImage, imageAlt: text('sections.pedagogy-intro.imageAlt'),
+      paragraphs: paragraphs('sections.pedagogy-intro.paragraphs'),
+      specializationsLabel: text('sections.pedagogy-intro.specializationsLabel'),
+      specializations: paragraphs('sections.pedagogy-intro.specializations'),
+      imageSrc: heroImage, imageAlt: text('sections.pedagogy-intro.imageAlt'),
     },
     {
       id: 'teaching-institutions', type: 'teachingInstitutionCards', preserveNextTone: true,

@@ -2,6 +2,7 @@ import type { PageSection } from '../types/page'
 import { HeroBlock } from './blocks/HeroBlock'
 import { GalleryBlock } from './blocks/GalleryBlock'
 import { CardGridBlock } from './blocks/CardGridBlock'
+import { NavigationCardsBlock } from './blocks/NavigationCardsBlock'
 import { ProcessBlock } from './blocks/ProcessBlock'
 import { SplitBlock } from './blocks/SplitBlock'
 import { TextBlock } from './blocks/TextBlock'
@@ -26,7 +27,7 @@ export function SectionRenderer({ section, tone = 'light' }: SectionRendererProp
   const content = import.meta.env.DEV
     ? <ContentSourceBoundary sectionId={section.id}>{block}</ContentSourceBoundary>
     : block
-  return <div className={`section-tone-boundary rendered-section--${resolvedTone}`}>{content}</div>
+  return <div className={`section-tone-boundary rendered-section--${resolvedTone}`} data-section-id={section.id}>{content}</div>
 }
 
 function renderBlock({ section, tone }: SectionRendererProps) {
@@ -43,6 +44,8 @@ function renderBlock({ section, tone }: SectionRendererProps) {
       return <GalleryBlock {...section} />
     case 'cardGrid':
       return <CardGridBlock {...section} />
+    case 'navigationCards':
+      return <NavigationCardsBlock {...section} />
     case 'institutionCards':
       return <InstitutionCardsBlock {...section} tone={tone} />
     case 'teachingInstitutionCards':

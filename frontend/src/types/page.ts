@@ -29,6 +29,7 @@ export type LineIconName =
   | 'database'
   | 'document'
   | 'people'
+  | 'monitor'
   | 'search'
   | 'camera'
   | 'settings'
@@ -49,10 +50,13 @@ export type ToolLogo = {
 export type HeroSection = {
   id: string
   type: 'hero'
+  tone?: 'light' | 'dark'
   heading: string
+  headingHighlight?: string
   imageSrc: string
   imageAlt: string
   paragraphs: string[]
+  actions?: Array<{ id: string; label: string; href: string }>
 }
 
 export type SplitSection = {
@@ -77,15 +81,17 @@ export type SplitSection = {
   actionHref?: string
   brand?: BrandMark
   toolLogos?: ToolLogo[]
+  outcome?: string
 }
 
 export type TextSection = {
   id: string
   type: 'text'
+  tone?: 'light' | 'dark'
   heading?: string
   paragraphs: string[]
   items?: string[]
-  variant?: 'default' | 'principles' | 'cta'
+  variant?: 'default' | 'principles' | 'cta' | 'education'
   eyebrow?: string
   leadImage?: {
     src: string
@@ -94,6 +100,7 @@ export type TextSection = {
     height?: number
     fetchPriority?: 'high' | 'low' | 'auto'
   }
+  introSequence?: boolean
   features?: Array<{
     id: string
     heading: string
@@ -139,6 +146,7 @@ export type GallerySection = {
   actionHref?: string
   brand?: BrandMark
   toolLogos?: ToolLogo[]
+  outcome?: string
 }
 
 export type ProjectMetadataItem = {
@@ -157,6 +165,7 @@ export type ProjectDetailSection = {
   previewImage: GalleryImage
   paragraphs: string[]
   gallery?: GalleryImage[]
+  outcome?: string
 }
 
 export type CardItem = {
@@ -176,9 +185,23 @@ export type CardGridSection = {
   cards: CardItem[]
 }
 
+export type NavigationCardsSection = {
+  id: string
+  type: 'navigationCards'
+  tone?: 'light' | 'dark'
+  cards: Array<{
+    id: string
+    title: string
+    description: string
+    href: string
+    imageSrc: string
+  }>
+}
+
 export type InstitutionCard = {
   id: string
   title: string
+  period?: string
   role: string
   description: string
   logoSrc: string
@@ -215,6 +238,8 @@ export type LearningJourneyIntroSection = {
   eyebrow?: string
   heading: string
   paragraphs: string[]
+  specializationsLabel?: string
+  specializations?: string[]
   imageSrc: string
   imageAlt: string
 }
@@ -347,6 +372,7 @@ export type PageSection =
   | TextSection
   | GallerySection
   | CardGridSection
+  | NavigationCardsSection
   | InstitutionCardsSection
   | TeachingInstitutionCardsSection
   | LearningJourneyIntroSection

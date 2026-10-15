@@ -90,7 +90,7 @@ for (const page of pages) {
   assert.equal(new Set(page.sections.map(section => section.id)).size, page.sections.length)
   if (page.parentId) assert.ok(pages.some(parent => parent.id === page.parentId))
   for (const section of page.sections) {
-    if (section.actionHref?.startsWith('/')) assert.ok(pages.some(target => target.path === section.actionHref))
+    if (section.actionHref?.startsWith('/') && !section.actionHref.startsWith('/cv/')) assert.ok(pages.some(target => target.path === section.actionHref))
   }
 }
 const overview = pages.find(page => page.id === 'resource-coordination')

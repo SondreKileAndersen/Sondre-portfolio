@@ -6,17 +6,39 @@ import {
   type BrandedCaseStudySection,
 } from './components/CaseStudyGroup'
 import { Header } from './components/layout/Header'
+import { Footer } from './components/layout/Footer'
 import { LearningJourneyGroup } from './components/LearningJourneyGroup'
 import { getPages } from './data/pages'
 import {
   defaultLanguage,
   isSupportedLanguage,
 } from './i18n/config'
-import type { PageSection } from './types/page'
+import type { PageSection, PortfolioPage } from './types/page'
 import { sectionTone } from './lib/sectionTone'
+import portraitImage from './media/hjem/Sondre_Caps.jpg'
 
 const normalizePath = (path: string) =>
   path.length > 1 ? path.replace(/\/$/, '') : path
+
+function pageDescription(page?: PortfolioPage) {
+  if (!page) return ''
+  for (const section of page.sections) {
+    if ('introduction' in section && typeof section.introduction === 'string') return section.introduction
+    if ('paragraphs' in section && section.paragraphs?.[0]) return section.paragraphs[0]
+    if ('lead' in section && section.lead) return section.lead
+  }
+  return page.title
+}
+
+function setMeta(selector: string, attribute: 'name' | 'property', value: string) {
+  let element = document.head.querySelector<HTMLMetaElement>(`meta[${selector}]`)
+  if (!element) {
+    element = document.createElement('meta')
+    document.head.append(element)
+  }
+  element.setAttribute(attribute, selector.includes('=') ? selector.match(/="([^"]+)/)?.[1] ?? '' : '')
+  element.content = value
+}
 
 const isBrandedCaseStudy = (
   section: PageSection,
@@ -104,6 +126,46 @@ function renderSections(sections: PageSection[], startTone: 'light' | 'dark' = '
   return renderedSections
 }
 
+function toneAfterSections(sections: PageSection[], startTone: 'light' | 'dark' = 'light') {
+  let lastTone = startTone
+  let toneOffset = 0
+
+  for (let index = 0; index < sections.length;) {
+    const section = sections[index]
+    if (section && 'showOnPage' in section && section.showOnPage === false) {
+      index += 1
+      continue
+    }
+
+    if (section?.type === 'learningJourneyStep') {
+      const firstIndex = index
+      while (sections[index]?.type === 'learningJourneyStep') index += 1
+      lastTone = sectionTone(index - 1 - toneOffset, startTone)
+      if (index === firstIndex) index += 1
+      continue
+    }
+
+    if (section && isBrandedCaseStudy(section)) {
+      const groupId = section.brand.groupId
+      do {
+        lastTone = sectionTone(index - toneOffset, startTone)
+        index += 1
+        const nextSection = sections[index]
+        if (!nextSection || !isBrandedCaseStudy(nextSection) || nextSection.brand.groupId !== groupId) break
+      } while (true)
+      continue
+    }
+
+    if (section) {
+      lastTone = sectionTone(index - toneOffset, startTone)
+      if ((section.type === 'teachingInstitutionCards' || section.type === 'learningJourneyClosing') && section.preserveNextTone) toneOffset += 1
+    }
+    index += 1
+  }
+
+  return lastTone
+}
+
 export function App() {
   const { t, i18n } = useTranslation()
   const resolvedLanguage = i18n.resolvedLanguage
@@ -134,6 +196,19 @@ export function App() {
   useEffect(() => {
     document.documentElement.lang = language
     document.title = page?.title ?? t('errors.notFound')
+    const title = document.title
+    const description = pageDescription(page)
+    const image = portraitImage
+    setMeta('name="description"', 'name', description)
+    setMeta('property="og:title"', 'property', title)
+    setMeta('property="og:description"', 'property', description)
+    setMeta('property="og:type"', 'property', 'website')
+    setMeta('property="og:url"', 'property', window.location.href)
+    setMeta('property="og:image"', 'property', image ? new URL(image, window.location.origin).href : '')
+    setMeta('name="twitter:card"', 'name', 'summary_large_image')
+    setMeta('name="twitter:title"', 'name', title)
+    setMeta('name="twitter:description"', 'name', description)
+    setMeta('name="twitter:image"', 'name', image ? new URL(image, window.location.origin).href : '')
   }, [language, page, t])
 
   return (
@@ -151,6 +226,11 @@ export function App() {
           <h1>{t('errors.notFound')}</h1>
         )}
       </main>
+      <Footer tone={page?.id === 'home'
+        ? 'dark'
+        : page?.id === 'pedagogy'
+          ? 'light'
+        : toneAfterSections(page?.sections ?? [], page?.startTone ?? 'light') === 'light' ? 'dark' : 'light'} />
     </>
   )
 }

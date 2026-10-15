@@ -56,6 +56,7 @@ export const structure = {
         height: 316,
         fetchPriority: 'high',
       },
+      introSequence: true,
       heading: text("sections.resource-coordination-intro.heading"),
       paragraphs: paragraphs("sections.resource-coordination-intro.paragraphs"),
       features: [
@@ -86,6 +87,7 @@ export const structure = {
         {
           id: "oslomet-experience",
           title: text("sections.resource-coordination-institutions.cards.oslomet-experience.title"),
+          period: text("sections.resource-coordination-institutions.cards.oslomet-experience.period"),
           role: text("sections.resource-coordination-institutions.cards.oslomet-experience.role"),
           description: text("sections.resource-coordination-institutions.cards.oslomet-experience.description"),
           logoSrc: oslometLogo,
@@ -104,13 +106,14 @@ export const structure = {
             {
               id: "suppliers",
               label: text("sections.resource-coordination-institutions.cards.oslomet-experience.highlights.suppliers.label"),
-              icon: "database",
+              icon: "people",
             },
           ],
         },
         {
           id: "kuben-experience",
           title: text("sections.resource-coordination-institutions.cards.kuben-experience.title"),
+          period: text("sections.resource-coordination-institutions.cards.kuben-experience.period"),
           role: text("sections.resource-coordination-institutions.cards.kuben-experience.role"),
           description: text("sections.resource-coordination-institutions.cards.kuben-experience.description"),
           logoSrc: kubenLogo,
@@ -119,17 +122,17 @@ export const structure = {
             {
               id: "equipment",
               label: text("sections.resource-coordination-institutions.cards.kuben-experience.highlights.equipment.label"),
-              icon: "camera",
+              icon: "cube",
             },
             {
               id: "loans",
               label: text("sections.resource-coordination-institutions.cards.kuben-experience.highlights.loans.label"),
-              icon: "people",
+              icon: "monitor",
             },
             {
               id: "workflow",
               label: text("sections.resource-coordination-institutions.cards.kuben-experience.highlights.workflow.label"),
-              icon: "settings",
+              icon: "workflow",
             },
           ],
         },
@@ -150,6 +153,7 @@ export const structure = {
       heading: text("sections.equipment-for-learning.heading"),
       paragraphs: paragraphs("sections.equipment-for-learning.paragraphs"),
       detailParagraphs: paragraphs("sections.equipment-for-learning.detailParagraphs"),
+      outcome: text('sections.equipment-for-learning.outcome'),
       imageSrc: multiCameraStudioImage,
       imageAlt: text("sections.equipment-for-learning.imageAlt"),
       caption: text("sections.equipment-for-learning.caption"),
@@ -169,6 +173,7 @@ export const structure = {
       heading: text("sections.teaching-studio.heading"),
       paragraphs: paragraphs("sections.teaching-studio.paragraphs"),
       detailParagraphs: paragraphs("sections.teaching-studio.detailParagraphs"),
+      outcome: text('sections.teaching-studio.outcome'),
       images: [
         {
           id: "teaching-studio-overview",
@@ -233,6 +238,7 @@ export const structure = {
         },
       ],
       detailParagraphs: paragraphs("sections.equipment-loan-gallery.detailParagraphs"),
+      outcome: text('sections.equipment-loan-gallery.outcome'),
       images: [
         {
           id: "storage-overview",
@@ -275,6 +281,7 @@ export const structure = {
       heading: text("sections.oslomet-purchasing.heading"),
       paragraphs: paragraphs("sections.oslomet-purchasing.paragraphs"),
       detailParagraphs: paragraphs("sections.oslomet-purchasing.detailParagraphs"),
+      outcome: text('sections.oslomet-purchasing.outcome'),
       imageSrc: osloMetUnit4,
       imageAlt: text("sections.oslomet-purchasing.imageAlt"),
       caption: text("sections.oslomet-purchasing.caption"),

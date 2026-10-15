@@ -1,9 +1,59 @@
-import { useEffect, useRef } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import type { TextSection } from '../../types/page'
 import { LineIcon } from '../ui/LineIcon'
 
-export function TextBlock({ heading, paragraphs, items, variant = 'default', eyebrow, features, actionLabel, actionHref, leadImage }: TextSection) {
+export function TextBlock({ heading, paragraphs, items, variant = 'default', eyebrow, features, actionLabel, actionHref, leadImage, introSequence = false }: TextSection) {
   const principlesRef = useRef<HTMLElement>(null)
+  const portraitStageRef = useRef<HTMLDivElement>(null)
+  const portraitRef = useRef<HTMLImageElement>(null)
+  const hasIntroSequence = variant === 'principles' && introSequence && Boolean(leadImage)
+  const [portraitReady, setPortraitReady] = useState(!hasIntroSequence)
+  const [titleRevealed, setTitleRevealed] = useState(!hasIntroSequence)
+  const [sequenceComplete, setSequenceComplete] = useState(!hasIntroSequence)
+
+  const markPortraitReady = useCallback(async (image: HTMLImageElement) => {
+    try {
+      await image.decode()
+    } catch {
+      // Continue if decoding is unavailable; the browser can still render the image.
+    }
+    setPortraitReady(true)
+  }, [])
+
+  useEffect(() => {
+    if (!hasIntroSequence || !portraitRef.current?.complete) return
+    void markPortraitReady(portraitRef.current)
+  }, [hasIntroSequence, markPortraitReady])
+
+  useLayoutEffect(() => {
+    if (!hasIntroSequence || !portraitStageRef.current) return
+    const stage = portraitStageRef.current
+    const setStartPosition = () => {
+      const bounds = stage.getBoundingClientRect()
+      const x = window.innerWidth / 2 - (bounds.left + bounds.width / 2)
+      stage.style.setProperty('--principles-portrait-start-x', `${x}px`)
+    }
+    setStartPosition()
+    window.addEventListener('resize', setStartPosition)
+    return () => window.removeEventListener('resize', setStartPosition)
+  }, [hasIntroSequence])
+
+  useEffect(() => {
+    if (!hasIntroSequence || !portraitReady) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setTitleRevealed(true)
+      setSequenceComplete(true)
+      return
+    }
+    const timer = window.setTimeout(() => setTitleRevealed(true), 1200)
+    return () => window.clearTimeout(timer)
+  }, [hasIntroSequence, portraitReady])
+
+  useEffect(() => {
+    if (!hasIntroSequence || !titleRevealed || sequenceComplete) return
+    const timer = window.setTimeout(() => setSequenceComplete(true), 400)
+    return () => window.clearTimeout(timer)
+  }, [hasIntroSequence, sequenceComplete, titleRevealed])
 
   useEffect(() => {
     if (variant !== 'principles') return
@@ -37,7 +87,7 @@ export function TextBlock({ heading, paragraphs, items, variant = 'default', eye
   }, [variant, heading, leadImage])
 
   useEffect(() => {
-    if (variant !== 'principles' || !principlesRef.current) return
+    if (variant !== 'principles' || !principlesRef.current || !sequenceComplete) return
 
     const section = principlesRef.current
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -117,13 +167,16 @@ export function TextBlock({ heading, paragraphs, items, variant = 'default', eye
       window.removeEventListener('resize', observeCentralViewport)
       window.cancelAnimationFrame(animationFrame)
     }
-  }, [variant])
+  }, [variant, sequenceComplete])
 
   if (variant === 'principles') {
     return (
-      <section ref={principlesRef} className={`principles-block principles-block--animated${leadImage ? ' principles-block--with-portrait' : ''}`}>
+      <section ref={principlesRef} className={`principles-block principles-block--animated${leadImage ? ' principles-block--with-portrait' : ''}${hasIntroSequence ? ' principles-block--intro-sequence' : ''}${portraitReady ? ' principles-block--portrait-ready' : ''}${titleRevealed ? ' principles-block--title-revealed' : ''}${sequenceComplete ? ' principles-block--sequence-complete' : ''}`}>
         <header>
-          {leadImage && <img className="principles-block__portrait" src={leadImage.src} alt={leadImage.alt} width={leadImage.width} height={leadImage.height} loading="eager" fetchPriority={leadImage.fetchPriority} decoding="async" />}
+          {leadImage && <div ref={portraitStageRef} className="principles-block__portrait-stage">
+            {hasIntroSequence && <span className="principles-block__loader" aria-hidden="true" />}
+            <img ref={portraitRef} className="principles-block__portrait" src={leadImage.src} alt={leadImage.alt} width={leadImage.width} height={leadImage.height} loading="eager" fetchPriority={leadImage.fetchPriority} decoding="async" onLoad={(event) => { void markPortraitReady(event.currentTarget) }} onError={() => setPortraitReady(true)} />
+          </div>}
           <div className="principles-block__heading">
           {eyebrow && <p className="eyebrow">{eyebrow}</p>}
           {heading && <h2>{heading}</h2>}
@@ -156,7 +209,7 @@ export function TextBlock({ heading, paragraphs, items, variant = 'default', eye
           <p key={paragraph}>{paragraph}</p>
         ))}
         {items && (
-          <ul>
+          <ul className={variant === 'education' ? 'text-block__education-list' : undefined}>
             {items.map((item) => (
               <li key={item}>{item}</li>
             ))}

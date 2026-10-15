@@ -1,9 +1,10 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { LogoMarqueeSection } from '../../types/page'
 import { PointingHandIcon } from '../ui/PointingHandIcon'
 
 export function LogoMarqueeBlock({ heading, introduction, logos }: LogoMarqueeSection) {
+  const [failedLogoIds, setFailedLogoIds] = useState<Set<string>>(() => new Set())
   const viewportRef = useRef<HTMLDivElement>(null)
   const measuredGroupRef = useRef<HTMLUListElement>(null)
   const trackRef = useRef<HTMLDivElement>(null)
@@ -57,7 +58,9 @@ export function LogoMarqueeBlock({ heading, introduction, logos }: LogoMarqueeSe
       resizeObserver.disconnect()
       window.cancelAnimationFrame(frame)
     }
-  }, [logos])
+  }, [logos, failedLogoIds])
+
+  const visibleLogos = logos.filter((logo) => !failedLogoIds.has(logo.id))
 
   const renderLogos = (duplicate = false) => (
     <ul
@@ -65,7 +68,7 @@ export function LogoMarqueeBlock({ heading, introduction, logos }: LogoMarqueeSe
       className="logo-marquee__group"
       aria-hidden={duplicate || undefined}
     >
-      {logos.map((logo) => (
+      {visibleLogos.map((logo) => (
           <li key={`${duplicate ? 'duplicate-' : ''}${logo.id}`}>
             <span className="logo-marquee__logo">
             <img
@@ -73,6 +76,7 @@ export function LogoMarqueeBlock({ heading, introduction, logos }: LogoMarqueeSe
               alt={duplicate ? '' : logo.alt}
               loading="lazy"
               decoding="async"
+              onError={() => setFailedLogoIds((current) => new Set(current).add(logo.id))}
             />
               <span
                 className="logo-marquee__silhouette"
@@ -127,8 +131,8 @@ export function LogoMarqueeBlock({ heading, introduction, logos }: LogoMarqueeSe
       >
       <div ref={viewportRef} className="logo-marquee__viewport">
         <div ref={trackRef} className="logo-marquee__track">
-          {renderLogos()}
-          {renderLogos(true)}
+        {visibleLogos.length > 0 && renderLogos()}
+          {visibleLogos.length > 0 && renderLogos(true)}
         </div>
       </div>
       </div>

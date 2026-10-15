@@ -21,6 +21,7 @@ export function GalleryBlock({
   visualTransition,
   toolLogos,
   galleryMode = 'default',
+  outcome,
 }: GallerySection) {
   const visibleImages = variant === 'caseStudy' ? images.slice(0, 1) : images
 
