@@ -5,7 +5,7 @@ export function NavigationCardsBlock({ cards }: NavigationCardsSection) {
     <section className="navigation-cards" aria-label="Veier videre">
       {cards.map((card) => (
         <a key={card.id} className="navigation-cards__card" href={card.href}>
-          <img className="navigation-cards__image" src={card.imageSrc} alt="" aria-hidden="true" />
+          {card.imageSrc && <img className="navigation-cards__image" src={card.imageSrc} alt="" aria-hidden="true" />}
           <div className="navigation-cards__content">
             <div className="navigation-cards__heading">
               <h2>{card.title}</h2>

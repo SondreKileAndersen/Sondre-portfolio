@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "test:content": "node scripts/test-page-content.cjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:research": "node scripts/test-research.cjs",
+    "test:research:browser": "node scripts/test-research-browser.cjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",

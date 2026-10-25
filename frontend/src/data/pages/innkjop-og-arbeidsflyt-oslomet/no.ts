@@ -2,7 +2,7 @@ import type { PageContent } from './structure'
 
 export const no = {
   "slug": "innkjop-og-arbeidsflyt-oslomet",
-  "title": "En tydeligere flyt fra behov til bestilling",
+  "title": "Bestiller ved OsloMet",
   "eyebrow": "Prosjekt · OsloMet",
   "introduction": "Innkjøpsansvar, leverandøroppfølging og tydeligere rutiner fra bestilling til ferdig leveranse.",
   "metadata.organization.label": "Organisasjon",

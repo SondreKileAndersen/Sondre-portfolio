@@ -1,0 +1,145 @@
+/* Equal-width feature columns, with the middle icon at the wave's trough. */
+.principles-block {
+  /* 0 = dagens bratte svinger, 1 = mykest mulig svinger. */
+  --principles-curve-softness: .4;
+  --principles-text-max-width: 220px;
+  position: relative;
+  --principles-wave-height: 10rem;
+}
+.principles-block > header {
+  position: relative;
+  z-index: 1;
+}
+.principles-block .principles-block__heading h2 {
+  font-family: var(--font-heading-serif);
+  font-size: var(--section-title-font-size);
+  line-height: 1.1;
+  text-transform: none;
+}
+.principles-block__items {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  min-width: 0;
+  grid-column: 2;
+  grid-row: 1;
+  grid-template-columns: repeat(3, minmax(0, var(--principles-text-max-width)));
+  justify-content: space-between;
+  column-gap: 1rem;
+  margin: 0;
+  padding: 1.5rem 0;
+  padding-inline-start: clamp(0px, calc((100% - 3 * var(--principles-text-max-width)) / 2), 100px);
+  list-style: none;
+}
+.principles-block .principles-block__items li {
+  position: relative;
+  height: var(--principles-wave-height);
+  min-width: 0;
+  padding: 0;
+  text-align: center;
+}
+.principles-block__items li > svg {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 50%;
+  box-sizing: content-box;
+  padding: .45rem;
+  border-radius: 50%;
+  color: var(--palette-dark-background);
+  background: var(--rendered-section-background);
+  transform: translate(-50%, -50%);
+}
+.principles-block__items li:nth-child(even) > svg { top: 100%; }
+.principles-block__items [data-icon-tone='blue'] { --principles-icon-accent: #5c9ae6; }
+.principles-block__items [data-icon-tone='yellow'] { --principles-icon-accent: var(--theme-yellow); }
+.principles-block__items [data-icon-tone='green'] { --principles-icon-accent: var(--theme-green); }
+.principles-block__items [data-icon-tone] > svg {
+  background: color-mix(in srgb, var(--principles-icon-accent) 18%, var(--palette-light-background));
+}
+.principles-block__feature-copy {
+  max-width: var(--principles-text-max-width);
+  margin-inline: auto;
+  position: absolute;
+  top: 2.2rem;
+  left: 0;
+  right: 0;
+  display: grid;
+  gap: .35rem;
+  background: var(--rendered-section-background);
+}
+.principles-block__items li:nth-child(even) .principles-block__feature-copy {
+  top: auto;
+  bottom: 2.2rem;
+}
+.principles-block svg.principles-block__path {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .principles-block--animated .principles-block__feature-copy {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  .principles-block--animated li:nth-child(even) .principles-block__feature-copy {
+    transform: translateY(1rem);
+  }
+  .principles-block--animated .principles-block__items li > svg {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  .principles-block--animated .principles-feature--visible .principles-block__feature-copy {
+    animation: principles-copy-enter 350ms ease-out forwards;
+  }
+  .principles-block--animated .principles-feature--visible > svg {
+    animation: principles-flow-icon-enter 250ms ease-out forwards;
+  }
+}
+@keyframes principles-copy-enter {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes principles-flow-icon-enter {
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+@media (max-width: 1200px) {
+  .principles-block {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 2rem;
+  }
+  .principles-block > header {
+    grid-column: 1;
+    grid-row: 1;
+    transform: none;
+  }
+  .principles-block__items {
+    grid-column: 1;
+    grid-row: 2;
+    padding-inline-start: 0;
+  }
+}
+@media (max-width: 900px) {
+  .principles-block__items {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    padding-block: 1rem;
+  }
+  .principles-block .principles-block__items li {
+    height: auto;
+    min-height: 8rem;
+  }
+  .principles-block .principles-block__items li > svg {
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+  .principles-block .principles-block__items li .principles-block__feature-copy {
+    position: relative;
+    inset: auto;
+    margin-left: 4.5rem;
+    padding-top: .25rem;
+    text-align: left;
+  }
+}

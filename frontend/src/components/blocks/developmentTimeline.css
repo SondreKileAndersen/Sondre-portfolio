@@ -1,0 +1,99 @@
+.development-timeline {
+  /* Adjust the inner figure, not the page section and its shared padding. */
+  --timeline-width:50rem;
+  --timeline-label-width:9rem;
+  --timeline-label-gap:0rem;
+  --timeline-box-width:9rem;
+  --timeline-gap:3rem;
+  --timeline-label-icon-size:7rem;
+  --timeline-label-icon-x:-20%;
+  --timeline-label-icon-y:-.3rem;
+  --research-figure-label-color:#407B95;
+  --timeline-light:#E5F2F8;
+  --timeline-connector-gap:2.5rem;
+  --timeline-image:6rem;
+}
+.development-timeline__layout {
+  isolation:isolate;
+  width:100%; max-width:var(--timeline-width); margin-inline:auto;
+  display:grid; grid-template-columns:minmax(0,min(28%,var(--timeline-label-width))) minmax(0,1fr); column-gap:var(--timeline-label-gap);
+}
+.development-timeline__layout::after {
+  content:''; grid-column:1 / -1; grid-row:3; align-self:start;
+  height:1px; background:#d5dfe5; transform:translateY(calc(var(--timeline-connector-gap) / -2));
+  z-index:-1; pointer-events:none;
+}
+.development-timeline__layout > .development-timeline__labels { grid-column:1; grid-row:1 / span 4; }
+.development-timeline__layout > .development-timeline__stages { grid-column:2; grid-row:1 / span 4; }
+.development-timeline__labels,
+.development-timeline__stages,
+.development-timeline__stages > li {
+  display:grid; grid-template-rows:subgrid; grid-row:span 4; min-width:0;
+}
+.development-timeline__labels > div {
+  position:relative; isolation:isolate; display:flex; align-items:center; min-width:0;
+}
+.development-timeline__labels > div:first-child { grid-row:2; margin-bottom:var(--timeline-connector-gap); }
+.development-timeline__labels > div:last-child { grid-row:3; }
+.development-timeline__label-icon {
+  position:absolute; z-index:0; pointer-events:none;
+  left:var(--timeline-label-icon-x); top:calc(50% + var(--timeline-label-icon-y));
+  transform:translate(-50%,-50%); width:var(--timeline-label-icon-size); height:var(--timeline-label-icon-size);
+  max-width:100%; background:var(--timeline-light);
+  mask-size:contain; mask-position:center; mask-repeat:no-repeat;
+  -webkit-mask-size:contain; -webkit-mask-position:center; -webkit-mask-repeat:no-repeat;
+}
+.development-timeline h3 {
+  font-family:var(--font-body); font-size:var(--body-font-size); font-weight:400;
+  line-height:1.3; letter-spacing:normal; color:inherit; margin:0;
+}
+.development-timeline__labels h3 { position:relative; z-index:1; max-width:var(--timeline-label-width); font-weight:700; color:#082531; }
+.development-timeline__stages { grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:var(--timeline-gap); row-gap:0; list-style:none; padding:0; margin:0; }
+.development-timeline__stages > li { isolation:isolate; text-align:center; grid-template-columns:minmax(0,1fr); }
+.development-timeline__stages > li > h3 { align-self:end; margin-bottom:.75rem; }
+.development-timeline__stage-note { display:block; max-width:18ch; margin:0 auto .2rem; font-size:.7em; line-height:1.3; font-weight:400; color:#082531; }
+.development-timeline__milestone { position:relative; display:grid; place-items:center; margin-bottom:var(--timeline-connector-gap); }
+.development-timeline__milestone img {
+  display:block; width:var(--timeline-image); max-width:calc(100% - 10px); aspect-ratio:1;
+  object-fit:cover; border-radius:50%; border:0;
+  outline:2px solid var(--timeline-light); outline-offset:3px;
+}
+.development-timeline__stages > li:first-child .development-timeline__milestone img { outline-color:#407B95; }
+.development-timeline__stages > li + li .development-timeline__milestone::before {
+  content:''; position:absolute; top:50%; left:calc(var(--timeline-gap) / -2);
+  width:.65rem; height:1.3rem; transform:translate(-50%,-50%);
+  background:#407B95; clip-path:polygon(0 0,100% 50%,0 100%);
+}
+.development-timeline__info {
+  width:100%; max-width:var(--timeline-box-width); justify-self:center; min-width:0;
+  position:relative; display:grid; place-items:center; padding:.5rem;
+  border:2px solid var(--timeline-light); border-radius:.5rem; background:var(--timeline-light);
+}
+.development-timeline__info::after {
+  content:''; position:absolute; left:50%; bottom:calc(100% - 2px);
+  width:2px; height:calc(var(--timeline-connector-gap) - 1px); z-index:-1;
+  transform:translateX(-50%); background:var(--timeline-light);
+}
+.development-timeline__info--solid { background:transparent; border-color:transparent; }
+.development-timeline__info--solid::after {
+  top:calc(0px - var(--timeline-connector-gap) + 3px); bottom:calc(50% + 1.75rem);
+  height:auto; background:#407B95;
+}
+.development-timeline__info ul { list-style:none; margin:0; padding:0; }
+.development-timeline__focus-badge { outline:3px solid #70C6B7; outline-offset:.75rem; }
+.development-timeline__focus-note { position:relative; grid-row:4; margin-top:3rem; margin-bottom:1rem; color:#70C6B7; }
+.development-timeline__focus-note svg { position:absolute; bottom:100%; left:calc(50% - 3.75rem); width:4rem; height:4rem; overflow:visible; }
+.development-timeline__focus-note path { fill:none; stroke:currentColor; stroke-width:3; stroke-dasharray:6 5; }
+.development-timeline__focus-note > span { display:block; position:relative; left:-25%; width:150%; font-family:'Just Another Hand',cursive; font-size:35.77px; font-weight:400; line-height:1; letter-spacing:.03em; transform:rotate(-18deg); }
+/* Keep the reference composition on phones, using the available width directly. */
+@media(max-width:600px) {
+  .development-timeline__focus-badge { outline-width:2px; outline-offset:.35rem; }
+  .development-timeline__focus-note { margin-top:2rem; }
+  .development-timeline__focus-note svg { width:2.5rem; height:2.5rem; left:calc(50% - 2.25rem); }
+  .development-timeline__focus-note > span { font-size:1.1rem; }
+  .development-timeline__stages { --timeline-gap:.5rem; }
+  .development-timeline { --body-font-size:clamp(.6rem,2.5vw,.9rem); --timeline-label-icon-size:4rem; --timeline-image:4rem; --timeline-connector-gap:1.75rem; }
+  .development-timeline__info { padding:.3rem .15rem; }
+    .development-timeline__info--solid::after { bottom:calc(50% + 1.25rem); }
+  .development-timeline__stages > li + li .development-timeline__milestone::before { width:.35rem; height:.7rem; }
+}

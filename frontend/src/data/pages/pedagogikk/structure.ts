@@ -1,7 +1,12 @@
 import heroImage from '../../../media/pedagogikk/F21-meg-studio-elever.jpg'
+import digitalTeachingImage from '../../../media/pedagogikk/Digital Undervisning.jpg'
 import placeholderImage from '../../../media/pedagogikk/F21 Studio.webp'
 import artsImage from '../../../media/pedagogikk/ARTS.png'
+import artsDisplayImage from '../../../media/pedagogikk/ARTS display.jpg'
 import exhibitionImage from '../../../media/pedagogikk/Utstilling 2.jpg'
+import exhibition4Image from '../../../media/pedagogikk/Utstilling 4.jpg'
+import exhibition6Image from '../../../media/pedagogikk/Utstilling 6.jpg'
+import exhibition2025Image from '../../../media/pedagogikk/Utstilling 2025 2.jpg'
 import greenScreenImage from '../../../media/pedagogikk/F21-Green-screen.png'
 import gameDevelopmentImage from '../../../media/pedagogikk/F21-spillutvikling.jpg'
 import oslometSmalImage from '../../../media/pedagogikk/OsloMet Smal.jpg'
@@ -18,19 +23,26 @@ import { text, paragraphs, collection } from '../../../lib/pageContent'
 import type { ContentFor, PageStructure } from '../../../lib/pageContent'
 
 export const structure = {
+  theme: 'light-blue',
   startTone: 'dark', id: 'pedagogy', slug: text('slug'), path: text('path'), navTitle: text('navTitle'), title: text('title'),
   sections: [
     {
-      id: 'pedagogy-intro', type: 'learningJourneyIntro',
+      id: 'pedagogy-intro', type: 'learningJourneyIntro', tone: 'light',
       heading: text('sections.pedagogy-intro.heading'),
       paragraphs: paragraphs('sections.pedagogy-intro.paragraphs'),
       specializationsLabel: text('sections.pedagogy-intro.specializationsLabel'),
-      specializations: paragraphs('sections.pedagogy-intro.specializations'),
+      specializations: [
+        { id: 'audio', icon: 'headphones', label: text('intro.specializations.audio') },
+        { id: 'graphic-design', icon: 'palette', label: text('intro.specializations.graphic-design') },
+        { id: 'interaction-design', icon: 'pointer', label: text('intro.specializations.interaction-design') },
+        { id: 'video-editing', icon: 'film', label: text('intro.specializations.video-editing') },
+      ],
       imageSrc: heroImage, imageAlt: text('sections.pedagogy-intro.imageAlt'),
     },
     {
       id: 'teaching-institutions', type: 'teachingInstitutionCards', preserveNextTone: true,
       variant: 'four',
+      appearance: 'branded',
       subjectsLabel: text('sections.teaching-institutions.subjectsLabel'),
       cards: [
         {
@@ -73,6 +85,8 @@ export const structure = {
     },
     {
       id: 'shared-starting-point', type: 'learningJourneyStep', number: '01', imagePosition: 'left', visual: 'starterCards',
+      lineAnchorX: 0.3,
+      tone: 'light',
       groupHeading: text('sections.learning-journey.heading'),
       lead: text('sections.shared-starting-point.lead'),
       body: text('sections.shared-starting-point.body'),
@@ -94,17 +108,18 @@ export const structure = {
     },
     {
       id: 'methodical-repertoire', type: 'learningJourneyStep', number: '02', imagePosition: 'right', visual: 'image',
-      spacingBefore: 'relaxed',
-      spacingAfter: 'compact',
+      tone: 'light',
       variant: 'accented',
       imageFit: 'contain',
-      heading: text('sections.methodical-repertoire.heading'),
-      paragraphs: paragraphs('sections.methodical-repertoire.paragraphs'), imageSrc: artsImage, imageAlt: text('sections.methodical-repertoire.imageAlt'),
+      lead: text('sections.methodical-repertoire.lead'),
+      body: text('sections.methodical-repertoire.body'), imageSrc: artsDisplayImage, imageAlt: text('sections.methodical-repertoire.imageAlt'),
       resources: collection('teachingResources'),
       previewResourceId: 'arts-method-for-media-production',
       highlights: [
         {
           id: 'arts', heading: text('sections.methodical-repertoire.highlights.arts.heading'),
+          variant: 'callout',
+          label: text('sections.methodical-repertoire.highlights.arts.label'),
           descriptionParts: [
             { id: 'arts-link', text: text('sections.methodical-repertoire.highlights.arts.description.arts'), resourceId: 'arts-method-for-media-production' },
             { id: 'rest', text: text('sections.methodical-repertoire.highlights.arts.description.rest') },
@@ -114,9 +129,12 @@ export const structure = {
     },
     {
       id: 'authentic-exercises', type: 'learningJourneyStep', number: '03', imagePosition: 'left', visual: 'starterCards',
-      spacingAfter: 'spacious',
-      heading: text('sections.authentic-exercises.heading'),
-      paragraphs: paragraphs('sections.authentic-exercises.paragraphs'),
+      tone: 'light',
+      inlineParagraphs: [{ id: 'authentic-intro', parts: [
+        { id: 'start', text: text('sections.authentic-exercises.intro.start') },
+        { id: 'emphasis', text: text('sections.authentic-exercises.intro.emphasis'), emphasis: true },
+        { id: 'rest', text: text('sections.authentic-exercises.intro.rest') },
+      ] }],
       examplesLabel: text('sections.authentic-exercises.examplesLabel'),
       examples: [
         { id: 'dialogue', categoryId: 'film', label: text('sections.authentic-exercises.examples.dialogue.label'), description: text('sections.authentic-exercises.examples.dialogue.description') },
@@ -131,21 +149,44 @@ export const structure = {
         {
           id: 'workflow', resourceId: 'media-production-project-workflow', categoryId: 'process',
           imageSrc: gameDevelopmentImage, imageAlt: text('sections.authentic-exercises.imageAlt'),
-          plainMedia: true, stackZ: 5, enterDelay: 1800,
+          plainMedia: true, stackZ: 5,
         },
         { id: 'specialization', resourceId: 'interaction-design-specialization-assignment', categoryId: 'interaction-design' },
       ],
     },
     {
       id: 'oslomet-teacher-education', type: 'split', variant: 'caseStudy', tone: 'light',
-      eyebrow: text('sections.oslomet-teacher-education.eyebrow'),
+      layout: 'showcase',
+      callout: {
+        theme: 'yellow',
+        heading: text('teacher-education.callout.heading'),
+        label: text('teacher-education.callout.label'),
+        text: text('teacher-education.callout'),
+        action: {
+          label: text('sections.oslomet-teacher-education.instagram.label'),
+          href: text('sections.oslomet-teacher-education.instagram.href'),
+          external: true,
+        },
+      },
       heading: text('sections.oslomet-teacher-education.heading'),
       paragraphs: paragraphs('sections.oslomet-teacher-education.paragraphs'),
       imageSrc: exhibitionImage, imageAlt: text('sections.oslomet-teacher-education.imageAlt'),
-      secondaryImageSrc: oslometSmalImage,
-      secondaryImageAlt: text('sections.oslomet-teacher-education.secondaryImageAlt'),
-      actionLabel: text('sections.oslomet-teacher-education.actionLabel'),
-      actionHref: text('sections.oslomet-teacher-education.actionHref'),
+      imageStrip: [
+        { id: 'oslomet-building', src: oslometSmalImage, alt: text('sections.oslomet-teacher-education.secondaryImageAlt') },
+        { id: 'exhibition-overview', src: exhibitionImage, alt: text('sections.oslomet-teacher-education.imageAlt'), objectPosition: 'left center' },
+        { id: 'exhibition-4', src: exhibition4Image, alt: text('teacher-education.exhibition4.alt'), objectPosition: 'left center' },
+        { id: 'exhibition-6', src: exhibition6Image, alt: text('teacher-education.exhibition6.alt'), objectPosition: 'left center' },
+        { id: 'exhibition-2025-2', src: exhibition2025Image, alt: text('teacher-education.exhibition2025.alt'), objectPosition: 'left center' },
+      ],
+    },
+    {
+      id: 'digital-teaching', type: 'split', tone: 'light',
+      layout: 'showcase',
+      imageFit: 'contain',
+      heading: text('digitalTeaching.heading'),
+      paragraphs: paragraphs('digitalTeaching.paragraphs'),
+      imageSrc: digitalTeachingImage, imageAlt: text('digitalTeaching.imageAlt'),
+      imagePosition: 'left',
     },
     {
       id: 'shared-direction', type: 'learningJourneyClosing', tone: 'dark', showOnPage: false,
@@ -154,7 +195,7 @@ export const structure = {
       imageSrc: placeholderImage, imageAlt: text('sections.shared-direction.imageAlt'),
     },
     {
-      id: 'premiere-color-grading-playlist', type: 'youtubePlaylist', tone: 'dark',
+      id: 'premiere-color-grading-playlist', type: 'youtubePlaylist', tone: 'light',
       eyebrow: text('sections.premiere-color-grading-playlist.eyebrow'),
       heading: text('sections.premiere-color-grading-playlist.heading'),
       introduction: text('sections.premiere-color-grading-playlist.introduction'), playlistId: 'PLVcoQA4TE8eg',

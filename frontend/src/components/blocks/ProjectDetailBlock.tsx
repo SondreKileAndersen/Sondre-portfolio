@@ -6,6 +6,7 @@ export function ProjectDetailBlock({
   introduction,
   metadata,
   previewImage,
+  showPreviewImage = true,
   paragraphs,
   gallery,
   outcome,
@@ -27,10 +28,10 @@ export function ProjectDetailBlock({
         ))}
       </dl>
 
-      <figure className="project-detail__preview">
+      {showPreviewImage && <figure className="project-detail__preview">
         <img src={previewImage.src} alt={previewImage.alt} loading="eager" fetchPriority="high" decoding="async" />
         <figcaption>{previewImage.caption}</figcaption>
-      </figure>
+      </figure>}
 
       <div className="project-detail__body">
         {[...paragraphs, ...(outcome ? [outcome] : [])].map((paragraph) => <p key={paragraph}>{paragraph}</p>)}

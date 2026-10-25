@@ -5,15 +5,15 @@ import type { TeachingResource, TeachingResourceCategory } from '../types/teachi
 import { recordContentSource } from './contentSource'
 
 type LocalizedField =
-  | 'slug' | 'path' | 'navTitle' | 'title' | 'heading' | 'headingHighlight' | 'groupHeading' | 'eyebrow'
+  | 'slug' | 'path' | 'navTitle' | 'title' | 'heading' | 'headingHighlight' | 'subtitle' | 'groupHeading' | 'eyebrow'
   | 'introduction' | 'paragraphs' | 'detailParagraphs' | 'items' | 'note' | 'notice'
   | 'alt' | 'imageAlt' | 'secondaryImageAlt' | 'logoAlt' | 'caption' | 'label' | 'text'
   | 'role' | 'roles' | 'period' | 'lead' | 'body' | 'prefix' | 'examplesLabel' | 'description' | 'value' | 'actionLabel' | 'actionHref' | 'ctaLabel' | 'href'
   | 'subjectsLabel' | 'subjects' | 'outcome'
-  | 'specializationsLabel' | 'specializations'
+  | 'specializationsLabel'
   | 'iframeTitle' | 'firstVideoTitle' | 'videoLabel'
   | 'categoryLabel' | 'typeLabel' | 'thumbnailAltPrefix' | 'openPlaylistLabel' | 'playlistUrl'
-  | 'quote' | 'footer'
+  | 'quote' | 'footer' | 'tags' | 'authors' | 'status'
 
 type TextReference<K extends string = string, F extends 'text' | 'paragraphs' = 'text' | 'paragraphs'> = {
   readonly $text: K

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "DT-01",
+    "finding": "Tydelig og mottakertilpasset første kontakt kan redusere terskelen for videre vurdering.",
+    "memo_ids": [
+      "MEMO-3"
+    ],
+    "candidate_design_implication": "Konsis pitch med tydelige lenker til mer omfattende materiale.",
+    "cosmic_anchor_actual_design_choice": null,
+    "verification_status": "design_not_verified"
+  },
+  {
+    "id": "DT-02",
+    "finding": "Steam-side brukes som et sentralt informasjons- og presentasjonspunkt.",
+    "memo_ids": [
+      "MEMO-4"
+    ],
+    "candidate_design_implication": "Sørg for konsistent tekst og lett vei til Steam-side.",
+    "cosmic_anchor_actual_design_choice": null,
+    "verification_status": "design_not_verified"
+  },
+  {
+    "id": "DT-03",
+    "finding": "Brukbar B-roll, logo og bildeinnhold kan redusere produksjonsfriksjon.",
+    "memo_ids": [
+      "MEMO-6"
+    ],
+    "candidate_design_implication": "Tilgjengelige ressurser i format egnet for gjenbruk.",
+    "cosmic_anchor_actual_design_choice": null,
+    "verification_status": "design_not_verified"
+  },
+  {
+    "id": "DT-04",
+    "finding": "Troverdighet kan signaliseres ved synlig oppfølging og offentlig informasjon.",
+    "memo_ids": [
+      "MEMO-5"
+    ],
+    "candidate_design_implication": "Synlig prosjekt- og utviklerhistorikk uten krav om å publisere privat identitet.",
+    "cosmic_anchor_actual_design_choice": null,
+    "verification_status": "design_not_verified"
+  }
+]

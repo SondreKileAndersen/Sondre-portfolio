@@ -3,6 +3,7 @@ import { text } from '../../../lib/pageContent'
 import type { ContentFor, ProjectStructure } from '../../../lib/pageContent'
 
 export const structure = {
+  excludedGalleryImageIds: ['yamaha-mixer-guide'],
   startTone: 'light',
   sourcePageId: 'resource-coordination',
   id: "teaching-studio-project",

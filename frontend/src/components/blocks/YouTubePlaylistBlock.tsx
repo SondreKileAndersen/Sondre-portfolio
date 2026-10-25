@@ -62,7 +62,6 @@ export function YouTubePlaylistBlock({
   playlistUrl,
   iframeTitle,
   firstVideoId,
-  firstVideoTitle,
   videoLabel,
   categoryLabel,
   thumbnailAltPrefix,
@@ -76,7 +75,6 @@ export function YouTubePlaylistBlock({
   const featuredRef = useRef<HTMLDivElement | null>(null)
   const [selectedVideoId, setSelectedVideoId] = useState(firstVideoId)
   const [featuredHeight, setFeaturedHeight] = useState<number>()
-  const selectedVideo = videos.find((video) => video.videoId === selectedVideoId) ?? videos[0]
 
   useEffect(() => {
     const featured = featuredRef.current
@@ -136,8 +134,6 @@ export function YouTubePlaylistBlock({
           <div className="youtube-playlist__player">
             <div id={playerId} />
           </div>
-          <strong>{selectedVideo?.title ?? firstVideoTitle}</strong>
-          <span>{categoryLabel}</span>
         </div>
         <aside
           className="youtube-playlist__queue"

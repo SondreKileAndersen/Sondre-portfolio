@@ -4,6 +4,8 @@ import { VisualTransition } from '../ui/VisualTransition'
 import { ToolLogoRow } from '../ui/ToolLogoRow'
 import { RotatingImageGrid } from '../ui/RotatingImageGrid'
 import { FeatureImageMosaic } from '../ui/FeatureImageMosaic'
+import { MaskedImageGallery } from '../ui/MaskedImageGallery'
+import { PortraitImageStrip } from '../ui/PortraitImageStrip'
 
 export function GalleryBlock({
   heading,
@@ -21,13 +23,17 @@ export function GalleryBlock({
   visualTransition,
   toolLogos,
   galleryMode = 'default',
+  displayImageIds,
   outcome,
 }: GallerySection) {
   const visibleImages = variant === 'caseStudy' ? images.slice(0, 1) : images
+  const displayImages = displayImageIds
+    ? displayImageIds.flatMap(id => images.filter(image => image.id === id))
+    : images
 
   return (
     <section
-      className={`gallery-block gallery-block--gallery-${galleryPosition} gallery-block--${variant} section-tone--${tone}`}
+      className={`gallery-block gallery-block--gallery-${galleryPosition} gallery-block--${variant} gallery-block--${galleryMode} section-tone--${tone}`}
     >
       <div className="gallery-block__content">
         {eyebrow && <p className="eyebrow">{eyebrow}</p>}
@@ -40,7 +46,11 @@ export function GalleryBlock({
         {actionLabel && actionHref && <a className="case-study__action" href={actionHref}>{actionLabel} <span aria-hidden="true">→</span></a>}
       </div>
       <div className="gallery-block__images">
-        {galleryMode === 'rotatingGrid' ? (
+        {galleryMode === 'portraitStrip' ? (
+          <PortraitImageStrip images={displayImages} />
+        ) : galleryMode === 'maskedPanels' ? (
+          <MaskedImageGallery images={images} interval={interval} autoplay={autoplay} />
+        ) : galleryMode === 'rotatingGrid' ? (
           <RotatingImageGrid images={images} interval={interval} />
         ) : galleryMode === 'featureMosaic' ? (
           <FeatureImageMosaic images={images} />

@@ -6,8 +6,8 @@ import { structure as utviklingStructure } from './utvikling/structure'
 import { no as utviklingContent } from './utvikling/no'
 import { structure as pedagogikkStructure } from './pedagogikk/structure'
 import { no as pedagogikkContent } from './pedagogikk/no'
-import { structure as ressurskoordineringStructure } from './ressurskoordinering/structure'
-import { no as ressurskoordineringContent } from './ressurskoordinering/no'
+import { structure as logistikkStructure } from './logistikk/structure'
+import { no as logistikkContent } from './logistikk/no'
 import { structure as forskningStructure } from './forskning/structure'
 import { no as forskningContent } from './forskning/no'
 import { structure as prosjekterStructure } from './prosjekter/structure'
@@ -54,7 +54,7 @@ const baseDefinitions: Array<(language: Language, collections: ContentCollection
   localizedContent(omMegStructure, { no: omMegContent }),
   localizedContent(utviklingStructure, { no: utviklingContent }),
   localizedContent(pedagogikkStructure, { no: pedagogikkContent }),
-  localizedContent(ressurskoordineringStructure, { no: ressurskoordineringContent }),
+  localizedContent(logistikkStructure, { no: logistikkContent }),
   localizedContent(forskningStructure, { no: forskningContent }),
   localizedContent(prosjekterStructure, { no: prosjekterContent }),
   localizedContent(vanviddStructure, { no: vanviddContent }),
@@ -91,7 +91,7 @@ export function getPages(language: Language): PortfolioPage[] {
         && (section.type === 'gallery' || section.type === 'split'),
     )
     if (!source) throw new Error(`Missing project source: ${definition.sourcePageId}/${definition.sourceSectionId}`)
-    return createProjectPage(definition, source)
+    return { ...createProjectPage(definition, source), theme: sourcePage?.theme }
   })
   const pages = [...basePages, ...projectPages]
   pageCache.set(language, pages)

@@ -1,0 +1,66 @@
+{
+  "id": "matrix-review-2026-10-21",
+  "version": "1.1.0",
+  "date": "2026-10-21",
+  "review_source": "sources/review_matrix_2026-10-21.md",
+  "method_source": "sources/review_method_2026-10-21.md",
+  "scope": "User-supplied analytical synthesis, including theoretical and case-based qualifications; not a systematic measure of empirical strength.",
+  "changes": [
+    {
+      "cell_id": "CELL-02-3",
+      "from": "possible",
+      "to": "none"
+    },
+    {
+      "cell_id": "CELL-03-3",
+      "from": "clear",
+      "to": "possible"
+    },
+    {
+      "cell_id": "CELL-04-3",
+      "from": "clear",
+      "to": "possible"
+    },
+    {
+      "cell_id": "CELL-04-4",
+      "from": "clear",
+      "to": "possible"
+    },
+    {
+      "cell_id": "CELL-05-2",
+      "from": "possible",
+      "to": "none"
+    },
+    {
+      "cell_id": "CELL-06-2",
+      "from": "clear",
+      "to": "possible"
+    },
+    {
+      "cell_id": "CELL-06-4",
+      "from": "possible",
+      "to": "none"
+    },
+    {
+      "cell_id": "CELL-07-1",
+      "from": "possible",
+      "to": "none"
+    },
+    {
+      "cell_id": "CELL-07-2",
+      "from": "clear",
+      "to": "possible"
+    },
+    {
+      "cell_id": "CELL-07-3",
+      "from": "possible",
+      "to": "none"
+    }
+  ],
+  "definitions": {
+    "clear": "En sentral funksjon som kommer eksplisitt frem i analysen eller utformingen av caset.",
+    "possible": "En sekundær funksjon gjennom andre paratekster, bestemte brukssituasjoner eller analytisk fortolkning.",
+    "none": "Ingen tilstrekkelig begrunnet forbindelse i denne analysen; ikke dokumentasjon på at forbindelsen er utelukket."
+  },
+  "activity_note": "Synlig aktivitet på utvikling inngår som en planlagt eller delvis etablert paratekstuell funksjon og er ikke fullt operasjonalisert i praksiscaset."
+}

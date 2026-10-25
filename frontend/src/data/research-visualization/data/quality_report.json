@@ -1,0 +1,55 @@
+{
+  "total_entries": 227,
+  "counts_by_informant": {
+    "A": 51,
+    "B": 41,
+    "C": 21,
+    "D": 28,
+    "E": 47,
+    "Samlet": 1,
+    "Z": 38
+  },
+  "counts_by_section": {
+    "ekspert_z": 38,
+    "praksis_mellomledd": 23,
+    "praksis_prioritering": 32,
+    "pressemateriale": 27,
+    "privat_kommunikasjon": 37,
+    "prosjekt_offentlig": 46,
+    "utviklersignaler": 24
+  },
+  "unique_informant_text_pairs": 216,
+  "exact_repeated_entries": 11,
+  "flagged_entries": 5,
+  "relations_by_tier": {
+    "direct": 37,
+    "analytical": 36,
+    "exploratory": 4
+  },
+  "total_relations": 77,
+  "matrix_cells": 28,
+  "matrix_nonempty": 20,
+  "num_stances_curated": 20,
+  "historical_relations": 85,
+  "historical_relations_by_tier": {
+    "direct": 38,
+    "analytical": 41,
+    "exploratory": 6
+  },
+  "withdrawn_relation_ids": [
+    "REL-0022",
+    "REL-0045",
+    "REL-0055",
+    "REL-0059",
+    "REL-0060",
+    "REL-0062",
+    "REL-0080",
+    "REL-0081"
+  ],
+  "matrix_status_counts": {
+    "clear": 11,
+    "possible": 9,
+    "none": 8
+  },
+  "matrix_revision_id": "matrix-review-2026-10-21"
+}

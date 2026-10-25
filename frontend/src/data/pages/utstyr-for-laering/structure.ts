@@ -3,6 +3,7 @@ import { text } from '../../../lib/pageContent'
 import type { ContentFor, ProjectStructure } from '../../../lib/pageContent'
 
 export const structure = {
+  showPreviewImage: false,
   startTone: 'light',
   sourcePageId: 'resource-coordination',
   id: "learning-equipment-project",

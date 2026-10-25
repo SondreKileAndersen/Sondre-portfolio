@@ -6,7 +6,7 @@ export function ToolLogoRow({ logos }: { logos: ToolLogo[] }) {
   return (
     <ul className="tool-logo-row">
       {logos.map((logo) => (
-        <li key={logo.id}>
+        <li key={logo.id} data-tool-id={logo.id}>
           <img src={logo.src} alt={logo.alt} loading="lazy" decoding="async" />
         </li>
       ))}

@@ -1,0 +1,552 @@
+[
+  {
+    "informant_id": "A",
+    "code_section": "ekspert_z",
+    "n_codebook_entries": 0,
+    "n_distinct_normalized_statements": 0,
+    "observation_ids": []
+  },
+  {
+    "informant_id": "A",
+    "code_section": "praksis_mellomledd",
+    "n_codebook_entries": 6,
+    "n_distinct_normalized_statements": 6,
+    "observation_ids": [
+      "OBS-0001",
+      "OBS-0005",
+      "OBS-0006",
+      "OBS-0007",
+      "OBS-0010",
+      "OBS-0019"
+    ]
+  },
+  {
+    "informant_id": "A",
+    "code_section": "praksis_prioritering",
+    "n_codebook_entries": 9,
+    "n_distinct_normalized_statements": 9,
+    "observation_ids": [
+      "OBS-0024",
+      "OBS-0026",
+      "OBS-0032",
+      "OBS-0034",
+      "OBS-0035",
+      "OBS-0036",
+      "OBS-0037",
+      "OBS-0041",
+      "OBS-0042"
+    ]
+  },
+  {
+    "informant_id": "A",
+    "code_section": "pressemateriale",
+    "n_codebook_entries": 6,
+    "n_distinct_normalized_statements": 6,
+    "observation_ids": [
+      "OBS-0166",
+      "OBS-0167",
+      "OBS-0175",
+      "OBS-0176",
+      "OBS-0178",
+      "OBS-0182"
+    ]
+  },
+  {
+    "informant_id": "A",
+    "code_section": "privat_kommunikasjon",
+    "n_codebook_entries": 8,
+    "n_distinct_normalized_statements": 8,
+    "observation_ids": [
+      "OBS-0056",
+      "OBS-0064",
+      "OBS-0066",
+      "OBS-0067",
+      "OBS-0069",
+      "OBS-0070",
+      "OBS-0073",
+      "OBS-0074"
+    ]
+  },
+  {
+    "informant_id": "A",
+    "code_section": "prosjekt_offentlig",
+    "n_codebook_entries": 17,
+    "n_distinct_normalized_statements": 17,
+    "observation_ids": [
+      "OBS-0094",
+      "OBS-0098",
+      "OBS-0099",
+      "OBS-0100",
+      "OBS-0103",
+      "OBS-0104",
+      "OBS-0105",
+      "OBS-0106",
+      "OBS-0107",
+      "OBS-0108",
+      "OBS-0111",
+      "OBS-0114",
+      "OBS-0115",
+      "OBS-0130",
+      "OBS-0131",
+      "OBS-0134",
+      "OBS-0135"
+    ]
+  },
+  {
+    "informant_id": "A",
+    "code_section": "utviklersignaler",
+    "n_codebook_entries": 5,
+    "n_distinct_normalized_statements": 4,
+    "observation_ids": [
+      "OBS-0144",
+      "OBS-0158",
+      "OBS-0159",
+      "OBS-0160",
+      "OBS-0161"
+    ]
+  },
+  {
+    "informant_id": "B",
+    "code_section": "ekspert_z",
+    "n_codebook_entries": 0,
+    "n_distinct_normalized_statements": 0,
+    "observation_ids": []
+  },
+  {
+    "informant_id": "B",
+    "code_section": "praksis_mellomledd",
+    "n_codebook_entries": 9,
+    "n_distinct_normalized_statements": 9,
+    "observation_ids": [
+      "OBS-0002",
+      "OBS-0003",
+      "OBS-0008",
+      "OBS-0011",
+      "OBS-0012",
+      "OBS-0013",
+      "OBS-0018",
+      "OBS-0020",
+      "OBS-0021"
+    ]
+  },
+  {
+    "informant_id": "B",
+    "code_section": "praksis_prioritering",
+    "n_codebook_entries": 7,
+    "n_distinct_normalized_statements": 5,
+    "observation_ids": [
+      "OBS-0033",
+      "OBS-0038",
+      "OBS-0043",
+      "OBS-0044",
+      "OBS-0046",
+      "OBS-0047",
+      "OBS-0048"
+    ]
+  },
+  {
+    "informant_id": "B",
+    "code_section": "pressemateriale",
+    "n_codebook_entries": 4,
+    "n_distinct_normalized_statements": 3,
+    "observation_ids": [
+      "OBS-0168",
+      "OBS-0169",
+      "OBS-0179",
+      "OBS-0183"
+    ]
+  },
+  {
+    "informant_id": "B",
+    "code_section": "privat_kommunikasjon",
+    "n_codebook_entries": 3,
+    "n_distinct_normalized_statements": 3,
+    "observation_ids": [
+      "OBS-0057",
+      "OBS-0058",
+      "OBS-0086"
+    ]
+  },
+  {
+    "informant_id": "B",
+    "code_section": "prosjekt_offentlig",
+    "n_codebook_entries": 11,
+    "n_distinct_normalized_statements": 11,
+    "observation_ids": [
+      "OBS-0096",
+      "OBS-0097",
+      "OBS-0101",
+      "OBS-0102",
+      "OBS-0109",
+      "OBS-0112",
+      "OBS-0113",
+      "OBS-0119",
+      "OBS-0120",
+      "OBS-0133",
+      "OBS-0136"
+    ]
+  },
+  {
+    "informant_id": "B",
+    "code_section": "utviklersignaler",
+    "n_codebook_entries": 7,
+    "n_distinct_normalized_statements": 7,
+    "observation_ids": [
+      "OBS-0139",
+      "OBS-0140",
+      "OBS-0146",
+      "OBS-0147",
+      "OBS-0148",
+      "OBS-0152",
+      "OBS-0153"
+    ]
+  },
+  {
+    "informant_id": "C",
+    "code_section": "ekspert_z",
+    "n_codebook_entries": 0,
+    "n_distinct_normalized_statements": 0,
+    "observation_ids": []
+  },
+  {
+    "informant_id": "C",
+    "code_section": "praksis_mellomledd",
+    "n_codebook_entries": 0,
+    "n_distinct_normalized_statements": 0,
+    "observation_ids": []
+  },
+  {
+    "informant_id": "C",
+    "code_section": "praksis_prioritering",
+    "n_codebook_entries": 4,
+    "n_distinct_normalized_statements": 4,
+    "observation_ids": [
+      "OBS-0027",
+      "OBS-0028",
+      "OBS-0039",
+      "OBS-0040"
+    ]
+  },
+  {
+    "informant_id": "C",
+    "code_section": "pressemateriale",
+    "n_codebook_entries": 3,
+    "n_distinct_normalized_statements": 3,
+    "observation_ids": [
+      "OBS-0170",
+      "OBS-0184",
+      "OBS-0185"
+    ]
+  },
+  {
+    "informant_id": "C",
+    "code_section": "privat_kommunikasjon",
+    "n_codebook_entries": 7,
+    "n_distinct_normalized_statements": 7,
+    "observation_ids": [
+      "OBS-0059",
+      "OBS-0068",
+      "OBS-0071",
+      "OBS-0075",
+      "OBS-0076",
+      "OBS-0077",
+      "OBS-0079"
+    ]
+  },
+  {
+    "informant_id": "C",
+    "code_section": "prosjekt_offentlig",
+    "n_codebook_entries": 4,
+    "n_distinct_normalized_statements": 4,
+    "observation_ids": [
+      "OBS-0093",
+      "OBS-0110",
+      "OBS-0121",
+      "OBS-0125"
+    ]
+  },
+  {
+    "informant_id": "C",
+    "code_section": "utviklersignaler",
+    "n_codebook_entries": 3,
+    "n_distinct_normalized_statements": 3,
+    "observation_ids": [
+      "OBS-0141",
+      "OBS-0149",
+      "OBS-0154"
+    ]
+  },
+  {
+    "informant_id": "D",
+    "code_section": "ekspert_z",
+    "n_codebook_entries": 0,
+    "n_distinct_normalized_statements": 0,
+    "observation_ids": []
+  },
+  {
+    "informant_id": "D",
+    "code_section": "praksis_mellomledd",
+    "n_codebook_entries": 3,
+    "n_distinct_normalized_statements": 3,
+    "observation_ids": [
+      "OBS-0004",
+      "OBS-0014",
+      "OBS-0015"
+    ]
+  },
+  {
+    "informant_id": "D",
+    "code_section": "praksis_prioritering",
+    "n_codebook_entries": 3,
+    "n_distinct_normalized_statements": 3,
+    "observation_ids": [
+      "OBS-0029",
+      "OBS-0030",
+      "OBS-0049"
+    ]
+  },
+  {
+    "informant_id": "D",
+    "code_section": "pressemateriale",
+    "n_codebook_entries": 7,
+    "n_distinct_normalized_statements": 7,
+    "observation_ids": [
+      "OBS-0171",
+      "OBS-0172",
+      "OBS-0180",
+      "OBS-0181",
+      "OBS-0186",
+      "OBS-0187",
+      "OBS-0188"
+    ]
+  },
+  {
+    "informant_id": "D",
+    "code_section": "privat_kommunikasjon",
+    "n_codebook_entries": 7,
+    "n_distinct_normalized_statements": 7,
+    "observation_ids": [
+      "OBS-0060",
+      "OBS-0061",
+      "OBS-0080",
+      "OBS-0081",
+      "OBS-0082",
+      "OBS-0083",
+      "OBS-0084"
+    ]
+  },
+  {
+    "informant_id": "D",
+    "code_section": "prosjekt_offentlig",
+    "n_codebook_entries": 4,
+    "n_distinct_normalized_statements": 4,
+    "observation_ids": [
+      "OBS-0095",
+      "OBS-0116",
+      "OBS-0117",
+      "OBS-0118"
+    ]
+  },
+  {
+    "informant_id": "D",
+    "code_section": "utviklersignaler",
+    "n_codebook_entries": 4,
+    "n_distinct_normalized_statements": 3,
+    "observation_ids": [
+      "OBS-0142",
+      "OBS-0145",
+      "OBS-0150",
+      "OBS-0162"
+    ]
+  },
+  {
+    "informant_id": "E",
+    "code_section": "ekspert_z",
+    "n_codebook_entries": 0,
+    "n_distinct_normalized_statements": 0,
+    "observation_ids": []
+  },
+  {
+    "informant_id": "E",
+    "code_section": "praksis_mellomledd",
+    "n_codebook_entries": 5,
+    "n_distinct_normalized_statements": 5,
+    "observation_ids": [
+      "OBS-0009",
+      "OBS-0016",
+      "OBS-0017",
+      "OBS-0022",
+      "OBS-0023"
+    ]
+  },
+  {
+    "informant_id": "E",
+    "code_section": "praksis_prioritering",
+    "n_codebook_entries": 9,
+    "n_distinct_normalized_statements": 8,
+    "observation_ids": [
+      "OBS-0025",
+      "OBS-0031",
+      "OBS-0045",
+      "OBS-0050",
+      "OBS-0051",
+      "OBS-0052",
+      "OBS-0053",
+      "OBS-0054",
+      "OBS-0055"
+    ]
+  },
+  {
+    "informant_id": "E",
+    "code_section": "pressemateriale",
+    "n_codebook_entries": 7,
+    "n_distinct_normalized_statements": 7,
+    "observation_ids": [
+      "OBS-0163",
+      "OBS-0164",
+      "OBS-0165",
+      "OBS-0173",
+      "OBS-0174",
+      "OBS-0177",
+      "OBS-0189"
+    ]
+  },
+  {
+    "informant_id": "E",
+    "code_section": "privat_kommunikasjon",
+    "n_codebook_entries": 11,
+    "n_distinct_normalized_statements": 11,
+    "observation_ids": [
+      "OBS-0062",
+      "OBS-0065",
+      "OBS-0072",
+      "OBS-0078",
+      "OBS-0085",
+      "OBS-0087",
+      "OBS-0088",
+      "OBS-0089",
+      "OBS-0090",
+      "OBS-0091",
+      "OBS-0092"
+    ]
+  },
+  {
+    "informant_id": "E",
+    "code_section": "prosjekt_offentlig",
+    "n_codebook_entries": 10,
+    "n_distinct_normalized_statements": 10,
+    "observation_ids": [
+      "OBS-0122",
+      "OBS-0123",
+      "OBS-0124",
+      "OBS-0126",
+      "OBS-0127",
+      "OBS-0128",
+      "OBS-0129",
+      "OBS-0132",
+      "OBS-0137",
+      "OBS-0138"
+    ]
+  },
+  {
+    "informant_id": "E",
+    "code_section": "utviklersignaler",
+    "n_codebook_entries": 5,
+    "n_distinct_normalized_statements": 4,
+    "observation_ids": [
+      "OBS-0143",
+      "OBS-0151",
+      "OBS-0155",
+      "OBS-0156",
+      "OBS-0157"
+    ]
+  },
+  {
+    "informant_id": "Z",
+    "code_section": "ekspert_z",
+    "n_codebook_entries": 38,
+    "n_distinct_normalized_statements": 38,
+    "observation_ids": [
+      "OBS-0190",
+      "OBS-0191",
+      "OBS-0192",
+      "OBS-0193",
+      "OBS-0194",
+      "OBS-0195",
+      "OBS-0196",
+      "OBS-0197",
+      "OBS-0198",
+      "OBS-0199",
+      "OBS-0200",
+      "OBS-0201",
+      "OBS-0202",
+      "OBS-0203",
+      "OBS-0204",
+      "OBS-0205",
+      "OBS-0206",
+      "OBS-0207",
+      "OBS-0208",
+      "OBS-0209",
+      "OBS-0210",
+      "OBS-0211",
+      "OBS-0212",
+      "OBS-0213",
+      "OBS-0214",
+      "OBS-0215",
+      "OBS-0216",
+      "OBS-0217",
+      "OBS-0218",
+      "OBS-0219",
+      "OBS-0220",
+      "OBS-0221",
+      "OBS-0222",
+      "OBS-0223",
+      "OBS-0224",
+      "OBS-0225",
+      "OBS-0226",
+      "OBS-0227"
+    ]
+  },
+  {
+    "informant_id": "Z",
+    "code_section": "praksis_mellomledd",
+    "n_codebook_entries": 0,
+    "n_distinct_normalized_statements": 0,
+    "observation_ids": []
+  },
+  {
+    "informant_id": "Z",
+    "code_section": "praksis_prioritering",
+    "n_codebook_entries": 0,
+    "n_distinct_normalized_statements": 0,
+    "observation_ids": []
+  },
+  {
+    "informant_id": "Z",
+    "code_section": "pressemateriale",
+    "n_codebook_entries": 0,
+    "n_distinct_normalized_statements": 0,
+    "observation_ids": []
+  },
+  {
+    "informant_id": "Z",
+    "code_section": "privat_kommunikasjon",
+    "n_codebook_entries": 0,
+    "n_distinct_normalized_statements": 0,
+    "observation_ids": []
+  },
+  {
+    "informant_id": "Z",
+    "code_section": "prosjekt_offentlig",
+    "n_codebook_entries": 0,
+    "n_distinct_normalized_statements": 0,
+    "observation_ids": []
+  },
+  {
+    "informant_id": "Z",
+    "code_section": "utviklersignaler",
+    "n_codebook_entries": 0,
+    "n_distinct_normalized_statements": 0,
+    "observation_ids": []
+  }
+]

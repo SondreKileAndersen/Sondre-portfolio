@@ -3,6 +3,9 @@ import { createRoot } from 'react-dom/client'
 import './i18n/config'
 import { App } from './App'
 import './styles.css'
+import './researchGallerySettings.css'
+import './principlesFlow.css'
+import './sectionSpacing.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

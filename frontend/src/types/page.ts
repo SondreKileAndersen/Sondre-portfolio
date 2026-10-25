@@ -24,6 +24,16 @@ export type TitleSection = {
 }
 
 export type LineIconName =
+  | 'books'
+  | 'conversation'
+  | 'shieldLock'
+  | 'arrowUp'
+  | 'check'
+  | 'lightbulb'
+  | 'headphones'
+  | 'palette'
+  | 'pointer'
+  | 'film'
   | 'cube'
   | 'workflow'
   | 'database'
@@ -36,6 +46,8 @@ export type LineIconName =
 
 export type BrandMark = {
   groupId: string
+  sharedSurface?: boolean
+  badgeColor?: string
   src: string
   alt: string
   crop?: 'none' | 'oslomet-symbol'
@@ -53,13 +65,23 @@ export type HeroSection = {
   tone?: 'light' | 'dark'
   heading: string
   headingHighlight?: string
-  imageSrc: string
-  imageAlt: string
+  subtitle?: string
+  imageSrc?: string
+  imageAlt?: string
   paragraphs: string[]
-  actions?: Array<{ id: string; label: string; href: string }>
+  actions?: Array<{ id: string; label: string; href: string; icon?: 'arrowDown' }>
 }
 
 export type SplitSection = {
+  layout?: 'split' | 'stacked' | 'showcase' | 'coverIntro'
+  callout?: {
+    theme?: 'yellow'
+    heading?: string
+    label?: string
+    icon?: LineIconName
+    text: string
+    action?: { label: string; href: string; external?: boolean }
+  }
   showOnPage?: boolean
   id: string
   type: 'split'
@@ -73,12 +95,16 @@ export type SplitSection = {
   imageFit?: 'cover' | 'contain'
   secondaryImageSrc?: string
   secondaryImageAlt?: string
+  imageStrip?: Array<{ id: string; src: string; alt: string; objectPosition?: string }>
   variant?: 'default' | 'caseStudy'
   eyebrow?: string
   tone?: 'light' | 'dark'
   note?: string
   actionLabel?: string
   actionHref?: string
+  actionExternal?: boolean
+  actionAfterParagraph?: number
+  actions?: Array<{ id: string; label: string; href: string; external?: boolean }>
   brand?: BrandMark
   toolLogos?: ToolLogo[]
   outcome?: string
@@ -87,6 +113,7 @@ export type SplitSection = {
 export type TextSection = {
   id: string
   type: 'text'
+  surface?: 'full' | 'inset'
   tone?: 'light' | 'dark'
   heading?: string
   paragraphs: string[]
@@ -99,6 +126,10 @@ export type TextSection = {
     width?: number
     height?: number
     fetchPriority?: 'high' | 'low' | 'auto'
+    zoom?: number
+    positionX?: number
+    positionY?: number
+    flipHorizontal?: boolean
   }
   introSequence?: boolean
   features?: Array<{
@@ -106,6 +137,7 @@ export type TextSection = {
     heading: string
     description: string
     icon: LineIconName
+    iconTone?: 'blue' | 'yellow' | 'green'
   }>
   actionLabel?: string
   actionHref?: string
@@ -117,6 +149,8 @@ export type GalleryImage = {
   alt: string
   caption: string
   imageFit?: 'cover' | 'contain'
+  objectPosition?: string
+  cropX?: number
 }
 
 export type GallerySection = {
@@ -126,11 +160,13 @@ export type GallerySection = {
       id: string
       src: string
       alt: string
+      iconTone?: 'blue' | 'green'
     }>
   }
   autoplay?: boolean
   interval?: number
-  galleryMode?: 'default' | 'rotatingGrid' | 'featureMosaic'
+  galleryMode?: 'default' | 'rotatingGrid' | 'featureMosaic' | 'maskedPanels' | 'portraitStrip'
+  displayImageIds?: string[]
   id: string
   type: 'gallery'
   heading: string
@@ -163,6 +199,7 @@ export type ProjectDetailSection = {
   introduction?: string
   metadata: ProjectMetadataItem[]
   previewImage: GalleryImage
+  showPreviewImage?: boolean
   paragraphs: string[]
   gallery?: GalleryImage[]
   outcome?: string
@@ -171,9 +208,12 @@ export type ProjectDetailSection = {
 export type CardItem = {
   id: string
   title: string
-  text: string
-  imageSrc: string
-  imageAlt: string
+  text?: string
+  imageSrc?: string
+  imageAlt?: string
+  items?: string[]
+  label?: string
+  tags?: string[]
   actionLabel?: string
   href?: string
 }
@@ -210,12 +250,14 @@ export type InstitutionCard = {
 }
 
 export type InstitutionCardsSection = {
+  appearance?: 'default' | 'branded'
   id: string
   type: 'institutionCards'
   cards: InstitutionCard[]
 }
 
 export type TeachingInstitutionCardsSection = {
+  appearance?: 'default' | 'branded'
   id: string
   type: 'teachingInstitutionCards'
   variant?: 'three' | 'four'
@@ -235,24 +277,25 @@ export type TeachingInstitutionCardsSection = {
 export type LearningJourneyIntroSection = {
   id: string
   type: 'learningJourneyIntro'
+  tone?: 'light' | 'dark'
   eyebrow?: string
   heading: string
   paragraphs: string[]
   specializationsLabel?: string
-  specializations?: string[]
+  specializations?: Array<{ id: string; label: string; icon: LineIconName }>
   imageSrc: string
   imageAlt: string
 }
 
 export type LearningJourneyStepSection = {
+  lineAnchorX?: number
   id: string
   type: 'learningJourneyStep'
+  tone?: 'light' | 'dark'
   groupHeading?: string
   number: string
-  spacingBefore?: 'default' | 'relaxed'
-  spacingAfter?: 'default' | 'compact' | 'relaxed' | 'spacious'
   variant?: 'default' | 'accented'
-  inlineParagraphs?: Array<{ id: string; parts: Array<{ id: string; text: string; categoryId?: string }> }>
+  inlineParagraphs?: Array<{ id: string; parts: Array<{ id: string; text: string; categoryId?: string; emphasis?: boolean }> }>
   eyebrow?: string
   heading?: string
   paragraphs?: string[]
@@ -286,6 +329,8 @@ export type LearningJourneyStepSection = {
   highlights?: Array<{
     id: string
     heading: string
+    variant?: 'default' | 'callout'
+    label?: string
     description?: string
     descriptionParts?: Array<{ id: string; text: string; resourceId?: string }>
   }>
@@ -307,21 +352,26 @@ export type LearningJourneyClosingSection = {
 
 export type ProcessStep = {
   id: string
+  columnSpan?: number
   label: string
   description: string
+  image?: { src: string; alt: string; overlay?: { src: string; alt: string } }
 }
 
 export type ProcessSection = {
   id: string
   type: 'process'
+  variant?: 'default' | 'grid' | 'horizontalCards'
   heading: string
   paragraphs: string[]
   steps: ProcessStep[]
+  outcome?: string
 }
 
 export type LogoMarqueeSection = {
   id: string
   type: 'logoMarquee'
+  tone?: 'light' | 'dark'
   heading?: string
   introduction?: string
   logos: Array<{
@@ -365,7 +415,91 @@ export type YouTubePlaylistSection = {
   }>
 }
 
-export type PageSection =
+export type QuoteSection = {
+  showOnPage?: boolean
+  id: string
+  type: 'quote'
+  heading: string
+  quote: string
+  title: string
+  role: string
+  imageSrc: string
+  imageAlt: string
+}
+
+export type ImageCompareSection = {
+  id: string
+  type: 'imageCompare'
+  tone?: 'light' | 'dark'
+  heading: string
+  introduction?: string
+  groups: Array<{
+    id: string
+    heading: string
+    images: Array<{ id: 'before' | 'after'; src: string; alt: string; label?: string }>
+  }>
+}
+
+export type SectionPresentation = {
+  background?: 'subtle'
+  tone?: 'light' | 'dark'
+  headingStyle?: 'ruled'
+  headingAccent?: 'green' | 'yellow' | 'blue' | 'light-blue' | 'turquoise'
+}
+
+export type PublicationListSection = {
+  id: string
+  type: 'publicationList'
+  heading: string
+  publications: Array<{
+    id: string
+    title: string
+    authors: string[]
+    status: string
+    label: string
+    items?: string[]
+    tags?: string[]
+  }>
+}
+
+export type ResearchStudySection = {
+ id:string; type:'researchStudy'; parts:Array<{
+ id:string; label:string; heading:string; subtitle?:string; description?:string; paragraphs:string[]; variant?:'cover';
+ premise?:{heading?:string};
+ question?:{label:string;text:string;footnote?:{label:string;text:string}}; abstract?:{label:string;text:string};
+ norwegianAbstract?:{label:string;text:string};
+ practical?:{text:string;prefix:string;label:string;href:string;description:string};
+ facts?:Array<{id:string;icon:LineIconName;label:string}>;
+ factsAppearance?:'compact';
+ findings?:Array<{id:string;momentId?:string;iconSrc?:string;label:string;text:string}>; outcome?:string;
+ visualization?: ResearchVisualizationsSection;
+ illustration?: DevelopmentTimelineSection;
+ image?:{src?:string;file:string;alt:string;href?:string;caption?:string;position?:'right';variant:'document'|'landscape'}
+ }>
+}
+export type ResearchVisualizationsSection = {
+  id: string
+  type: 'researchVisualizations'
+  datasetId: 'master'
+  presentation?: 'overview'
+  heading: string
+  paragraphs: string[]
+  views: Array<{ id: string; kind: 'concepts' | 'relations' | 'comparison' | 'process'; heading: string; paragraphs: string[] }>
+}
+export type DevelopmentTimelineSection = {
+  id: string
+  type: 'developmentTimeline'
+  heading: string
+  labels: Array<{ id: string; iconSrc: string; label: string }>
+  stages: Array<{ id: string; label: string; note?: string; focus?: { label: string }; src: string; alt: string; items?: string[]; appearance: 'solid' | 'outline'; caption?: string }>
+}
+export type PageSection = (
+ | DevelopmentTimelineSection
+ | ResearchVisualizationsSection
+ | ResearchStudySection
+  | PublicationListSection
+  | ImageCompareSection
+  | QuoteSection
   | TitleSection
   | HeroSection
   | SplitSection
@@ -383,8 +517,10 @@ export type PageSection =
   | YouTubePlaylistSection
   | TeachingResourcesSection
   | ProjectDetailSection
+) & SectionPresentation
 
 export type PortfolioPage = {
+  theme?: 'green' | 'yellow' | 'blue' | 'light-blue'
   startTone?: 'light' | 'dark'
   id: string
   slug: string

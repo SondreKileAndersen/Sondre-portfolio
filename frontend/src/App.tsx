@@ -17,8 +17,10 @@ import type { PageSection, PortfolioPage } from './types/page'
 import { sectionTone } from './lib/sectionTone'
 import portraitImage from './media/hjem/Sondre_Caps.jpg'
 
-const normalizePath = (path: string) =>
-  path.length > 1 ? path.replace(/\/$/, '') : path
+const normalizePath = (path: string) => {
+  const normalized = path.length > 1 ? path.replace(/\/$/, '') : path
+  return normalized === '/ressurskoordinering' ? '/logistikk' : normalized
+}
 
 function pageDescription(page?: PortfolioPage) {
   if (!page) return ''
@@ -126,46 +128,6 @@ function renderSections(sections: PageSection[], startTone: 'light' | 'dark' = '
   return renderedSections
 }
 
-function toneAfterSections(sections: PageSection[], startTone: 'light' | 'dark' = 'light') {
-  let lastTone = startTone
-  let toneOffset = 0
-
-  for (let index = 0; index < sections.length;) {
-    const section = sections[index]
-    if (section && 'showOnPage' in section && section.showOnPage === false) {
-      index += 1
-      continue
-    }
-
-    if (section?.type === 'learningJourneyStep') {
-      const firstIndex = index
-      while (sections[index]?.type === 'learningJourneyStep') index += 1
-      lastTone = sectionTone(index - 1 - toneOffset, startTone)
-      if (index === firstIndex) index += 1
-      continue
-    }
-
-    if (section && isBrandedCaseStudy(section)) {
-      const groupId = section.brand.groupId
-      do {
-        lastTone = sectionTone(index - toneOffset, startTone)
-        index += 1
-        const nextSection = sections[index]
-        if (!nextSection || !isBrandedCaseStudy(nextSection) || nextSection.brand.groupId !== groupId) break
-      } while (true)
-      continue
-    }
-
-    if (section) {
-      lastTone = sectionTone(index - toneOffset, startTone)
-      if ((section.type === 'teachingInstitutionCards' || section.type === 'learningJourneyClosing') && section.preserveNextTone) toneOffset += 1
-    }
-    index += 1
-  }
-
-  return lastTone
-}
-
 export function App() {
   const { t, i18n } = useTranslation()
   const resolvedLanguage = i18n.resolvedLanguage
@@ -192,6 +154,10 @@ export function App() {
   }
 
   const page = pages.find((candidate) => candidate.path === currentPath)
+  const firstSection = page?.sections.find(section => !('showOnPage' in section) || section.showOnPage !== false)
+  const headerTone = firstSection && 'tone' in firstSection && firstSection.tone
+    ? firstSection.tone
+    : page?.startTone ?? 'light'
 
   useEffect(() => {
     document.documentElement.lang = language
@@ -212,9 +178,9 @@ export function App() {
   }, [language, page, t])
 
   return (
-    <>
+    <div className="site-theme" data-theme={page?.theme ?? 'default'} data-page-id={page?.id}>
       <Header
-        tone={page?.startTone ?? 'light'}
+        tone={headerTone}
         pages={pages}
         currentPath={currentPath}
         onNavigate={navigate}
@@ -226,11 +192,7 @@ export function App() {
           <h1>{t('errors.notFound')}</h1>
         )}
       </main>
-      <Footer tone={page?.id === 'home'
-        ? 'dark'
-        : page?.id === 'pedagogy'
-          ? 'light'
-        : toneAfterSections(page?.sections ?? [], page?.startTone ?? 'light') === 'light' ? 'dark' : 'light'} />
-    </>
+      <Footer />
+    </div>
   )
 }

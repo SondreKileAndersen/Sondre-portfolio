@@ -1,0 +1,10 @@
+{
+  "excluded_concept_ids": ["P_PROJECTWEB"],
+  "excluded_evidence_cell_ids": [
+    "formidlingsrammer__project_site",
+    "prosjektgrunnlag__project_site",
+    "utviklergrunnlag__project_site",
+    "pressemateriale__project_site"
+  ],
+  "reason": "User removed Ekstern info om prosjektet entirely because all four evidence cells are empty. Applied centrally to active concepts, relations, matrix cells and curated evidence. Original source JSON remains historical provenance."
+}

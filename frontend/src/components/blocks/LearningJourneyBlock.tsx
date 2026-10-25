@@ -4,19 +4,20 @@ import { FeatureImageMosaic } from '../ui/FeatureImageMosaic'
 import { LineIcon } from '../ui/LineIcon'
 import { TeachingResourceCard, ResourceFilesDialog } from './TeachingResourcesBlock'
 import type { TeachingResource } from '../../types/teachingResource'
+import { crossfadeLayers } from '../../lib/crossfadeLayers'
 
 export function LearningJourneyIntroBlock({ eyebrow, heading, paragraphs, specializationsLabel, specializations, imageSrc, imageAlt }: LearningJourneyIntroSection) {
   return <section className="learning-journey-intro">
+    <img src={imageSrc} alt={imageAlt} loading="eager" fetchPriority="high" decoding="async" />
     <div className="learning-journey-intro__copy">
       {eyebrow && <p className="learning-journey__eyebrow">{eyebrow}</p>}
       <h1>{heading}</h1>
       {paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-      {specializationsLabel && specializations && specializations.length > 0 && <div className="learning-journey-intro__specializations">
+      {specializationsLabel && specializations && specializations.length > 0 && <div className="learning-journey-intro__specializations content-callout">
         <p>{specializationsLabel}</p>
-        <ul>{specializations.map((specialization) => <li key={specialization}>{specialization}</li>)}</ul>
+        <ul>{specializations.map(specialization => <li key={specialization.id}><LineIcon name={specialization.icon} /><span>{specialization.label}</span></li>)}</ul>
       </div>}
     </div>
-    <img src={imageSrc} alt={imageAlt} loading="eager" fetchPriority="high" decoding="async" />
   </section>
 }
 
@@ -41,6 +42,52 @@ function StarterCardsVisual({ step, highlightedId, expandedId, onHighlight, onTo
   const pointerCardId = useRef<string | null>(null)
   const openingUntil = useRef(0)
   const stackRef = useRef<HTMLDivElement>(null)
+  useLayoutEffect(() => {
+    const stack = stackRef.current
+    const visual = stack?.parentElement
+    const section = stack?.closest<HTMLElement>('.learning-journey-step')
+    if (!stack || !visual || !section) return
+    const cards = Array.from(stack.querySelectorAll<HTMLElement>('[data-starter-card]'))
+    const collapsedBottoms = new Map<HTMLElement, number>()
+    const layoutTop = (element: HTMLElement) => {
+      let top = 0
+      for (let current: HTMLElement | null = element; current; current = current.offsetParent as HTMLElement | null) {
+        top += current.offsetTop
+      }
+      return top
+    }
+    const measure = () => {
+      // Reserve rotated card bounds without following entrance or hover
+      // animations, which must not change the space between sections.
+      let bottom = stack.offsetHeight
+      for (const card of cards) {
+        // Opening a card must not resize its section or move its own center.
+        if (!card.classList.contains('learning-journey__starter-card--expanded') && !card.hasAttribute('data-card-returning')) {
+          const angle = (parseFloat(getComputedStyle(card).rotate) || 0) * Math.PI / 180
+          collapsedBottoms.set(card, card.offsetTop
+            + Math.max(0, card.offsetWidth * Math.sin(angle))
+            + Math.max(0, card.offsetHeight * Math.cos(angle)))
+        }
+        bottom = Math.max(bottom, collapsedBottoms.get(card) ?? 0)
+      }
+      visual.style.setProperty('--starter-stack-overflow', `${Math.ceil(bottom - stack.offsetHeight)}px`)
+      const centerY = layoutTop(section) + section.offsetHeight / 2 - layoutTop(stack)
+      stack.style.setProperty('--starter-expanded-center-y', `${centerY}px`)
+    }
+    let measureFrame = 0
+    const observer = new ResizeObserver(() => {
+      cancelAnimationFrame(measureFrame)
+      measureFrame = requestAnimationFrame(measure)
+    })
+    observer.observe(stack)
+    observer.observe(section)
+    cards.forEach(card => observer.observe(card))
+    measure()
+    return () => {
+      observer.disconnect()
+      cancelAnimationFrame(measureFrame)
+    }
+  }, [])
   const overlayRef = useRef<HTMLDivElement>(null)
   const [frontCardId, setFrontCardId] = useState<string | null>(null)
   const [cardOrder, setCardOrder] = useState(() =>
@@ -70,25 +117,17 @@ function StarterCardsVisual({ step, highlightedId, expandedId, onHighlight, onTo
       element.setAttribute('tabindex', '-1')
       element.removeAttribute('aria-controls')
     })
-    let frame = 0
     const synchronize = () => {
       const style = getComputedStyle(source)
       // Mirror the rendered geometry, including entrance, scale and float.
       for (const property of ['top', 'left', 'right', 'width', 'height', 'transform', 'transform-origin', 'translate', 'rotate', 'scale']) {
         copy.style.setProperty(property, style.getPropertyValue(property))
       }
-      frame = requestAnimationFrame(synchronize)
     }
-    synchronize()
-    const fade = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? undefined
-      : copy.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300, easing: 'ease', fill: 'forwards' })
-    const finish = () => { promoteCard(fadeCardId); setFadeCardId(null) }
-    if (fade) fade.onfinish = finish
-    else finish()
-    return () => {
-      cancelAnimationFrame(frame)
-      fade?.cancel()
-    }
+    return crossfadeLayers({
+      incoming: copy, outgoing: source, styleSource: source, synchronize,
+      onFinish: () => { promoteCard(fadeCardId); setFadeCardId(null) },
+    })
   }, [fadeCardId, expandedId, promoteCard])
   useEffect(() => {
     openingUntil.current = performance.now() + 400
@@ -112,7 +151,7 @@ function StarterCardsVisual({ step, highlightedId, expandedId, onHighlight, onTo
         return <div
         key={card.id}
         data-starter-card={card.id}
-        style={{ '--card-stack-z': cardOrder.indexOf(card.id) + 1, '--card-enter-delay': card.enterDelay ? `${card.enterDelay}ms` : undefined } as CSSProperties}
+        style={{ '--card-stack-z': cardOrder.indexOf(card.id) + 1, '--card-enter-delay': card.enterDelay !== undefined ? `${card.enterDelay}ms` : undefined } as CSSProperties}
         className={`learning-journey__starter-card learning-journey__starter-card--${card.id}${highlighted ? ' learning-journey__starter-card--on-top' : ''}${frontCardId === card.id ? ' learning-journey__starter-card--front' : ''}${expanded ? ' learning-journey__starter-card--expanded' : ''}`}
         onMouseEnter={() => { pointerCardId.current = card.id; onHighlight(card.id) }}
         onMouseLeave={(event) => {
@@ -170,22 +209,67 @@ function JourneyVisual({ step, ...interaction }: { step: LearningJourneyStepSect
 }
 
 export function LearningJourneyStepBlock(step: LearningJourneyStepSection) {
+  const sectionRef = useRef<HTMLElement>(null)
+  const pendingCardTransitions = useRef<Array<{ id: string; start: Keyframe }>>([])
+  const expansionProperties = ['top', 'left', 'width', 'transform', 'translate', 'rotate', 'scale'] as const
+  const readExpansionFrame = (element: HTMLElement): Keyframe => {
+    const style = getComputedStyle(element)
+    return Object.fromEntries(expansionProperties.map(property => [property, style.getPropertyValue(property)]))
+  }
   const [highlightedId, setHighlightedId] = useState<string | null>(null)
   const [expandedId, setExpandedId] = useState<string | null>(null)
-  const toggleCard = useCallback((id: string) => setExpandedId(id), [])
-  const closeCard = useCallback((id: string) => setExpandedId(current => current === id ? null : current), [])
+  const changeExpandedCard = (nextId: string | null) => {
+    if (nextId === expandedId) return
+    const section = sectionRef.current
+    const transitions: Array<{ id: string; start: Keyframe }> = []
+    if (expandedId) {
+      const outgoing = section?.querySelector<HTMLElement>(`[data-starter-card="${CSS.escape(expandedId)}"]`)
+      if (outgoing) {
+        transitions.push({ id: expandedId, start: readExpansionFrame(outgoing) })
+        outgoing.setAttribute('data-card-returning', '')
+      }
+    }
+    if (nextId) {
+      const card = section?.querySelector<HTMLElement>(`[data-starter-card="${CSS.escape(nextId)}"]`)
+      const visibleCard = section?.querySelector<HTMLElement>(`[data-starter-overlay="${CSS.escape(nextId)}"]`) ?? card
+      if (visibleCard) transitions.push({ id: nextId, start: readExpansionFrame(visibleCard) })
+      // Once opened, this card must never replay its entrance from scale zero.
+      card?.setAttribute('data-card-entered', '')
+    }
+    pendingCardTransitions.current = transitions
+    setExpandedId(nextId)
+  }
+  const toggleCard = (id: string) => changeExpandedCard(id)
+  useLayoutEffect(() => {
+    const transitions = pendingCardTransitions.current
+    pendingCardTransitions.current = []
+    const animations: Array<{ card: HTMLElement; animation: Animation }> = []
+    for (const { id, start } of transitions) {
+      const card = sectionRef.current?.querySelector<HTMLElement>(`[data-starter-card="${CSS.escape(id)}"]`)
+      if (!card) continue
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        card.removeAttribute('data-card-returning')
+        continue
+      }
+      const animation = card.animate([start, readExpansionFrame(card)], { duration: 400, easing: 'ease' })
+      animation.onfinish = () => card.removeAttribute('data-card-returning')
+      animations.push({ card, animation })
+    }
+    return () => {
+      for (const { card, animation } of animations) {
+        animation.cancel()
+        if (!pendingCardTransitions.current.some(transition => transition.id === card.dataset.starterCard)) {
+          card.removeAttribute('data-card-returning')
+        }
+      }
+    }
+  }, [expandedId])
+  const closeCard = (id: string) => { if (expandedId === id) changeExpandedCard(null) }
   const highlightExample = (id: string) => {
-    setExpandedId(current => current === id ? current : null)
+    if (expandedId && expandedId !== id) changeExpandedCard(null)
     setHighlightedId(id)
   }
-  const spacingBeforeClass = step.spacingBefore && step.spacingBefore !== 'default'
-    ? ` learning-journey-step--before-${step.spacingBefore}`
-    : ''
-  const spacingAfterClass = step.spacingAfter && step.spacingAfter !== 'default'
-    ? ` learning-journey-step--after-${step.spacingAfter}`
-    : ''
-
-  return <section className={`learning-journey-step learning-journey-step--${step.imagePosition}${step.visual === 'starterCards' ? ' learning-journey-step--starter-cards' : ''}${spacingBeforeClass}${spacingAfterClass}${step.variant === 'accented' ? ' learning-journey-step--accented' : ''}`}>
+  return <section ref={sectionRef} className={`learning-journey-step learning-journey-step--${step.imagePosition}${step.visual === 'starterCards' ? ' learning-journey-step--starter-cards' : ''}${step.variant === 'accented' ? ' learning-journey-step--accented' : ''}`}>
     <div className="learning-journey-step__copy">
       {step.eyebrow && <p className="learning-journey__eyebrow">{step.eyebrow}</p>}
       {step.heading && <h2>{step.heading}</h2>}
@@ -193,8 +277,9 @@ export function LearningJourneyStepBlock(step: LearningJourneyStepSection) {
       {step.paragraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
       {step.inlineParagraphs?.map(paragraph => <p key={paragraph.id}>{paragraph.parts.map(part => part.categoryId
         ? <strong key={part.id} className="learning-journey__inline-emphasis" data-category={part.categoryId}>{part.text}</strong>
+        : part.emphasis ? <strong key={part.id}>{part.text}</strong>
         : <span key={part.id}>{part.text}</span>)}</p>)}
-      {step.highlights && <div className="learning-journey-step__highlights">{step.highlights.map((item) => <div key={item.id}><strong>{item.heading}</strong><p>{item.descriptionParts ? item.descriptionParts.map(part => part.resourceId
+      {step.highlights && <div className="learning-journey-step__highlights">{step.highlights.map((item) => <div key={item.id} className={item.variant === 'callout' ? 'content-callout' : undefined}><div className="learning-journey-step__highlight-header"><strong>{item.heading}</strong>{item.label && <span className="split-block__callout-label">{item.label}</span>}</div><p>{item.descriptionParts ? item.descriptionParts.map(part => part.resourceId
         ? <ResourcePreviewLink key={part.id} resource={step.resources?.find(resource => resource.id === part.resourceId)} className="learning-journey-step__inline-preview">{part.text}</ResourcePreviewLink>
         : <span key={part.id}>{part.text}</span>) : item.description}</p></div>)}</div>}
       {step.examples?.length && <div className="learning-journey-step__examples">
@@ -213,7 +298,6 @@ export function LearningJourneyStepBlock(step: LearningJourneyStepSection) {
       </div>}
       {step.ctaLabel && <a className="learning-journey-step__cta" href="#teaching-resources-library">{step.ctaLabel}</a>}
     </div>
-    <div className="learning-journey-step__marker" aria-hidden="true"><span>{step.number}</span></div>
     <div className="learning-journey-step__visual"><JourneyVisual step={step} highlightedId={highlightedId} expandedId={expandedId} onHighlight={setHighlightedId} onToggle={toggleCard} onClose={closeCard} /></div>
   </section>
 }

@@ -1,0 +1,14 @@
+.research-viz, .development-timeline {
+  --rendered-section-text:var(--research-figure-label-color, #163564);
+  --font-body:'Inter',sans-serif;
+  --font-heading:'Inter',sans-serif;
+  --body-font-weight:400;
+  --body-text-color:var(--research-figure-label-color, #163564);
+  --body-bold-color:var(--research-figure-label-color, #163564);
+  --palette-light-text:var(--research-figure-label-color, #163564);
+  font-family:var(--font-body);
+  font-size:var(--body-font-size);
+  font-weight:400;
+  letter-spacing:normal;
+  color:var(--research-figure-label-color, #163564);
+}

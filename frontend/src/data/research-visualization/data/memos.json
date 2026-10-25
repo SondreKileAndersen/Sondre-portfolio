@@ -1,0 +1,106 @@
+[
+  {
+    "id": "MEMO-1",
+    "title": "Kulturelle mellomledd",
+    "source_pdf_pages": [
+      11,
+      12
+    ],
+    "printed_pages": [
+      107,
+      108
+    ],
+    "summary_analytical": "Spillformidlerne kan være selektive kulturelle mellomledd, men rollen varierer og ingen felles typologi følger av materialet.",
+    "source_file": "Vedlegg for kodebok og koder.pdf"
+  },
+  {
+    "id": "MEMO-2",
+    "title": "Innholdsprioritering",
+    "source_pdf_pages": [
+      12,
+      13,
+      14
+    ],
+    "printed_pages": [
+      108,
+      109,
+      110
+    ],
+    "summary_analytical": "Sjanger, kanal, format, publikum, smak og spillbarhet varierer; vurderingen gjelder mulig omgjøring til stoff.",
+    "source_file": "Vedlegg for kodebok og koder.pdf"
+  },
+  {
+    "id": "MEMO-3",
+    "title": "Privat kommunikasjon",
+    "source_pdf_pages": [
+      14,
+      15
+    ],
+    "printed_pages": [
+      110,
+      111
+    ],
+    "summary_analytical": "Første kontakt er oppdagelseskanal og mulig første vurderingsbarriere; personlig tilpasning er ikke universelt krav.",
+    "source_file": "Vedlegg for kodebok og koder.pdf"
+  },
+  {
+    "id": "MEMO-4",
+    "title": "Offentlig prosjektgrunnlag",
+    "source_pdf_pages": [
+      15,
+      16
+    ],
+    "printed_pages": [
+      111,
+      112
+    ],
+    "summary_analytical": "Trailer, Steam-side, visuelle og tekstlige signaler gjør ulike sider ved et tidlig prosjekt vurderbare.",
+    "source_file": "Vedlegg for kodebok og koder.pdf"
+  },
+  {
+    "id": "MEMO-5",
+    "title": "Utviklersignaler",
+    "source_pdf_pages": [
+      16,
+      17,
+      18
+    ],
+    "printed_pages": [
+      112,
+      113,
+      114
+    ],
+    "summary_analytical": "Troverdighet leses på tvers av kontakt, offentlige spor, aktivitet og utviklerkommunikasjon; ulike terskler.",
+    "source_file": "Vedlegg for kodebok og koder.pdf"
+  },
+  {
+    "id": "MEMO-6",
+    "title": "Pressemateriale",
+    "source_pdf_pages": [
+      18,
+      19,
+      20
+    ],
+    "printed_pages": [
+      114,
+      115,
+      116
+    ],
+    "summary_analytical": "Brukbare ressurser reduserer merarbeid og støtter representasjon, men formelt presskit er ikke universelt krav.",
+    "source_file": "Vedlegg for kodebok og koder.pdf"
+  },
+  {
+    "id": "MEMO-SYNTH",
+    "title": "Overordnede mønstre: Vurderingsmomenter",
+    "source_pdf_pages": [
+      20,
+      21
+    ],
+    "printed_pages": [
+      116,
+      117
+    ],
+    "summary_analytical": "Fire delvis overlappende vurderingsmomenter; varierende vekt og rekkefølge. Ikke en universell sjekkliste.",
+    "source_file": "Vedlegg for kodebok og koder.pdf"
+  }
+]

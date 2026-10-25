@@ -1,0 +1,180 @@
+{
+  "model_id": "possible_pathways_v1",
+  "tier": "analytical",
+  "is_universal_order": false,
+  "explanation": "Illustrative alternatives synthesized from memos 2–6; no necessary single evaluation order.",
+  "nodes": [
+    {
+      "id": "ENTRY",
+      "label": "Direkte kontakt eller offentlig oppdagelse",
+      "type": "entry"
+    },
+    {
+      "id": "FIT",
+      "label": "Relevans og formidlingsrammer",
+      "type": "decision"
+    },
+    {
+      "id": "PROJECT",
+      "label": "Prosjekt og tilgjengelige paratekster",
+      "type": "assessment"
+    },
+    {
+      "id": "DEV",
+      "label": "Utvikler og troverdighet",
+      "type": "assessment"
+    },
+    {
+      "id": "ASSET",
+      "label": "Tilgjengelig innhold / produksjonsvilkår",
+      "type": "assessment"
+    },
+    {
+      "id": "COVER",
+      "label": "Mulig omtale / produksjon",
+      "type": "outcome"
+    },
+    {
+      "id": "WAIT",
+      "label": "Vent / følg opp senere",
+      "type": "outcome"
+    },
+    {
+      "id": "SKIP",
+      "label": "Ingen omtale nå",
+      "type": "outcome"
+    },
+    {
+      "id": "SECONDARY",
+      "label": "Alternativ kanal / annet format",
+      "type": "outcome"
+    }
+  ],
+  "edges": [
+    {
+      "from": "ENTRY",
+      "to": "FIT",
+      "condition": "Mulig første relevanssjekk",
+      "tier": "analytical",
+      "memo_ids": [
+        "MEMO-2",
+        "MEMO-3"
+      ]
+    },
+    {
+      "from": "ENTRY",
+      "to": "PROJECT",
+      "condition": "Prosjekt kan også oppdages gjennom offentlige flater",
+      "tier": "analytical",
+      "memo_ids": [
+        "MEMO-4"
+      ]
+    },
+    {
+      "from": "FIT",
+      "to": "SKIP",
+      "condition": "Dårlig relevans i aktuell kanal/sjanger",
+      "tier": "analytical",
+      "memo_ids": [
+        "MEMO-2",
+        "MEMO-3"
+      ]
+    },
+    {
+      "from": "FIT",
+      "to": "PROJECT",
+      "condition": "Aktuelt å undersøke videre",
+      "tier": "analytical",
+      "memo_ids": [
+        "MEMO-2",
+        "MEMO-3"
+      ]
+    },
+    {
+      "from": "PROJECT",
+      "to": "DEV",
+      "condition": "Ønske om troverdighetskontroll",
+      "tier": "analytical",
+      "memo_ids": [
+        "MEMO-4",
+        "MEMO-5"
+      ]
+    },
+    {
+      "from": "DEV",
+      "to": "PROJECT",
+      "condition": "Ytterligere informasjon kan avklare usikkerhet",
+      "tier": "analytical",
+      "memo_ids": [
+        "MEMO-5"
+      ]
+    },
+    {
+      "from": "PROJECT",
+      "to": "ASSET",
+      "condition": "Nok interesse til å vurdere produksjon",
+      "tier": "analytical",
+      "memo_ids": [
+        "MEMO-4",
+        "MEMO-6"
+      ]
+    },
+    {
+      "from": "DEV",
+      "to": "ASSET",
+      "condition": "Tilstrekkelig tillit til prosjekt/utvikler",
+      "tier": "analytical",
+      "memo_ids": [
+        "MEMO-5",
+        "MEMO-6"
+      ]
+    },
+    {
+      "from": "ASSET",
+      "to": "COVER",
+      "condition": "Format, spillbarhet og tilgjengelig materiale passer",
+      "tier": "analytical",
+      "memo_ids": [
+        "MEMO-2",
+        "MEMO-6"
+      ]
+    },
+    {
+      "from": "PROJECT",
+      "to": "WAIT",
+      "condition": "For tidlig / mer materiale forventes",
+      "tier": "analytical",
+      "memo_ids": [
+        "MEMO-2",
+        "MEMO-4"
+      ]
+    },
+    {
+      "from": "ASSET",
+      "to": "SECONDARY",
+      "condition": "Mulig alternativt format eller sekundær kanal",
+      "tier": "analytical",
+      "memo_ids": [
+        "MEMO-2"
+      ]
+    },
+    {
+      "from": "ASSET",
+      "to": "WAIT",
+      "condition": "Ennå ikke tilstrekkelig produksjonsgrunnlag",
+      "tier": "analytical",
+      "memo_ids": [
+        "MEMO-6"
+      ]
+    },
+    {
+      "from": "DEV",
+      "to": "SKIP",
+      "condition": "Betydelige troverdighetsforbehold",
+      "tier": "analytical",
+      "memo_ids": [
+        "MEMO-5"
+      ]
+    }
+  ]
+}

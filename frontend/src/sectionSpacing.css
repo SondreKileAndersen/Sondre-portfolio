@@ -1,0 +1,64 @@
+/* One rhythm for every rendered section, independent of block type or tone.
+   Each side contributes half the gap; the taller content column sets the edge.
+   Decorative heading rules and transient hover/entrance motion are excluded. */
+:root body main .section-tone-boundary:is(.rendered-section--light, .rendered-section--dark) > :is(section, h1),
+:root body main .section-tone-boundary:is(.rendered-section--light, .rendered-section--dark) > .content-source-boundary > :is(section, h1) {
+  padding-block: calc(var(--section-gap) / 2);
+  margin-block: 0;
+  min-height: 0;
+}
+
+:root body main .case-study-group,
+:root body main .learning-journey-group {
+  margin-block: 0;
+  padding-block: 0;
+}
+
+/* A journey heading and optional final image belong to the same rhythm. */
+:root body main .learning-journey-group:has(> .learning-journey-group__heading) {
+  padding-top: calc(var(--section-gap) / 2);
+}
+:root body main .learning-journey-group__heading {
+  margin-top: 0;
+  margin-bottom: calc(var(--section-gap) / 2);
+}
+:root body main .learning-journey-group__footer-image {
+  margin-top: calc(var(--section-gap) / 2);
+  margin-bottom: 0;
+  padding-bottom: calc(var(--section-gap) / 2);
+}
+
+/* Keep staggered images inside the media's measured layout height. */
+.split-block--layout-showcase .split-block__media--strip {
+  padding: 0 0 1rem;
+}
+
+/* The library heading is internal content, so it adds no section padding. */
+:root body main .teaching-resources__header {
+  padding-block: 0;
+  margin-block: 0;
+}
+
+.case-study-group__brand-rail {
+  padding-top: calc(var(--section-gap) / 2);
+  bottom: calc(var(--section-gap) / 2);
+}
+
+/* Reserve the overlaid header only at the start of a page. */
+:root body main > .section-tone-boundary:first-child > :is(section, h1),
+:root body main > .section-tone-boundary:first-child > .content-source-boundary > :is(section, h1),
+:root body main > .case-study-group:first-child > .section-tone-boundary:nth-child(2) > section,
+:root body main > .case-study-group:first-child > .section-tone-boundary:nth-child(2) > .content-source-boundary > section {
+  padding-top: calc(var(--site-header-overlay-height, 6rem) + var(--section-gap) / 2);
+}
+
+/* The connection overview continues the study's findings. */
+:root body main .section-tone-boundary[data-section-id='masteroppgaven'] > section,
+:root body main .section-tone-boundary[data-section-id='masteroppgaven'] > .content-source-boundary > section {
+  padding-bottom:calc(var(--section-gap) / 4);
+}
+:root body main .section-tone-boundary[data-section-id='master-connection-overview'] > section,
+:root body main .section-tone-boundary[data-section-id='master-connection-overview'] > .content-source-boundary > section {
+  padding-top:calc(var(--section-gap) / 2);
+}
+#master-connection-overview > .research-viz__figure { margin-top:0; }

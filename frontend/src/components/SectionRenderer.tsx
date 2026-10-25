@@ -1,7 +1,19 @@
+import { ResearchStudyBlock } from './blocks/ResearchStudyBlock'
+import { DevelopmentTimelineBlock } from './blocks/DevelopmentTimelineBlock'
+import { lazy, Suspense } from 'react'
+import { useTranslation } from 'react-i18next'
+const ResearchVisualizationsBlock = lazy(() => import('./blocks/ResearchVisualizationsBlock').then(module => ({ default: module.ResearchVisualizationsBlock })))
+function ResearchLoading() {
+  const { t } = useTranslation()
+  return <p role="status">{t('research.loading')}</p>
+}
 import type { PageSection } from '../types/page'
 import { HeroBlock } from './blocks/HeroBlock'
+import { ImageCompareBlock } from './blocks/ImageCompareBlock'
+import { QuoteBlock } from './blocks/QuoteBlock'
 import { GalleryBlock } from './blocks/GalleryBlock'
 import { CardGridBlock } from './blocks/CardGridBlock'
+import { PublicationListBlock } from './blocks/PublicationListBlock'
 import { NavigationCardsBlock } from './blocks/NavigationCardsBlock'
 import { ProcessBlock } from './blocks/ProcessBlock'
 import { SplitBlock } from './blocks/SplitBlock'
@@ -27,11 +39,22 @@ export function SectionRenderer({ section, tone = 'light' }: SectionRendererProp
   const content = import.meta.env.DEV
     ? <ContentSourceBoundary sectionId={section.id}>{block}</ContentSourceBoundary>
     : block
-  return <div className={`section-tone-boundary rendered-section--${resolvedTone}`} data-section-id={section.id}>{content}</div>
+  const surface = 'surface' in section ? section.surface : undefined
+  return <div className={`section-tone-boundary rendered-section--${resolvedTone}${surface === 'full' ? ' section-surface--full' : ''}${section.headingStyle === 'ruled' ? ' section-heading--ruled' : ''}`} data-section-id={section.id} data-heading-accent={section.headingAccent} data-section-background={section.background}>{content}</div>
 }
 
 function renderBlock({ section, tone }: SectionRendererProps) {
   switch (section.type) {
+    case 'developmentTimeline':
+      return <DevelopmentTimelineBlock {...section} />
+    case 'researchVisualizations':
+      return <Suspense fallback={<ResearchLoading />}><ResearchVisualizationsBlock {...section} /></Suspense>
+    case 'researchStudy':
+      return <ResearchStudyBlock {...section} />
+    case 'imageCompare':
+      return <ImageCompareBlock {...section} />
+    case 'quote':
+      return <QuoteBlock {...section} />
     case 'hero':
       return <HeroBlock {...section} />
     case 'title':
@@ -44,6 +67,8 @@ function renderBlock({ section, tone }: SectionRendererProps) {
       return <GalleryBlock {...section} />
     case 'cardGrid':
       return <CardGridBlock {...section} />
+    case 'publicationList':
+      return <PublicationListBlock {...section} />
     case 'navigationCards':
       return <NavigationCardsBlock {...section} />
     case 'institutionCards':

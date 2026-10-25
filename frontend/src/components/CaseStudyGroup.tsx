@@ -16,9 +16,12 @@ type CaseStudyGroupProps = {
 
 export function CaseStudyGroup({ sections, startIndex, startSectionIndex, startTone }: CaseStudyGroupProps) {
   const brand = sections[0]?.brand
+  const sharedTone = brand?.sharedSurface
+    ? sections[0].tone ?? sectionTone(startSectionIndex, startTone)
+    : undefined
 
   return (
-    <div className="case-study-group">
+    <div className={`case-study-group${sharedTone ? ` case-study-group--shared rendered-section--${sharedTone}` : ''}`}>
       <div className="case-study-group__brand-rail">
         <StickyBrandMark brand={brand} />
       </div>
@@ -26,7 +29,7 @@ export function CaseStudyGroup({ sections, startIndex, startSectionIndex, startT
         const sequenceIndex = startIndex + sectionIndex
         const position: 'left' | 'right' = sequenceIndex % 2 === 0 ? 'left' : 'right'
         const sharedOverrides = {
-          tone: section.tone ?? sectionTone(startSectionIndex + sectionIndex, startTone),
+          tone: sharedTone ?? section.tone ?? sectionTone(startSectionIndex + sectionIndex, startTone),
         }
         const positionedSection = section.type === 'split'
           ? { ...section, ...sharedOverrides, imagePosition: position }

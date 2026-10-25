@@ -8,10 +8,13 @@ export function CardGridBlock({ heading, cards }: CardGridSection) {
         {cards.map((card) => {
           const content = (
             <>
-              <img src={card.imageSrc} alt={card.imageAlt} loading="lazy" decoding="async" />
+              {card.imageSrc && <img src={card.imageSrc} alt={card.imageAlt ?? ''} loading="lazy" decoding="async" />}
               <div className="card-grid-block__content">
                 <strong>{card.title}</strong>
-                <p>{card.text}</p>
+                {card.text && <p>{card.text}</p>}
+                {card.label && <p>{card.label}</p>}
+                {card.items && <ul>{card.items.map(item => <li key={item}>{item}</li>)}</ul>}
+                {card.tags && <div className="card-grid-block__tags">{card.tags.map(tag => <span key={tag}>{tag}</span>)}</div>}
                 {card.actionLabel && <span>{card.actionLabel}</span>}
               </div>
             </>

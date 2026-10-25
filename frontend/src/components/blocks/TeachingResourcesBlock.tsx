@@ -252,7 +252,6 @@ export function TeachingResourcesBlock({
           {introduction.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
         </div>}
         {notice && <p className="teaching-resources__notice"><em>{notice}</em></p>}
-        <span className="teaching-resources__intro-arrow" aria-hidden="true" />
       </header>
       {populatedCategories.map((category) => (
         <section className="teaching-resources__category" key={category.id}>

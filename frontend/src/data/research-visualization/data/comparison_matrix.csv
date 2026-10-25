@@ -1,0 +1,51 @@
+﻿informant_id,concept_id,topic_label,status,positions,stance_ids,source_observation_ids
+A,S_AI,Generativ AI,documented_position,critical,AI_neg_A,OBS-0134|OBS-0135
+B,S_AI,Generativ AI,documented_position,does_not_disqualify,AI_B,OBS-0136
+C,S_AI,Generativ AI,not_coded_in_this_comparison,,,
+D,S_AI,Generativ AI,not_coded_in_this_comparison,,,
+E,S_AI,Generativ AI,documented_position,critical,AI_neg_E,OBS-0137|OBS-0138
+A,S_PLAYABLE,Demo / spillbarhet,not_coded_in_this_comparison,,,
+B,S_PLAYABLE,Demo / spillbarhet,not_coded_in_this_comparison,,,
+C,S_PLAYABLE,Demo / spillbarhet,not_coded_in_this_comparison,,,
+D,S_PLAYABLE,Demo / spillbarhet,documented_position,requires_for_coverage,demo_D,OBS-0049
+E,S_PLAYABLE,Demo / spillbarhet,documented_position,requires_on_primary_channel,demo_E,OBS-0054
+A,P_TRAILER,Trailerkrav / bruk,not_coded_in_this_comparison,,,
+B,P_TRAILER,Trailerkrav / bruk,documented_position,does_not_require,trailer_B,OBS-0096
+C,P_TRAILER,Trailerkrav / bruk,not_coded_in_this_comparison,,,
+D,P_TRAILER,Trailerkrav / bruk,not_coded_in_this_comparison,,,
+E,P_TRAILER,Trailerkrav / bruk,not_coded_in_this_comparison,,,
+A,S_VISUAL,Visuell appell,documented_position,values,visual_A,OBS-0107
+B,S_VISUAL,Visuell appell,not_coded_in_this_comparison,,,
+C,S_VISUAL,Visuell appell,documented_position,values,visual_C,OBS-0110
+D,S_VISUAL,Visuell appell,not_coded_in_this_comparison,,,
+E,S_VISUAL,Visuell appell,not_coded_in_this_comparison,,,
+A,S_TARGET,Målrettet kontakt,not_coded_in_this_comparison,,,
+B,S_TARGET,Målrettet kontakt,not_coded_in_this_comparison,,,
+C,S_TARGET,Målrettet kontakt,documented_position,supports,tailor_C,OBS-0076
+D,S_TARGET,Målrettet kontakt,not_coded_in_this_comparison,,,
+E,S_TARGET,Målrettet kontakt,documented_position,does_not_require_personalization,tailor_E,OBS-0078
+A,P_PRESSKIT,Pressekit / produksjonsressurser,not_coded_in_this_comparison,,,
+B,P_PRESSKIT,Pressekit / produksjonsressurser,documented_position,not_disqualifying,promo_B,OBS-0119
+C,P_PRESSKIT,Pressekit / produksjonsressurser,not_coded_in_this_comparison,,,
+D,P_PRESSKIT,Pressekit / produksjonsressurser,not_coded_in_this_comparison,,,
+E,P_PRESSKIT,Pressekit / produksjonsressurser,documented_position,not_required,presskit_E,OBS-0189
+A,S_INFO_STUDIO,Studiohistorikk,not_coded_in_this_comparison,,,
+B,S_INFO_STUDIO,Studiohistorikk,not_coded_in_this_comparison,,,
+C,S_INFO_STUDIO,Studiohistorikk,not_coded_in_this_comparison,,,
+D,S_INFO_STUDIO,Studiohistorikk,documented_position,not_disqualifying,history_D,OBS-0145|OBS-0162
+E,S_INFO_STUDIO,Studiohistorikk,not_coded_in_this_comparison,,,
+A,S_GENRE,Publikums- og sjangerfit,documented_position,audience_oriented,publ_A,OBS-0037
+B,S_GENRE,Publikums- og sjangerfit,not_coded_in_this_comparison,,,
+C,S_GENRE,Publikums- og sjangerfit,not_coded_in_this_comparison,,,
+D,S_GENRE,Publikums- og sjangerfit,documented_position,taste_oriented,publ_D,OBS-0029
+E,S_GENRE,Publikums- og sjangerfit,documented_position,taste_oriented,publ_E,OBS-0031
+A,S_RISK,Risiko / oppfølging,not_coded_in_this_comparison,,,
+B,S_RISK,Risiko / oppfølging,not_coded_in_this_comparison,,,
+C,S_RISK,Risiko / oppfølging,not_coded_in_this_comparison,,,
+D,S_RISK,Risiko / oppfølging,not_coded_in_this_comparison,,,
+E,S_RISK,Risiko / oppfølging,documented_position,concern,risk_E,OBS-0128
+A,S_FORMAT,Publiseringsformat,not_coded_in_this_comparison,,,
+B,S_FORMAT,Publiseringsformat,documented_position,allows_news_angle,news_B,OBS-0044|OBS-0048
+C,S_FORMAT,Publiseringsformat,not_coded_in_this_comparison,,,
+D,S_FORMAT,Publiseringsformat,not_coded_in_this_comparison,,,
+E,S_FORMAT,Publiseringsformat,documented_position,allows_on_secondary_channel,early_E,OBS-0052

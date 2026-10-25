@@ -1,0 +1,570 @@
+[
+  {
+    "informant_id": "A",
+    "concept_id": "S_AI",
+    "topic_label": "Generativ AI",
+    "status": "documented_position",
+    "positions": [
+      "critical"
+    ],
+    "stance_ids": [
+      "AI_neg_A"
+    ],
+    "source_observation_ids": [
+      "OBS-0134",
+      "OBS-0135"
+    ]
+  },
+  {
+    "informant_id": "B",
+    "concept_id": "S_AI",
+    "topic_label": "Generativ AI",
+    "status": "documented_position",
+    "positions": [
+      "does_not_disqualify"
+    ],
+    "stance_ids": [
+      "AI_B"
+    ],
+    "source_observation_ids": [
+      "OBS-0136"
+    ]
+  },
+  {
+    "informant_id": "C",
+    "concept_id": "S_AI",
+    "topic_label": "Generativ AI",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "D",
+    "concept_id": "S_AI",
+    "topic_label": "Generativ AI",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "E",
+    "concept_id": "S_AI",
+    "topic_label": "Generativ AI",
+    "status": "documented_position",
+    "positions": [
+      "critical"
+    ],
+    "stance_ids": [
+      "AI_neg_E"
+    ],
+    "source_observation_ids": [
+      "OBS-0137",
+      "OBS-0138"
+    ]
+  },
+  {
+    "informant_id": "A",
+    "concept_id": "S_PLAYABLE",
+    "topic_label": "Demo / spillbarhet",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "B",
+    "concept_id": "S_PLAYABLE",
+    "topic_label": "Demo / spillbarhet",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "C",
+    "concept_id": "S_PLAYABLE",
+    "topic_label": "Demo / spillbarhet",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "D",
+    "concept_id": "S_PLAYABLE",
+    "topic_label": "Demo / spillbarhet",
+    "status": "documented_position",
+    "positions": [
+      "requires_for_coverage"
+    ],
+    "stance_ids": [
+      "demo_D"
+    ],
+    "source_observation_ids": [
+      "OBS-0049"
+    ]
+  },
+  {
+    "informant_id": "E",
+    "concept_id": "S_PLAYABLE",
+    "topic_label": "Demo / spillbarhet",
+    "status": "documented_position",
+    "positions": [
+      "requires_on_primary_channel"
+    ],
+    "stance_ids": [
+      "demo_E"
+    ],
+    "source_observation_ids": [
+      "OBS-0054"
+    ]
+  },
+  {
+    "informant_id": "A",
+    "concept_id": "P_TRAILER",
+    "topic_label": "Trailerkrav / bruk",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "B",
+    "concept_id": "P_TRAILER",
+    "topic_label": "Trailerkrav / bruk",
+    "status": "documented_position",
+    "positions": [
+      "does_not_require"
+    ],
+    "stance_ids": [
+      "trailer_B"
+    ],
+    "source_observation_ids": [
+      "OBS-0096"
+    ]
+  },
+  {
+    "informant_id": "C",
+    "concept_id": "P_TRAILER",
+    "topic_label": "Trailerkrav / bruk",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "D",
+    "concept_id": "P_TRAILER",
+    "topic_label": "Trailerkrav / bruk",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "E",
+    "concept_id": "P_TRAILER",
+    "topic_label": "Trailerkrav / bruk",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "A",
+    "concept_id": "S_VISUAL",
+    "topic_label": "Visuell appell",
+    "status": "documented_position",
+    "positions": [
+      "values"
+    ],
+    "stance_ids": [
+      "visual_A"
+    ],
+    "source_observation_ids": [
+      "OBS-0107"
+    ]
+  },
+  {
+    "informant_id": "B",
+    "concept_id": "S_VISUAL",
+    "topic_label": "Visuell appell",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "C",
+    "concept_id": "S_VISUAL",
+    "topic_label": "Visuell appell",
+    "status": "documented_position",
+    "positions": [
+      "values"
+    ],
+    "stance_ids": [
+      "visual_C"
+    ],
+    "source_observation_ids": [
+      "OBS-0110"
+    ]
+  },
+  {
+    "informant_id": "D",
+    "concept_id": "S_VISUAL",
+    "topic_label": "Visuell appell",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "E",
+    "concept_id": "S_VISUAL",
+    "topic_label": "Visuell appell",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "A",
+    "concept_id": "S_TARGET",
+    "topic_label": "Målrettet kontakt",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "B",
+    "concept_id": "S_TARGET",
+    "topic_label": "Målrettet kontakt",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "C",
+    "concept_id": "S_TARGET",
+    "topic_label": "Målrettet kontakt",
+    "status": "documented_position",
+    "positions": [
+      "supports"
+    ],
+    "stance_ids": [
+      "tailor_C"
+    ],
+    "source_observation_ids": [
+      "OBS-0076"
+    ]
+  },
+  {
+    "informant_id": "D",
+    "concept_id": "S_TARGET",
+    "topic_label": "Målrettet kontakt",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "E",
+    "concept_id": "S_TARGET",
+    "topic_label": "Målrettet kontakt",
+    "status": "documented_position",
+    "positions": [
+      "does_not_require_personalization"
+    ],
+    "stance_ids": [
+      "tailor_E"
+    ],
+    "source_observation_ids": [
+      "OBS-0078"
+    ]
+  },
+  {
+    "informant_id": "A",
+    "concept_id": "P_PRESSKIT",
+    "topic_label": "Pressekit / produksjonsressurser",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "B",
+    "concept_id": "P_PRESSKIT",
+    "topic_label": "Pressekit / produksjonsressurser",
+    "status": "documented_position",
+    "positions": [
+      "not_disqualifying"
+    ],
+    "stance_ids": [
+      "promo_B"
+    ],
+    "source_observation_ids": [
+      "OBS-0119"
+    ]
+  },
+  {
+    "informant_id": "C",
+    "concept_id": "P_PRESSKIT",
+    "topic_label": "Pressekit / produksjonsressurser",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "D",
+    "concept_id": "P_PRESSKIT",
+    "topic_label": "Pressekit / produksjonsressurser",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "E",
+    "concept_id": "P_PRESSKIT",
+    "topic_label": "Pressekit / produksjonsressurser",
+    "status": "documented_position",
+    "positions": [
+      "not_required"
+    ],
+    "stance_ids": [
+      "presskit_E"
+    ],
+    "source_observation_ids": [
+      "OBS-0189"
+    ]
+  },
+  {
+    "informant_id": "A",
+    "concept_id": "S_INFO_STUDIO",
+    "topic_label": "Studiohistorikk",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "B",
+    "concept_id": "S_INFO_STUDIO",
+    "topic_label": "Studiohistorikk",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "C",
+    "concept_id": "S_INFO_STUDIO",
+    "topic_label": "Studiohistorikk",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "D",
+    "concept_id": "S_INFO_STUDIO",
+    "topic_label": "Studiohistorikk",
+    "status": "documented_position",
+    "positions": [
+      "not_disqualifying"
+    ],
+    "stance_ids": [
+      "history_D"
+    ],
+    "source_observation_ids": [
+      "OBS-0145",
+      "OBS-0162"
+    ]
+  },
+  {
+    "informant_id": "E",
+    "concept_id": "S_INFO_STUDIO",
+    "topic_label": "Studiohistorikk",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "A",
+    "concept_id": "S_GENRE",
+    "topic_label": "Publikums- og sjangerfit",
+    "status": "documented_position",
+    "positions": [
+      "audience_oriented"
+    ],
+    "stance_ids": [
+      "publ_A"
+    ],
+    "source_observation_ids": [
+      "OBS-0037"
+    ]
+  },
+  {
+    "informant_id": "B",
+    "concept_id": "S_GENRE",
+    "topic_label": "Publikums- og sjangerfit",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "C",
+    "concept_id": "S_GENRE",
+    "topic_label": "Publikums- og sjangerfit",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "D",
+    "concept_id": "S_GENRE",
+    "topic_label": "Publikums- og sjangerfit",
+    "status": "documented_position",
+    "positions": [
+      "taste_oriented"
+    ],
+    "stance_ids": [
+      "publ_D"
+    ],
+    "source_observation_ids": [
+      "OBS-0029"
+    ]
+  },
+  {
+    "informant_id": "E",
+    "concept_id": "S_GENRE",
+    "topic_label": "Publikums- og sjangerfit",
+    "status": "documented_position",
+    "positions": [
+      "taste_oriented"
+    ],
+    "stance_ids": [
+      "publ_E"
+    ],
+    "source_observation_ids": [
+      "OBS-0031"
+    ]
+  },
+  {
+    "informant_id": "A",
+    "concept_id": "S_RISK",
+    "topic_label": "Risiko / oppfølging",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "B",
+    "concept_id": "S_RISK",
+    "topic_label": "Risiko / oppfølging",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "C",
+    "concept_id": "S_RISK",
+    "topic_label": "Risiko / oppfølging",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "D",
+    "concept_id": "S_RISK",
+    "topic_label": "Risiko / oppfølging",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "E",
+    "concept_id": "S_RISK",
+    "topic_label": "Risiko / oppfølging",
+    "status": "documented_position",
+    "positions": [
+      "concern"
+    ],
+    "stance_ids": [
+      "risk_E"
+    ],
+    "source_observation_ids": [
+      "OBS-0128"
+    ]
+  },
+  {
+    "informant_id": "A",
+    "concept_id": "S_FORMAT",
+    "topic_label": "Publiseringsformat",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "B",
+    "concept_id": "S_FORMAT",
+    "topic_label": "Publiseringsformat",
+    "status": "documented_position",
+    "positions": [
+      "allows_news_angle"
+    ],
+    "stance_ids": [
+      "news_B"
+    ],
+    "source_observation_ids": [
+      "OBS-0044",
+      "OBS-0048"
+    ]
+  },
+  {
+    "informant_id": "C",
+    "concept_id": "S_FORMAT",
+    "topic_label": "Publiseringsformat",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "D",
+    "concept_id": "S_FORMAT",
+    "topic_label": "Publiseringsformat",
+    "status": "not_coded_in_this_comparison",
+    "positions": [],
+    "stance_ids": [],
+    "source_observation_ids": []
+  },
+  {
+    "informant_id": "E",
+    "concept_id": "S_FORMAT",
+    "topic_label": "Publiseringsformat",
+    "status": "documented_position",
+    "positions": [
+      "allows_on_secondary_channel"
+    ],
+    "stance_ids": [
+      "early_E"
+    ],
+    "source_observation_ids": [
+      "OBS-0052"
+    ]
+  }
+]

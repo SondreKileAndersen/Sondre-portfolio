@@ -1,21 +1,22 @@
 import type { InstitutionCardsSection } from '../../types/page'
 import { LineIcon } from '../ui/LineIcon'
+import { InstitutionCardFrame } from '../ui/InstitutionCardFrame'
 
-export function InstitutionCardsBlock({ cards, tone = 'light' }: InstitutionCardsSection & {
+export function InstitutionCardsBlock({ cards, appearance = 'default', tone = 'light' }: InstitutionCardsSection & {
   tone?: 'light' | 'dark'
 }) {
   return (
-    <section className={`institution-cards-block teaching-institution-cards section-tone--${tone}`}>
+    <section className={`institution-cards-block teaching-institution-cards teaching-institution-cards--${appearance} section-tone--${tone}`}>
       <div className="institution-cards-block__grid teaching-institution-cards__grid">
         {cards.map((card) => (
-          <article key={card.id} className="institution-card teaching-institution-card resource-institution-card" data-institution={card.id}>
+          <InstitutionCardFrame key={card.id} id={card.id} logoSrc={card.logoSrc} appearance={appearance} className="resource-institution-card">
             <div className="teaching-institution-card__identity">
               <div className="teaching-institution-card__logo-frame">
                 <img className="institution-card__logo" src={card.logoSrc} alt={card.logoAlt} loading="lazy" decoding="async" />
               </div>
               <div className="teaching-institution-card__body">
                 <div className="institution-card__content">
-                  <h2>{card.title}</h2>
+                  <p className="institution-card__title"><strong>{card.title}</strong></p>
                   {card.period && <p className="teaching-institution-card__period">{card.period}</p>}
                   <p className="institution-card__role">{card.role}</p>
                 </div>
@@ -32,7 +33,7 @@ export function InstitutionCardsBlock({ cards, tone = 'light' }: InstitutionCard
                 ))}
               </ul>
             </div>
-          </article>
+          </InstitutionCardFrame>
         ))}
       </div>
     </section>

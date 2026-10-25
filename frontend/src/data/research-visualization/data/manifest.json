@@ -1,0 +1,35 @@
+{
+  "version": "1.1.0",
+  "unit_of_record": "Codebook paraphrases, not transcript segments",
+  "counting_policy": {
+    "raw_observation_count": "Number of tagged entries in PDF; not interview frequency.",
+    "primary_distinct_informants": "Distinct A-E in evidence-linked observations, excluding Z and Samlet.",
+    "deduplication": "Duplicate normalized wording should not inflate distinct claims.",
+    "missing": "No mention does not imply 0 disagreement or absence.",
+    "weights": "No numeric strength weights from clear/possible or tier."
+  },
+  "filter_defaults": {
+    "direct": true,
+    "analytical": true,
+    "exploratory": false,
+    "include_expert_z": false,
+    "interpretive_matrix_statuses": [
+      "clear",
+      "possible"
+    ]
+  },
+  "matrix_interpretation": {
+    "clear": "En sentral funksjon som kommer eksplisitt frem i analysen eller utformingen av caset.",
+    "possible": "En sekundær funksjon gjennom andre paratekster, bestemte brukssituasjoner eller analytisk fortolkning.",
+    "none": "Ingen tilstrekkelig begrunnet forbindelse i denne analysen; ikke dokumentasjon på at forbindelsen er utelukket."
+  },
+  "provenance_semantics": {
+    "direct": "Explicit relation in a paraphrased codebook statement; not verbatim interview transcript.",
+    "analytical": "Researcher matrix or memo synthesis with sources.",
+    "exploratory": "Unvalidated research hypothesis, not an empirical finding."
+  },
+  "active_matrix_file": "analysis_matrix.json",
+  "original_matrix_file": "original_matrix.json",
+  "active_revision_id": "matrix-review-2026-10-21",
+  "analysis_scope": "User-supplied analytical synthesis, including theoretical and case-based qualifications; not a systematic measure of empirical strength."
+}

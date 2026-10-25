@@ -1,0 +1,253 @@
+[
+  {
+    "id": "AI_neg_A",
+    "informant_id": "A",
+    "concept_id": "S_AI",
+    "stance": "critical",
+    "observation_ids": [
+      "OBS-0134",
+      "OBS-0135"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  },
+  {
+    "id": "AI_neg_E",
+    "informant_id": "E",
+    "concept_id": "S_AI",
+    "stance": "critical",
+    "observation_ids": [
+      "OBS-0137",
+      "OBS-0138"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  },
+  {
+    "id": "AI_B",
+    "informant_id": "B",
+    "concept_id": "S_AI",
+    "stance": "does_not_disqualify",
+    "observation_ids": [
+      "OBS-0136"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  },
+  {
+    "id": "tailor_C",
+    "informant_id": "C",
+    "concept_id": "S_TARGET",
+    "stance": "supports",
+    "observation_ids": [
+      "OBS-0076"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  },
+  {
+    "id": "tailor_E",
+    "informant_id": "E",
+    "concept_id": "S_TARGET",
+    "stance": "does_not_require_personalization",
+    "observation_ids": [
+      "OBS-0078"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  },
+  {
+    "id": "trailer_B",
+    "informant_id": "B",
+    "concept_id": "P_TRAILER",
+    "stance": "does_not_require",
+    "observation_ids": [
+      "OBS-0096"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  },
+  {
+    "id": "demo_D",
+    "informant_id": "D",
+    "concept_id": "S_PLAYABLE",
+    "stance": "requires_for_coverage",
+    "observation_ids": [
+      "OBS-0049"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [
+      "C_NOTPLAYABLE"
+    ],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  },
+  {
+    "id": "demo_E",
+    "informant_id": "E",
+    "concept_id": "S_PLAYABLE",
+    "stance": "requires_on_primary_channel",
+    "observation_ids": [
+      "OBS-0054"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [
+      "C_PRIMARY",
+      "C_NOTPLAYABLE"
+    ],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  },
+  {
+    "id": "news_B",
+    "informant_id": "B",
+    "concept_id": "S_FORMAT",
+    "stance": "allows_news_angle",
+    "observation_ids": [
+      "OBS-0044",
+      "OBS-0048"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  },
+  {
+    "id": "early_E",
+    "informant_id": "E",
+    "concept_id": "S_FORMAT",
+    "stance": "allows_on_secondary_channel",
+    "observation_ids": [
+      "OBS-0052"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [
+      "C_SECONDARY"
+    ],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  },
+  {
+    "id": "presskit_E",
+    "informant_id": "E",
+    "concept_id": "P_PRESSKIT",
+    "stance": "not_required",
+    "observation_ids": [
+      "OBS-0189"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  },
+  {
+    "id": "promo_B",
+    "informant_id": "B",
+    "concept_id": "P_PRESSKIT",
+    "stance": "not_disqualifying",
+    "observation_ids": [
+      "OBS-0119"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  },
+  {
+    "id": "history_D",
+    "informant_id": "D",
+    "concept_id": "S_INFO_STUDIO",
+    "stance": "not_disqualifying",
+    "observation_ids": [
+      "OBS-0145",
+      "OBS-0162"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  },
+  {
+    "id": "broll_A",
+    "informant_id": "A",
+    "concept_id": "S_REUSE",
+    "stance": "values",
+    "observation_ids": [
+      "OBS-0176"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  },
+  {
+    "id": "risk_E",
+    "informant_id": "E",
+    "concept_id": "S_RISK",
+    "stance": "concern",
+    "observation_ids": [
+      "OBS-0128"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  },
+  {
+    "id": "visual_A",
+    "informant_id": "A",
+    "concept_id": "S_VISUAL",
+    "stance": "values",
+    "observation_ids": [
+      "OBS-0107"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  },
+  {
+    "id": "visual_C",
+    "informant_id": "C",
+    "concept_id": "S_VISUAL",
+    "stance": "values",
+    "observation_ids": [
+      "OBS-0110"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  },
+  {
+    "id": "publ_A",
+    "informant_id": "A",
+    "concept_id": "S_GENRE",
+    "stance": "audience_oriented",
+    "observation_ids": [
+      "OBS-0037"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  },
+  {
+    "id": "publ_D",
+    "informant_id": "D",
+    "concept_id": "S_GENRE",
+    "stance": "taste_oriented",
+    "observation_ids": [
+      "OBS-0029"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  },
+  {
+    "id": "publ_E",
+    "informant_id": "E",
+    "concept_id": "S_GENRE",
+    "stance": "taste_oriented",
+    "observation_ids": [
+      "OBS-0031"
+    ],
+    "method": "manual_non_exhaustive_curated",
+    "context_ids": [],
+    "caution": "Standpoints are not comparable numerical scale; blank is uncoded/unknown, not disagreement."
+  }
+]

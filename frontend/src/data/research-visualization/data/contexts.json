@@ -1,0 +1,62 @@
+[
+  {
+    "id": "C_FIRST",
+    "label": "Første kontakt",
+    "axis": "stage"
+  },
+  {
+    "id": "C_PUBLIC",
+    "label": "Offentlig vurdering",
+    "axis": "stage"
+  },
+  {
+    "id": "C_PRODUCTION",
+    "label": "Innholdsproduksjon",
+    "axis": "stage"
+  },
+  {
+    "id": "C_PREALPHA",
+    "label": "Pre-alpha / tidlig utviklingsfase",
+    "axis": "stage_of_game"
+  },
+  {
+    "id": "C_DEMO",
+    "label": "Demo / spillbar tilgang",
+    "axis": "playability"
+  },
+  {
+    "id": "C_NOTPLAYABLE",
+    "label": "Ikke-spillbart spill",
+    "axis": "playability"
+  },
+  {
+    "id": "C_PRIMARY",
+    "label": "Hovedplattform",
+    "axis": "channel"
+  },
+  {
+    "id": "C_SECONDARY",
+    "label": "Sekundær / uformell plattform",
+    "axis": "channel"
+  },
+  {
+    "id": "C_VIDEO",
+    "label": "Video / gameplay",
+    "axis": "publication_format"
+  },
+  {
+    "id": "C_NEWS",
+    "label": "Nyhet / feature",
+    "axis": "publication_format"
+  },
+  {
+    "id": "C_REVIEW",
+    "label": "Review / anmeldelse",
+    "axis": "publication_format"
+  },
+  {
+    "id": "C_OUTREACH",
+    "label": "Outreach / markedsføring",
+    "axis": "actor_context"
+  }
+]

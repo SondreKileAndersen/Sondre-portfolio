@@ -15,12 +15,44 @@ export function LineIcon({ name }: LineIconProps) {
     'aria-hidden': true,
   }
 
+  if (name === 'arrowUp') {
+    return <svg {...commonProps} viewBox="-2 -2 28 28"><path d="m12 2 9 11h-6v9H9v-9H3Z" /></svg>
+  }
+
+  if (name === 'check') {
+    return <svg {...commonProps}><path d="m5 12 4 4L19 6" /></svg>
+  }
+
+  if (name === 'lightbulb') {
+    return <svg {...commonProps}><path d="M9 18h6M10 21h4M9 16v-1c0-2-3-3-3-7a6 6 0 0 1 12 0c0 4-3 5-3 7v1M12 1V0M3 4 1 3M21 4l2-1M3 10H1M21 10h2" /></svg>
+  }
+  if (name === 'headphones') {
+    return <svg {...commonProps}><path d="M4 14v-3a8 8 0 0 1 16 0v3" /><rect x="3" y="12" width="4" height="8" rx="2" /><rect x="17" y="12" width="4" height="8" rx="2" /></svg>
+  }
+  if (name === 'palette') {
+    return <svg {...commonProps}><path d="M21 12a9 9 0 1 0-9 9h1a2 2 0 0 0 1.4-3.4 1.5 1.5 0 0 1 1.1-2.6H18a3 3 0 0 0 3-3Z" /><circle cx="7" cy="10" r="1" /><circle cx="10" cy="6" r="1" /><circle cx="15" cy="7" r="1" /><circle cx="7" cy="15" r="1" /></svg>
+  }
+  if (name === 'pointer') {
+    return <svg {...commonProps}><path d="m5 3 14 9-7 1-3 7-4-17ZM14 15l5 6" /></svg>
+  }
+  if (name === 'film') {
+    return <svg {...commonProps}><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M7 3v18M17 3v18M3 8h4M3 16h4M17 8h4M17 16h4m-11-7 5 3-5 3Z" /></svg>
+  }
   if (name === 'cube') {
     return <svg {...commonProps}><path d="m4 7 8-4 8 4v10l-8 4-8-4Z" /><path d="m4 7 8 4 8-4M12 11v10" /></svg>
   }
 
   if (name === 'workflow') {
     return <svg {...commonProps}><circle cx="12" cy="5" r="2" /><circle cx="6" cy="18" r="2" /><circle cx="18" cy="18" r="2" /><path d="M12 7v5M6 16v-4h12v4" /></svg>
+  }
+  if (name === 'books') {
+    return <svg {...commonProps}><path d="m3 6 12-3 6 3-12 3-6-3Zm0 0v5l6 3 12-3V6M3 12v5l6 3 12-3v-5M9 9v5M9 14v6" /></svg>
+  }
+  if (name === 'conversation') {
+    return <svg {...commonProps}><path d="M14 14a7 7 0 1 0-9-1l-2 5 6-2a7 7 0 0 0 5-2Z" /><path d="M16 7a6 6 0 0 1 4 10l1 4-5-2a6 6 0 0 1-5-1" /></svg>
+  }
+  if (name === 'shieldLock') {
+    return <svg {...commonProps}><path d="m12 2 9 3v6c0 6-9 11-9 11S3 17 3 11V5l9-3Z" /><rect x="8.5" y="10" width="7" height="6" rx="1" /><path d="M10 10V8a2 2 0 0 1 4 0v2" /></svg>
   }
 
   if (name === 'database') {

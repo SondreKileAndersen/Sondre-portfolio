@@ -20,6 +20,7 @@ Krever Node.js 20+ og .NET 8 SDK.
 
 ```powershell
 # Terminal 1: frontend
+  --research-figures-background: #fbfdff;
 cd "F:\9. Utvikling\Portfolio-Website\frontend"
 npm.cmd run dev
 

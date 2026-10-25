@@ -1,0 +1,1717 @@
+[
+  {
+    "id": "REL-0001",
+    "source_id": "P_EMAIL",
+    "target_id": "M_DEV",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Avsenderinntrykk fra første kontakt.",
+    "evidence_observation_ids": [
+      "OBS-0056",
+      "OBS-0159"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_FIRST"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0002",
+    "source_id": "P_EMAIL",
+    "target_id": "M_PROJ",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "E-post påvirker inntrykk av spillet.",
+    "evidence_observation_ids": [
+      "OBS-0091"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_FIRST"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0003",
+    "source_id": "P_EMAIL",
+    "target_id": "M_FORM",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Kontakt sorteres etter passform.",
+    "evidence_observation_ids": [
+      "OBS-0090"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_FIRST"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0004",
+    "source_id": "P_EMAIL",
+    "target_id": "M_FORM",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Mottakerrelevans i første kontakt.",
+    "evidence_observation_ids": [
+      "OBS-0075"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_FIRST"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0005",
+    "source_id": "P_EMAIL",
+    "target_id": "M_PRESS",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "E-post kan gi tilgang til arbeidsmateriale.",
+    "evidence_observation_ids": [
+      "OBS-0068",
+      "OBS-0184"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_FIRST",
+      "C_PRODUCTION"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0006",
+    "source_id": "P_TRAILER",
+    "target_id": "M_PROJ",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Trailer brukes til kvalitetsvurdering.",
+    "evidence_observation_ids": [
+      "OBS-0098"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PUBLIC"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0007",
+    "source_id": "P_TRAILER",
+    "target_id": "M_PROJ",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Trailer er informasjonsgrunnlag.",
+    "evidence_observation_ids": [
+      "OBS-0099"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PUBLIC"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0008",
+    "source_id": "P_TRAILER",
+    "target_id": "M_PROJ",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Trailer i prosjektvurdering.",
+    "evidence_observation_ids": [
+      "OBS-0095"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PUBLIC"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0009",
+    "source_id": "P_TRAILER",
+    "target_id": "M_FORM",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Trailer kan gi grunnlag for feature-format.",
+    "evidence_observation_ids": [
+      "OBS-0103"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PUBLIC"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0010",
+    "source_id": "P_TRAILER",
+    "target_id": "M_PRESS",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Trailer kan gi materiale for omtale.",
+    "evidence_observation_ids": [
+      "OBS-0101"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PUBLIC"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0011",
+    "source_id": "P_STEAM",
+    "target_id": "M_PROJ",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Steam-tekst gir signal om prosjekt.",
+    "evidence_observation_ids": [
+      "OBS-0120"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PUBLIC"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0012",
+    "source_id": "P_STEAM",
+    "target_id": "M_PROJ",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Steam-side brukes i offentlig prosjektvurdering.",
+    "evidence_observation_ids": [
+      "OBS-0117"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PUBLIC"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0013",
+    "source_id": "P_STEAM",
+    "target_id": "M_DEV",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Steam-tekst brukes som pålitelighetssignal.",
+    "evidence_observation_ids": [
+      "OBS-0126"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PUBLIC"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0014",
+    "source_id": "P_DEVELOPERWEB",
+    "target_id": "M_DEV",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Utviklerside som kilde til utviklergrunnlag.",
+    "evidence_observation_ids": [
+      "OBS-0142"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0015",
+    "source_id": "P_ACTIVITY",
+    "target_id": "M_DEV",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Synlig utvikling signaliserer framdrift.",
+    "evidence_observation_ids": [
+      "OBS-0149"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0016",
+    "source_id": "P_ACTIVITY",
+    "target_id": "M_DEV",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Synlig aktivitet brukes som vurderingssignal.",
+    "evidence_observation_ids": [
+      "OBS-0150"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0017",
+    "source_id": "P_ACTIVITY",
+    "target_id": "M_DEV",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Oppfølging ses som utviklersignal.",
+    "evidence_observation_ids": [
+      "OBS-0151",
+      "OBS-0155"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0018",
+    "source_id": "P_ACTIVITY",
+    "target_id": "M_PROJ",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Oppfølging ses som prosjektsignal.",
+    "evidence_observation_ids": [
+      "OBS-0151",
+      "OBS-0155"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0019",
+    "source_id": "P_PRESSKIT",
+    "target_id": "M_PRESS",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Presskit som produksjonsressurs.",
+    "evidence_observation_ids": [
+      "OBS-0186"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PRODUCTION"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0020",
+    "source_id": "P_PRESSKIT",
+    "target_id": "M_PRESS",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Mangel gir produksjonsfriksjon.",
+    "evidence_observation_ids": [
+      "OBS-0188"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PRODUCTION"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0021",
+    "source_id": "P_PRESSKIT",
+    "target_id": "M_PROJ",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Presskit som prosjektinformasjon.",
+    "evidence_observation_ids": [
+      "OBS-0180"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PRODUCTION"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0022",
+    "source_id": "P_PRESSKIT",
+    "target_id": "M_DEV",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Utviklers posisjonering kommuniseres gjennom presskit.",
+    "evidence_observation_ids": [
+      "OBS-0187"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PRODUCTION"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0023",
+    "source_id": "S_AI",
+    "target_id": "M_PROJ",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "AI som negativt prosjektsignal hos A.",
+    "evidence_observation_ids": [
+      "OBS-0134"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PUBLIC"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0024",
+    "source_id": "S_AI",
+    "target_id": "M_PROJ",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "AI er ikke universelt eksklusjonskriterium.",
+    "evidence_observation_ids": [
+      "OBS-0136"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PUBLIC"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0025",
+    "source_id": "S_PLAYABLE",
+    "target_id": "M_FORM",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Dekningskrav varierer med spillbarhet.",
+    "evidence_observation_ids": [
+      "OBS-0049"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0026",
+    "source_id": "S_PLAYABLE",
+    "target_id": "M_FORM",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Hovedplattformen har krav til spillbarhet hos E.",
+    "evidence_observation_ids": [
+      "OBS-0054"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0027",
+    "source_id": "S_FORMAT",
+    "target_id": "M_FORM",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Innholdsformat skaper ulike vurderingsrammer.",
+    "evidence_observation_ids": [
+      "OBS-0043"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0028",
+    "source_id": "S_VISUAL",
+    "target_id": "M_PROJ",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Visuell kvalitet i prosjektvurdering.",
+    "evidence_observation_ids": [
+      "OBS-0104"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PUBLIC"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0029",
+    "source_id": "S_VISUAL",
+    "target_id": "M_PROJ",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Visuelt særpreg i vurdering.",
+    "evidence_observation_ids": [
+      "OBS-0110"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PUBLIC"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0030",
+    "source_id": "S_PROGRESS",
+    "target_id": "M_DEV",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Planverk som utviklersignal.",
+    "evidence_observation_ids": [
+      "OBS-0148"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0031",
+    "source_id": "S_RESP",
+    "target_id": "M_DEV",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Respons som utviklersignal.",
+    "evidence_observation_ids": [
+      "OBS-0157"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0032",
+    "source_id": "S_INFO_STUDIO",
+    "target_id": "M_DEV",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Studioinformasjon påvirker kredibilitet.",
+    "evidence_observation_ids": [
+      "OBS-0144",
+      "OBS-0161"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0033",
+    "source_id": "S_REUSE",
+    "target_id": "M_PRESS",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Gjenbrukbart videomateriale etterspørres.",
+    "evidence_observation_ids": [
+      "OBS-0175"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PRODUCTION"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0034",
+    "source_id": "S_FRICTION",
+    "target_id": "M_PRESS",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Materiale kan redusere friksjon.",
+    "evidence_observation_ids": [
+      "OBS-0182"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PRODUCTION"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0035",
+    "source_id": "S_REP",
+    "target_id": "M_PRESS",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Pressekit og representasjon.",
+    "evidence_observation_ids": [
+      "OBS-0188"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PRODUCTION"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0036",
+    "source_id": "S_TARGET",
+    "target_id": "M_FORM",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Mottakertilpasning som utvalgsfaktor.",
+    "evidence_observation_ids": [
+      "OBS-0075"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_FIRST"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0037",
+    "source_id": "S_RISK",
+    "target_id": "M_DEV",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Utvikler/oppfølgingsrisiko.",
+    "evidence_observation_ids": [
+      "OBS-0128"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PUBLIC"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0038",
+    "source_id": "S_INFO",
+    "target_id": "M_PROJ",
+    "tier": "direct",
+    "predicate": "provides_evidence_for",
+    "label": "Beskrivelse i prosjektvurdering.",
+    "evidence_observation_ids": [
+      "OBS-0121"
+    ],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [
+      "C_PUBLIC"
+    ],
+    "polarity": "descriptive",
+    "provenance_note": "Direct = the paraphrased codebook wording explicitly relates this item to the function, not a verbatim interview quote.",
+    "review_status": "curated",
+    "provenance_scope": "codebook_statement",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0039",
+    "source_id": "P_EMAIL",
+    "target_id": "M_FORM",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: tydelig funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-01-1"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=clear; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0040",
+    "source_id": "P_EMAIL",
+    "target_id": "M_PROJ",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: tydelig funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-01-2"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=clear; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0041",
+    "source_id": "P_EMAIL",
+    "target_id": "M_DEV",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: tydelig funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-01-3"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=clear; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0042",
+    "source_id": "P_EMAIL",
+    "target_id": "M_PRESS",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: mulig / indirekte funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-01-4"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=possible; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0043",
+    "source_id": "P_TRAILER",
+    "target_id": "M_FORM",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: mulig / indirekte funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-02-1"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=possible; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0044",
+    "source_id": "P_TRAILER",
+    "target_id": "M_PROJ",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: tydelig funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-02-2"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=clear; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0045",
+    "source_id": "P_TRAILER",
+    "target_id": "M_DEV",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: mulig / indirekte funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-02-3"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=possible; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0046",
+    "source_id": "P_TRAILER",
+    "target_id": "M_PRESS",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: tydelig funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-02-4"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=clear; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0047",
+    "source_id": "P_STEAM",
+    "target_id": "M_FORM",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: tydelig funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-03-1"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=clear; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0048",
+    "source_id": "P_STEAM",
+    "target_id": "M_PROJ",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: tydelig funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-03-2"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=clear; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0049",
+    "source_id": "P_STEAM",
+    "target_id": "M_DEV",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: tydelig funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-03-3"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=clear; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0050",
+    "source_id": "P_STEAM",
+    "target_id": "M_PRESS",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: mulig / indirekte funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-03-4"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=possible; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0051",
+    "source_id": "P_PROJECTWEB",
+    "target_id": "M_FORM",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: mulig / indirekte funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-04-1"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=possible; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0052",
+    "source_id": "P_PROJECTWEB",
+    "target_id": "M_PROJ",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: tydelig funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-04-2"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=clear; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0053",
+    "source_id": "P_PROJECTWEB",
+    "target_id": "M_DEV",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: tydelig funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-04-3"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=clear; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0054",
+    "source_id": "P_PROJECTWEB",
+    "target_id": "M_PRESS",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: tydelig funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-04-4"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=clear; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0055",
+    "source_id": "P_DEVELOPERWEB",
+    "target_id": "M_PROJ",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: mulig / indirekte funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-05-2"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=possible; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0056",
+    "source_id": "P_DEVELOPERWEB",
+    "target_id": "M_DEV",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: tydelig funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-05-3"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=clear; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0057",
+    "source_id": "P_ACTIVITY",
+    "target_id": "M_PROJ",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: tydelig funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-06-2"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=clear; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0058",
+    "source_id": "P_ACTIVITY",
+    "target_id": "M_DEV",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: tydelig funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-06-3"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=clear; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0059",
+    "source_id": "P_ACTIVITY",
+    "target_id": "M_PRESS",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: mulig / indirekte funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-06-4"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=possible; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0060",
+    "source_id": "P_PRESSKIT",
+    "target_id": "M_FORM",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: mulig / indirekte funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-07-1"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=possible; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0061",
+    "source_id": "P_PRESSKIT",
+    "target_id": "M_PROJ",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: tydelig funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-07-2"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=clear; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0062",
+    "source_id": "P_PRESSKIT",
+    "target_id": "M_DEV",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: mulig / indirekte funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-07-3"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=possible; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0063",
+    "source_id": "P_PRESSKIT",
+    "target_id": "M_PRESS",
+    "tier": "analytical",
+    "predicate": "may_contribute_to",
+    "label": "Original analysematrise: tydelig funksjon",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-SYNTH"
+    ],
+    "matrix_cell_ids": [
+      "CELL-07-4"
+    ],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Assessment from original user matrix. Status=clear; NOT automatically direct observational evidence.",
+    "review_status": "curated",
+    "provenance_scope": "researcher_matrix",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0064",
+    "source_id": "P_EMAIL",
+    "target_id": "P_STEAM",
+    "tier": "analytical",
+    "predicate": "links_to",
+    "label": "Første henvendelse kan lede videre til Steam-side.",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-3"
+    ],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Researcher synthesis grounded in PDF memo; interpretation, not a new interview observation.",
+    "review_status": "curated",
+    "provenance_scope": "memo_synthesis",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0065",
+    "source_id": "P_TRAILER",
+    "target_id": "S_SEARCH",
+    "tier": "analytical",
+    "predicate": "shows",
+    "label": "Trailer kan gjøre stil, sjanger og annet raskt observerbart.",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-4"
+    ],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Researcher synthesis grounded in PDF memo; interpretation, not a new interview observation.",
+    "review_status": "curated",
+    "provenance_scope": "memo_synthesis",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0066",
+    "source_id": "P_TRAILER",
+    "target_id": "S_EXPERIENCE",
+    "tier": "analytical",
+    "predicate": "signals_partially",
+    "label": "Trailer kan signalisere, men ikke bevise, erfaringsbaserte egenskaper.",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-4"
+    ],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Researcher synthesis grounded in PDF memo; interpretation, not a new interview observation.",
+    "review_status": "curated",
+    "provenance_scope": "memo_synthesis",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0067",
+    "source_id": "P_ACTIVITY",
+    "target_id": "S_PROGRESS",
+    "tier": "analytical",
+    "predicate": "signals",
+    "label": "Synlig aktivitet kan signalisere reell oppfølging over tid.",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-5"
+    ],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Researcher synthesis grounded in PDF memo; interpretation, not a new interview observation.",
+    "review_status": "curated",
+    "provenance_scope": "memo_synthesis",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0068",
+    "source_id": "S_PROGRESS",
+    "target_id": "M_DEV",
+    "tier": "analytical",
+    "predicate": "supports_assessment_of",
+    "label": "Vedvarende framdrift inngår i vurderingen av gjennomføringsevne.",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-5"
+    ],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Researcher synthesis grounded in PDF memo; interpretation, not a new interview observation.",
+    "review_status": "curated",
+    "provenance_scope": "memo_synthesis",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0069",
+    "source_id": "S_GENRE",
+    "target_id": "M_FORM",
+    "tier": "analytical",
+    "predicate": "supports_assessment_of",
+    "label": "Sjanger-, kanal- og publikumsfit.",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-2"
+    ],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Researcher synthesis grounded in PDF memo; interpretation, not a new interview observation.",
+    "review_status": "curated",
+    "provenance_scope": "memo_synthesis",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0070",
+    "source_id": "S_FORMAT",
+    "target_id": "M_PRESS",
+    "tier": "analytical",
+    "predicate": "conditions",
+    "label": "Produksjonsressursene må passe publikasjonens format.",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-2",
+      "MEMO-6"
+    ],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Researcher synthesis grounded in PDF memo; interpretation, not a new interview observation.",
+    "review_status": "curated",
+    "provenance_scope": "memo_synthesis",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0071",
+    "source_id": "S_FRICTION",
+    "target_id": "M_PRESS",
+    "tier": "analytical",
+    "predicate": "conditions",
+    "label": "Ekstraarbeid ved pressemateriale kan påvirke gjennomførbar omtale.",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-6"
+    ],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Researcher synthesis grounded in PDF memo; interpretation, not a new interview observation.",
+    "review_status": "curated",
+    "provenance_scope": "memo_synthesis",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0072",
+    "source_id": "S_REUSE",
+    "target_id": "S_FRICTION",
+    "tier": "analytical",
+    "predicate": "may_reduce",
+    "label": "Gjenbrukbare ressurser kan redusere merarbeid.",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-6"
+    ],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Researcher synthesis grounded in PDF memo; interpretation, not a new interview observation.",
+    "review_status": "curated",
+    "provenance_scope": "memo_synthesis",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0073",
+    "source_id": "S_REP",
+    "target_id": "M_PRESS",
+    "tier": "analytical",
+    "predicate": "supports_assessment_of",
+    "label": "Representasjonsmuligheter er del av pressematerialets funksjon.",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-6"
+    ],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Researcher synthesis grounded in PDF memo; interpretation, not a new interview observation.",
+    "review_status": "curated",
+    "provenance_scope": "memo_synthesis",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0074",
+    "source_id": "S_TRUST",
+    "target_id": "M_DEV",
+    "tier": "analytical",
+    "predicate": "supports_assessment_of",
+    "label": "Troverdighet vurderes gjennom flere spor.",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-5"
+    ],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Researcher synthesis grounded in PDF memo; interpretation, not a new interview observation.",
+    "review_status": "curated",
+    "provenance_scope": "memo_synthesis",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0075",
+    "source_id": "S_RISK",
+    "target_id": "M_FORM",
+    "tier": "analytical",
+    "predicate": "conditions",
+    "label": "Redaksjonell risiko påvirkes av kanal og publikum.",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-1",
+      "MEMO-2"
+    ],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Researcher synthesis grounded in PDF memo; interpretation, not a new interview observation.",
+    "review_status": "curated",
+    "provenance_scope": "memo_synthesis",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0076",
+    "source_id": "S_PLAYABLE",
+    "target_id": "M_FORM",
+    "tier": "analytical",
+    "predicate": "conditions",
+    "label": "Dekningsmuligheter kan avhenge av spillbarhet og format.",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-2"
+    ],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Researcher synthesis grounded in PDF memo; interpretation, not a new interview observation.",
+    "review_status": "curated",
+    "provenance_scope": "memo_synthesis",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0077",
+    "source_id": "S_INFO",
+    "target_id": "P_EMAIL",
+    "tier": "analytical",
+    "predicate": "part_of",
+    "label": "Lenker og informasjonsverdi i første henvendelse.",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-3"
+    ],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Researcher synthesis grounded in PDF memo; interpretation, not a new interview observation.",
+    "review_status": "curated",
+    "provenance_scope": "memo_synthesis",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0078",
+    "source_id": "S_PRESS_ASSETS",
+    "target_id": "P_PRESSKIT",
+    "tier": "analytical",
+    "predicate": "can_be_part_of",
+    "label": "B-roll, bilder, logoer inngår i presskit eller pressmateriale.",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-6"
+    ],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Researcher synthesis grounded in PDF memo; interpretation, not a new interview observation.",
+    "review_status": "curated",
+    "provenance_scope": "memo_synthesis",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0079",
+    "source_id": "S_INFO_STUDIO",
+    "target_id": "M_DEV",
+    "tier": "analytical",
+    "predicate": "supports_assessment_of",
+    "label": "Historikk og studioinformasjon signaliserer troverdighet.",
+    "evidence_observation_ids": [],
+    "memo_ids": [
+      "MEMO-5"
+    ],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "Researcher synthesis grounded in PDF memo; interpretation, not a new interview observation.",
+    "review_status": "curated",
+    "provenance_scope": "memo_synthesis",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0080",
+    "source_id": "P_DEVELOPERWEB",
+    "target_id": "M_PROJ",
+    "tier": "exploratory",
+    "predicate": "hypothesized_relationship",
+    "label": "Utviklerside kan også vise prosjektinformasjon, men må granskes nærmere.",
+    "evidence_observation_ids": [],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "EXPLORATORY HYPOTHESIS. Not validated as finding; toggle off by default.",
+    "review_status": "hypothesis_not_validated",
+    "provenance_scope": "research_question",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0081",
+    "source_id": "P_TRAILER",
+    "target_id": "M_DEV",
+    "tier": "exploratory",
+    "predicate": "hypothesized_relationship",
+    "label": "Trailerens profesjonalitet kan tenkes å signalisere utviklerkapasitet; ikke dokumentert som universell relasjon.",
+    "evidence_observation_ids": [],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "EXPLORATORY HYPOTHESIS. Not validated as finding; toggle off by default.",
+    "review_status": "hypothesis_not_validated",
+    "provenance_scope": "research_question",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0082",
+    "source_id": "P_PRESSKIT",
+    "target_id": "S_TRUST",
+    "tier": "exploratory",
+    "predicate": "hypothesized_relationship",
+    "label": "Strukturert presskit kan tenkes å bidra til tillit; ikke automatisk empirisk funn.",
+    "evidence_observation_ids": [],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "EXPLORATORY HYPOTHESIS. Not validated as finding; toggle off by default.",
+    "review_status": "hypothesis_not_validated",
+    "provenance_scope": "research_question",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0083",
+    "source_id": "P_PROJECTWEB",
+    "target_id": "S_PROGRESS",
+    "tier": "exploratory",
+    "predicate": "hypothesized_relationship",
+    "label": "Prosjektnettside kan tenkes å vise oppdateringer over tid; gjelder kun hvis innholdet finnes.",
+    "evidence_observation_ids": [],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "EXPLORATORY HYPOTHESIS. Not validated as finding; toggle off by default.",
+    "review_status": "hypothesis_not_validated",
+    "provenance_scope": "research_question",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0084",
+    "source_id": "P_EMAIL",
+    "target_id": "S_RISK",
+    "tier": "exploratory",
+    "predicate": "hypothesized_relationship",
+    "label": "Dårlig første kontakt kan tenkes å øke opplevd redaksjonell risiko; må underbygges.",
+    "evidence_observation_ids": [],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "EXPLORATORY HYPOTHESIS. Not validated as finding; toggle off by default.",
+    "review_status": "hypothesis_not_validated",
+    "provenance_scope": "research_question",
+    "numeric_weight": null
+  },
+  {
+    "id": "REL-0085",
+    "source_id": "S_SEARCH",
+    "target_id": "S_EXPERIENCE",
+    "tier": "exploratory",
+    "predicate": "hypothesized_relationship",
+    "label": "Hvilke observerbare signaler kompenserer best for manglende spillbarhet? Utforskende spørsmål.",
+    "evidence_observation_ids": [],
+    "memo_ids": [],
+    "matrix_cell_ids": [],
+    "context_ids": [],
+    "polarity": "descriptive",
+    "provenance_note": "EXPLORATORY HYPOTHESIS. Not validated as finding; toggle off by default.",
+    "review_status": "hypothesis_not_validated",
+    "provenance_scope": "research_question",
+    "numeric_weight": null
+  }
+]

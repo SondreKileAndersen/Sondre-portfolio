@@ -1,0 +1,38 @@
+[
+  {
+    "id": "A",
+    "role": "primary",
+    "label": "Informant A",
+    "note": "Anonymisert spillformidler. Ingen sikre faste rolletype-kategorier."
+  },
+  {
+    "id": "B",
+    "role": "primary",
+    "label": "Informant B",
+    "note": "Anonymisert spillformidler. Ingen sikre faste rolletype-kategorier."
+  },
+  {
+    "id": "C",
+    "role": "primary",
+    "label": "Informant C",
+    "note": "Anonymisert spillformidler. Ingen sikre faste rolletype-kategorier."
+  },
+  {
+    "id": "D",
+    "role": "primary",
+    "label": "Informant D",
+    "note": "Anonymisert spillformidler. Ingen sikre faste rolletype-kategorier."
+  },
+  {
+    "id": "E",
+    "role": "primary",
+    "label": "Informant E",
+    "note": "Anonymisert spillformidler. Ingen sikre faste rolletype-kategorier."
+  },
+  {
+    "id": "Z",
+    "role": "expert",
+    "label": "Ekspertinformant Z",
+    "note": "Ekspertperspektiv fra utvikler/outreach; ikke slå sammen med A–E i standardtall."
+  }
+]

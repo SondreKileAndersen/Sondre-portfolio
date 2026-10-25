@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 import type { MouseEvent } from 'react'
 import { ContactIcon } from '../ui/ContactIcon'
 
-export function Footer({ tone = 'dark' }: { tone?: 'light' | 'dark' }) {
+export function Footer() {
   const { t } = useTranslation()
   const openEmail = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault()
@@ -10,7 +10,7 @@ export function Footer({ tone = 'dark' }: { tone?: 'light' | 'dark' }) {
     window.location.href = `mailto:${address}`
   }
 
-  return <footer id="site-footer" className={`site-footer site-footer--${tone}`}>
+  return <footer id="site-footer" className="site-footer">
     <div className="site-footer__inner">
       <nav aria-label={t('footer.contact')}>
         <p className="site-footer__item"><ContactIcon name="location" />{t('footer.location')}</p>

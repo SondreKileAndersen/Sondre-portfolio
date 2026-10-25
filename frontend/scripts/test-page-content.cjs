@@ -135,7 +135,7 @@ for (const folder of folders) {
 }
 
 // The institutional cards are ordered in shared structure; translation keys stay stable.
-const directory = path.join(root, 'src/data/pages/ressurskoordinering')
+const directory = path.join(root, 'src/data/pages/logistikk')
 const shared = load(path.join(directory, 'structure.ts')).structure
 const content = load(path.join(directory, 'no.ts')).no
 const cards = composeContent(shared, content, collections).sections.find(section => section.type === 'institutionCards').cards

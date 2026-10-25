@@ -1,0 +1,65 @@
+/* Alle justerbare verdier for figurgalleriet på forskningssiden. */
+:root {
+  --research-figures-background: #fbfdff;
+  /* Tid mellom automatiske bytter til høyre. 0ms slår av automatisk bytte. */
+  --research-gallery-autoplay-interval: 5000ms;
+
+  /* Bakbilder: synlig andel fra ytterkanten, og størrelse per nivå (0–1). */
+  --research-gallery-spread: 0.1;
+  --research-gallery-scale: 0.7;
+  /* Masker den innerste halvdelen av bakbildet, uten å flytte eller skalere motivet. */
+  --research-gallery-hidden-crop: 50%;
+
+  /* Kun fokusbildet: 1 = dagens størrelse, 0.9 = 10 % mindre, 1.1 = 10 % større.
+     Tallene viser til filene Fig 1–8 i src/media/forskning/.
+     Bakbildene påvirkes ikke av disse verdiene. */
+  --research-gallery-focus-figure-1: 1;
+  --research-gallery-focus-figure-2: 1;
+  --research-gallery-focus-figure-3: 1.2;
+  --research-gallery-focus-figure-4: 1;
+  --research-gallery-focus-figure-5: 1;
+  --research-gallery-focus-figure-6: 1;
+  --research-gallery-focus-figure-7: 1;
+  --research-gallery-focus-figure-8: 1;
+
+  /* Felles grunnformat og høyde på hele galleriområdet. */
+  --research-gallery-frame-width: min(60cqw, 40rem);
+  --research-gallery-frame-height: clamp(17rem, 33cqw, 29rem);
+  --research-gallery-stage-height: clamp(28rem, 55cqw, 43rem);
+  /* Luft til skygger over/under. Galleriet reserverer også plass til før-bildet. */
+  --research-gallery-edge-space: 2rem;
+
+  /* Før-miniatyr: høyde og andelen som overlapper fokusbildet. */
+  --research-gallery-preview-height: clamp(6rem, 12cqw, 9rem);
+  --research-gallery-preview-overlap: 0.35;
+
+  /* HOVEDVERDI: total overgangstid. Alle tidene nedenfor følger denne. */
+  --research-gallery-duration: 300ms;
+  --research-gallery-easing: ease;
+  --research-gallery-preview-fade-duration: calc(var(--research-gallery-duration) * 0.625);
+  --research-gallery-radius: 0.8rem;
+  --research-gallery-shadow: 0 0.7rem 1.7rem rgb(0 0 0 / 28%);
+  /* Hover på neste fokusbilde. */
+  --research-gallery-hover-scale: 1.06;
+  /* Toningsstyrke (0–1): høyere = mer bakgrunnsfarge på bakbildene. */
+  --research-gallery-tint-strength: 10;
+  /* Kurve: 1 = lineær, over 1 = svakere nær fokus, under 1 = sterkere nær fokus.
+     Det ytterste, fjerde laget er alltid 100 % bakgrunnsfarget. */
+  --research-gallery-tint-curve: 1.4;
+  --research-gallery-tint-duration: var(--research-gallery-duration);
+  /* Kopi/fade følger hovedverdien og påvirker ikke undervisningskortene. */
+  --research-gallery-copy-fade-in-duration: calc(var(--research-gallery-duration) * 0.75);
+  --research-gallery-copy-fade-out-delay: calc(var(--research-gallery-duration) * 0.5);
+  --research-gallery-copy-fade-out-duration: calc(var(--research-gallery-duration) * 0.25);
+  --research-gallery-overlay-background: rgb(7 17 23 / 90%);
+}
+
+/* Kobling mellom stabil figur-ID og fokusverdiene over. */
+.image-compare-carousel__slide[data-figure-id='figure-1'] { --research-gallery-focus-scale: var(--research-gallery-focus-figure-1); }
+.image-compare-carousel__slide[data-figure-id='figure-2'] { --research-gallery-focus-scale: var(--research-gallery-focus-figure-2); }
+.image-compare-carousel__slide[data-figure-id='figure-3'] { --research-gallery-focus-scale: var(--research-gallery-focus-figure-3); }
+.image-compare-carousel__slide[data-figure-id='figure-4'] { --research-gallery-focus-scale: var(--research-gallery-focus-figure-4); }
+.image-compare-carousel__slide[data-figure-id='figure-5'] { --research-gallery-focus-scale: var(--research-gallery-focus-figure-5); }
+.image-compare-carousel__slide[data-figure-id='figure-6'] { --research-gallery-focus-scale: var(--research-gallery-focus-figure-6); }
+.image-compare-carousel__slide[data-figure-id='figure-7'] { --research-gallery-focus-scale: var(--research-gallery-focus-figure-7); }
+.image-compare-carousel__slide[data-figure-id='figure-8'] { --research-gallery-focus-scale: var(--research-gallery-focus-figure-8); }

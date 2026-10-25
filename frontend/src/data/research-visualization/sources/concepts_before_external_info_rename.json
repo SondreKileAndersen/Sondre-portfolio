@@ -1,0 +1,182 @@
+[
+  {
+    "id": "M_FORM",
+    "label": "Formidlingsrammer",
+    "kind": "assessment_dimension",
+    "description": "Passer prosjektet spillformidlerens kanal, publikum, sjanger, plattform og format?"
+  },
+  {
+    "id": "M_PROJ",
+    "label": "Prosjektgrunnlag",
+    "kind": "assessment_dimension",
+    "description": "Hva uttrykkene gjør vurderbart om spillidé, uttrykk, sjanger, gameplay, kvalitet og særpreg."
+  },
+  {
+    "id": "M_DEV",
+    "label": "Utviklergrunnlag",
+    "kind": "assessment_dimension",
+    "description": "Hva utviklerens kommunikasjon, identitet, aktivitet, historikk og oppfølging signaliserer."
+  },
+  {
+    "id": "M_PRESS",
+    "label": "Pressemateriale",
+    "kind": "assessment_dimension",
+    "description": "Tilgang til og anvendbarhet av ressurser for produksjon av publiserbart innhold."
+  },
+  {
+    "id": "P_EMAIL",
+    "label": "E-post / direkte kontakt",
+    "kind": "paratext",
+    "description": "Privat henvendelse som kan gi første sortering og peke videre."
+  },
+  {
+    "id": "P_TRAILER",
+    "label": "Trailer",
+    "kind": "paratext",
+    "description": "Audiovisuelt uttrykk som kommuniserer deler av spillprosjektet."
+  },
+  {
+    "id": "P_STEAM",
+    "label": "Steam-side",
+    "kind": "paratext",
+    "description": "Offentlig presentasjons- og informasjonsflate."
+  },
+  {
+    "id": "P_PROJECTWEB",
+    "label": "Prosjektnettside",
+    "kind": "paratext",
+    "description": "Nettside for spillprosjektet; kategori fra opprinnelig analysematrise."
+  },
+  {
+    "id": "P_DEVELOPERWEB",
+    "label": "Utviklerside",
+    "kind": "paratext",
+    "description": "Utviklerens nettside eller informasjon om utvikleren."
+  },
+  {
+    "id": "P_ACTIVITY",
+    "label": "Synlig utviklingsaktivitet",
+    "kind": "signal_cluster",
+    "description": "Observerbar aktivitet på tvers av flater; ikke en entydig parateksttype."
+  },
+  {
+    "id": "P_PRESSKIT",
+    "label": "Pressepakke",
+    "kind": "paratext_collection",
+    "description": "Samling av materialer som kan gjøre innholdsproduksjon enklere."
+  },
+  {
+    "id": "S_VISUAL",
+    "label": "Visuell appell",
+    "kind": "signal",
+    "description": "Visuelle særtrekk, tone, stemning og grafisk uttrykk."
+  },
+  {
+    "id": "S_GAMEPLAY",
+    "label": "Gameplay / mekanikk",
+    "kind": "signal",
+    "description": "Forsøk på å synliggjøre forventet faktisk spillopplevelse."
+  },
+  {
+    "id": "S_GENRE",
+    "label": "Sjanger- og kanalrelevans",
+    "kind": "signal",
+    "description": "Om spillet passer aktørens kanal, sjanger og publikum."
+  },
+  {
+    "id": "S_PLAYABLE",
+    "label": "Spillbarhet / demo",
+    "kind": "signal",
+    "description": "Om utviklingen er spillbar i relevante formater."
+  },
+  {
+    "id": "S_TRUST",
+    "label": "Troverdighet / seriøsitet",
+    "kind": "signal",
+    "description": "Forhold som inngår i vurderingen av utviklerens og prosjektets troverdighet."
+  },
+  {
+    "id": "S_PROGRESS",
+    "label": "Framdrift / oppfølging",
+    "kind": "signal",
+    "description": "Spor av faktisk utvikling, aktivitet og konsekvent oppfølging."
+  },
+  {
+    "id": "S_REUSE",
+    "label": "Gjenbrukbart materiale",
+    "kind": "signal",
+    "description": "Bilder, logoer, B-roll, grafikk og tekst for egen innholdsproduksjon."
+  },
+  {
+    "id": "S_FRICTION",
+    "label": "Friksjon / merarbeid",
+    "kind": "signal",
+    "description": "Tid og arbeid ved å finne, hente, tilpasse eller lage ressurser."
+  },
+  {
+    "id": "S_REP",
+    "label": "Representasjonskvalitet",
+    "kind": "signal",
+    "description": "Hvordan materiale muliggjør ønsket og korrekt presentasjon."
+  },
+  {
+    "id": "S_INFO",
+    "label": "Tydelig informasjon og lenker",
+    "kind": "signal",
+    "description": "Informasjon, beskrivelse og lenker som gjør vurdering og oppfølging enklere."
+  },
+  {
+    "id": "S_RESP",
+    "label": "Utviklerrespons / community",
+    "kind": "signal",
+    "description": "Offentlige svar og samhandling med spillere eller følgere."
+  },
+  {
+    "id": "S_FORMAT",
+    "label": "Publiseringsformat",
+    "kind": "signal",
+    "description": "Feature, nyhet, anmeldelse, gameplay og andre formater."
+  },
+  {
+    "id": "S_RISK",
+    "label": "Risiko ved omtale",
+    "kind": "signal",
+    "description": "Mulighet for å knytte publikum og eget omdømme til et uferdig prosjekt."
+  },
+  {
+    "id": "S_AI",
+    "label": "Generativ AI som signal",
+    "kind": "signal",
+    "description": "Ulike informanter vurderer mulig generativ AI ulikt."
+  },
+  {
+    "id": "S_SEARCH",
+    "label": "Søkbare egenskaper",
+    "kind": "analytical_concept",
+    "description": "Observerbare trekk før spillet prøves: visuell stil, sjanger, tittel og liknende."
+  },
+  {
+    "id": "S_EXPERIENCE",
+    "label": "Erfaringsbaserte egenskaper",
+    "kind": "analytical_concept",
+    "description": "Spillflyt, responsivitet, mestring, vanskelighetskurve, mekanisk opplevelse."
+  },
+  {
+    "id": "S_TARGET",
+    "label": "Målrettet kontakt",
+    "kind": "signal",
+    "description": "Om kontakt er relevant, tydelig og egnet for mottakeren."
+  },
+  {
+    "id": "S_INFO_STUDIO",
+    "label": "Studiohistorikk / identitet",
+    "kind": "signal",
+    "description": "Utviklerens bakgrunn og tilgjengelige informasjon."
+  },
+  {
+    "id": "S_PRESS_ASSETS",
+    "label": "B-roll / bilde / grafikk",
+    "kind": "signal",
+    "description": "Konkrete audiovisuelle og grafiske ressurser."
+  }
+]

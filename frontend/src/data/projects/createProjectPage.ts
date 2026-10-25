@@ -9,6 +9,8 @@ import type {
 export type ProjectSourceSection = GallerySection | SplitSection
 
 export type ProjectPageDefinition = {
+  excludedGalleryImageIds?: string[]
+  showPreviewImage?: boolean
   startTone?: 'light' | 'dark'
   id: string
   slug: string
@@ -48,9 +50,12 @@ export function createProjectPage(
     introduction: definition.introduction,
     metadata: definition.metadata,
     previewImage,
+    showPreviewImage: definition.showPreviewImage,
     paragraphs: source.detailParagraphs ?? source.paragraphs,
     outcome: source.outcome,
-    gallery: isGallery ? source.images.slice(1) : undefined,
+    gallery: isGallery
+      ? source.images.slice(1).filter(image => !definition.excludedGalleryImageIds?.includes(image.id))
+      : undefined,
   }
 
   return {

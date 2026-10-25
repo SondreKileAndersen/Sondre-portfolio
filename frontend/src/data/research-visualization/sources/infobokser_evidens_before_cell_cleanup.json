@@ -1,0 +1,2063 @@
+{
+  "meta": {
+    "title": "Evidensgrunnlag for infobokser",
+    "source": "Vedlegg B5, s. 97–116; kryssjekket mot master kap. 5–6",
+    "type": "Kodene er forskerens parafraser, ikke ordrette sitater",
+    "totalCells": 28,
+    "directCountMeaning": "Kun unike informantbokstaver i primærkoder, aldri antall koder; Z holdes separat",
+    "notPrimary": "Kontekstkoder må ikke inngå i antall eller fremstilles som direkte utsagn om spesifikk paratekst",
+    "classificationMeaning": {
+      "clear": "Tydelig begrunnet analytisk/case-funksjon, ikke statistisk evidens",
+      "indirect": "Indirekte eller betinget funksjon",
+      "none": "Ingen tilstrekkelig begrunnet forbindelse"
+    },
+    "codeMerges": [
+      {
+        "id": "merge-e-steam-images-video",
+        "retainedCodeId": "B5-163",
+        "sourceCodeIds": [
+          "B5-163",
+          "B5-167"
+        ],
+        "reason": "User requested one code for E retrieving images and video from Steam; preserve the shared researcher discussion.",
+        "affected": [
+          "pressemateriale__trailer:contextCodes",
+          "pressemateriale__steam:primaryCodes",
+          "pressemateriale__presskit:contextCodes"
+        ]
+      }
+    ],
+    "cellEvidenceCorrections": [
+      {
+        "cellId": "pressemateriale__steam",
+        "group": "contextCodes",
+        "removedCodes": [
+          {
+            "codeId": "B5-160",
+            "informant": "C",
+            "text": "ser etter skjermbilder/captures",
+            "evidenceRole": "contextual_not_cell_direct"
+          },
+          {
+            "codeId": "B5-161",
+            "informant": "D",
+            "text": "ønsker bilder i god kvalitet og størrelse",
+            "evidenceRole": "contextual_not_cell_direct"
+          },
+          {
+            "codeId": "B5-162",
+            "informant": "D",
+            "text": "trenger cover art til all dekning",
+            "evidenceRole": "contextual_not_cell_direct"
+          },
+          {
+            "codeId": "B5-170",
+            "informant": "D",
+            "text": "bruker press kits som informasjonskilde",
+            "evidenceRole": "contextual_not_cell_direct"
+          }
+        ],
+        "reason": "User correction: these image-quality, cover-art and press-kit codes do not concern the Steam page. Other cell assignments and original observations remain unchanged."
+      }
+    ]
+  },
+  "aliases": {
+    "Privat kommunikasjon": "Direkte kontakt (e-post)",
+    "Direkte kommunikasjon": "Direkte kontakt (e-post)",
+    "Prosjektsgrunnlag: Offentlig": "Prosjektgrunnlag (vurderingsmoment)",
+    "Offentlige prosjektgrunnlag": "Prosjektgrunnlag (vurderingsmoment)",
+    "Offentlige utvikler-signaler": "Utviklergrunnlag (vurderingsmoment)",
+    "Utviklersignaler": "Utviklergrunnlag (vurderingsmoment)",
+    "Press-kit Generelt": "Pressemateriale (vurderingsmoment)"
+  },
+  "cells": [
+    {
+      "id": "formidlingsrammer__epost",
+      "vurderingsmoment": "Formidlingsrammer",
+      "paratekst": "Direkte kontakt (e-post)",
+      "classification": "clear",
+      "primaryCodes": [
+        {
+          "codeId": "B5-069",
+          "informant": "C",
+          "text": "ser feil målretting som rødt flagg",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-070",
+          "informant": "C",
+          "text": "ønsker mer skreddersydd kommunikasjon",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-068",
+          "informant": "A",
+          "text": "reagerer negativt på kontekstløse e-poster",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-074",
+          "informant": "D",
+          "text": "reagerer negativt på e-poster som er sendt til bedriften, og ikke mot en spesifikk person",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-075",
+          "informant": "D",
+          "text": "reagerer negativt på åpenbar masseutsendelse",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-084",
+          "informant": "E",
+          "text": "avgjør på rundt 10 sekunder om spillet passer",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-086",
+          "informant": "E",
+          "text": "går ofte videre til Steam-side hvis spillet består grunnvurderinger (ikke AI, riktig sjanger)",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-072",
+          "informant": "E",
+          "text": "bryr seg ikke om personlig tilpasset e-post",
+          "evidenceRole": "direct_or_nearest"
+        }
+      ],
+      "contextCodes": [
+        {
+          "codeId": "B5-025",
+          "informant": "C",
+          "text": "anbefaler utviklere forstå og kontakte sjangerrelevante formidlere",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-026",
+          "informant": "C",
+          "text": "ignorerer spill utenfor egen sjangerinteresse",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-034",
+          "informant": "A",
+          "text": "følger med på hva som fungerer på plattformen de produserer for",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-037",
+          "informant": "C",
+          "text": "tilpasser dekningen til publikumsinteresse, men lar dette være sekundært",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-066",
+          "informant": "E",
+          "text": "foretrekker korte og poengterte e-poster",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-076",
+          "informant": "D",
+          "text": "reagerer negativt på lite informasjon i e-post",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-077",
+          "informant": "D",
+          "text": "forventer lenker til nettside eller steam-side",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-079",
+          "informant": "E",
+          "text": "ønsker lenke til Steam-side og andre relevante lenker, vurderer tidsbesparing",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-192",
+          "informant": "Z",
+          "text": "vurderer publikumstilpasning og creator-interesse før annonsering",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-200",
+          "informant": "Z",
+          "text": "bygger liste for creator-outreach etter spilltype, innholdstype og sjanger",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [
+        "A",
+        "C",
+        "D",
+        "E"
+      ],
+      "caseSection": "6.1.1",
+      "interpretiveWarning": "Personlig tilpasning er ikke et universelt krav; E oppgir eksplisitt at personlig e-post ikke er avgjørende."
+    },
+    {
+      "id": "formidlingsrammer__trailer",
+      "vurderingsmoment": "Formidlingsrammer",
+      "paratekst": "Trailer",
+      "classification": "indirect",
+      "primaryCodes": [
+        {
+          "codeId": "B5-091",
+          "informant": "B",
+          "text": "lager opinion/news fra trailerens potensial",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-096",
+          "informant": "B",
+          "text": "kan dekke spill basert på sterk trailer alene",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-097",
+          "informant": "A",
+          "text": "lager feature av mange spill kun ut fra trailer",
+          "evidenceRole": "direct_or_nearest"
+        }
+      ],
+      "contextCodes": [
+        {
+          "codeId": "B5-034",
+          "informant": "A",
+          "text": "følger med på hva som fungerer på plattformen de produserer for",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-038",
+          "informant": "A",
+          "text": "peker ut interessante spill i små features uten å spille dem selv",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-039",
+          "informant": "A",
+          "text": "bygger tydelig vinkling av spill til feature",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-040",
+          "informant": "B",
+          "text": "skiller mellom review og opinion/news",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-041",
+          "informant": "B",
+          "text": "omtaler tidlige spill som nyhet heller enn review",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-042",
+          "informant": "E",
+          "text": "lager primært gameplay-basert innhold, ikke trailer- og nyhetsomtale",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-087",
+          "informant": "C",
+          "text": "foretrekker at spill har video/trailer",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-089",
+          "informant": "D",
+          "text": "vurderer spill ut fra trailer",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-094",
+          "informant": "A",
+          "text": "vektlegger visuell stemning i trailer",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-101",
+          "informant": "A",
+          "text": "vektlegger visuell appell høyt, særlig i puzzle spill",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [
+        "A",
+        "B"
+      ],
+      "caseSection": "6.2.1",
+      "interpretiveWarning": "Trailerens egnethet for format og målgruppe er en analytisk slutning, ikke direkte uttalt for alle."
+    },
+    {
+      "id": "formidlingsrammer__steam",
+      "vurderingsmoment": "Formidlingsrammer",
+      "paratekst": "Steam-side",
+      "classification": "clear",
+      "primaryCodes": [
+        {
+          "codeId": "B5-086",
+          "informant": "E",
+          "text": "går ofte videre til Steam-side hvis spillet består grunnvurderinger (ikke AI, riktig sjanger)",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-111",
+          "informant": "D",
+          "text": "ser på spillets steam-side",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-112",
+          "informant": "D",
+          "text": "vurderer spill ut fra skjermbilder, beskrivelse og lanseringsdato",
+          "evidenceRole": "direct_or_nearest"
+        }
+      ],
+      "contextCodes": [
+        {
+          "codeId": "B5-026",
+          "informant": "C",
+          "text": "ignorerer spill utenfor egen sjangerinteresse",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-028",
+          "informant": "D",
+          "text": "nedprioriterer enkelte sjangre",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-040",
+          "informant": "B",
+          "text": "skiller mellom review og opinion/news",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-042",
+          "informant": "E",
+          "text": "lager primært gameplay-basert innhold, ikke trailer- og nyhetsomtale",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-044",
+          "informant": "B",
+          "text": "vil verifisere spillbarhet før omtale",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-045",
+          "informant": "D",
+          "text": "dekker ikke spill uten demo",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-048",
+          "informant": "E",
+          "text": "venter vanligvis på spillbar demo",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-049",
+          "informant": "E",
+          "text": "dekker aldri ikke-spillbare spill på hovedplattform",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-050",
+          "informant": "E",
+          "text": "ser ikke videoplattformen som reklameflate",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-115",
+          "informant": "C",
+          "text": "leser beskrivelse av spillet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-116",
+          "informant": "E",
+          "text": "bruker tekstlig info for å forstå spillet",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [
+        "D",
+        "E"
+      ],
+      "caseSection": "6.2.2",
+      "interpretiveWarning": "Kombinerer direkte observasjon av Steam med teoretisk/case-basert vurdering av sjanger og plattform."
+    },
+    {
+      "id": "formidlingsrammer__project_site",
+      "vurderingsmoment": "Formidlingsrammer",
+      "paratekst": "Prosjektnettside",
+      "classification": "indirect",
+      "primaryCodes": [],
+      "contextCodes": [
+        {
+          "codeId": "B5-077",
+          "informant": "D",
+          "text": "forventer lenker til nettside eller steam-side",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-079",
+          "informant": "E",
+          "text": "ønsker lenke til Steam-side og andre relevante lenker, vurderer tidsbesparing",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-115",
+          "informant": "C",
+          "text": "leser beskrivelse av spillet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-116",
+          "informant": "E",
+          "text": "bruker tekstlig info for å forstå spillet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-111",
+          "informant": "D",
+          "text": "ser på spillets steam-side",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-112",
+          "informant": "D",
+          "text": "vurderer spill ut fra skjermbilder, beskrivelse og lanseringsdato",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [],
+      "caseSection": "6.2.2",
+      "interpretiveWarning": "Ingen informant omtaler Cosmic Anchor-prosjektnettsiden direkte. Koder viser etterspurt informasjon, ikke direkte bruk av denne siden."
+    },
+    {
+      "id": "formidlingsrammer__developer_site",
+      "vurderingsmoment": "Formidlingsrammer",
+      "paratekst": "Utviklerside",
+      "classification": "none",
+      "primaryCodes": [],
+      "contextCodes": [],
+      "uniquePrimaryInformants": [],
+      "caseSection": "6.3.2",
+      "interpretiveWarning": "Ingen tilstrekkelig avgrenset forbindelse i dette vurderingsmomentet."
+    },
+    {
+      "id": "formidlingsrammer__activity",
+      "vurderingsmoment": "Formidlingsrammer",
+      "paratekst": "Synlig aktivitet på utvikling",
+      "classification": "none",
+      "primaryCodes": [],
+      "contextCodes": [],
+      "uniquePrimaryInformants": [],
+      "caseSection": "6.3.4",
+      "interpretiveWarning": "Aktivitet brukes som utviklersignal, ikke direkte kanal-/sjangerrelevans."
+    },
+    {
+      "id": "formidlingsrammer__presskit",
+      "vurderingsmoment": "Formidlingsrammer",
+      "paratekst": "Pressepakke",
+      "classification": "none",
+      "primaryCodes": [],
+      "contextCodes": [
+        {
+          "codeId": "B5-153",
+          "informant": "E",
+          "text": "vurderer dekkbarhet gjennom thumbnail-potensial",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-160",
+          "informant": "C",
+          "text": "ser etter skjermbilder/captures",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-166",
+          "informant": "A",
+          "text": "ser B-roll som essensielt for videoomtale",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [],
+      "caseSection": "5.4.1",
+      "interpretiveWarning": "Materialet skal passe formidlingsformat, men det gjelder primært produksjonsvilkåret pressemateriale."
+    },
+    {
+      "id": "prosjektgrunnlag__epost",
+      "vurderingsmoment": "Prosjektgrunnlag",
+      "paratekst": "Direkte kontakt (e-post)",
+      "classification": "clear",
+      "primaryCodes": [
+        {
+          "codeId": "B5-058",
+          "informant": "A",
+          "text": "foretrekker GIF i første kontakt",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-059",
+          "informant": "E",
+          "text": "e-posten bør fange oppmerksomheten raskt, med f.eks. bilder eller GIF",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-060",
+          "informant": "A",
+          "text": "foretrekker umiddelbar visuell presentasjon fremfor lang tekst",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-064",
+          "informant": "A",
+          "text": "kort pirrende beskrivelse skaper interesse",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-076",
+          "informant": "D",
+          "text": "reagerer negativt på lite informasjon i e-post",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-077",
+          "informant": "D",
+          "text": "forventer lenker til nettside eller steam-side",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-078",
+          "informant": "D",
+          "text": "e-post med manglende info svekker inntrykket",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-079",
+          "informant": "E",
+          "text": "ønsker lenke til Steam-side og andre relevante lenker, vurderer tidsbesparing",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-085",
+          "informant": "E",
+          "text": "e-postkvalitet påvirker inntrykket av spillet",
+          "evidenceRole": "direct_or_nearest"
+        }
+      ],
+      "contextCodes": [
+        {
+          "codeId": "B5-087",
+          "informant": "C",
+          "text": "foretrekker at spill har video/trailer",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-093",
+          "informant": "A",
+          "text": "bruker trailer som informasjonsgrunnlag",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-095",
+          "informant": "B",
+          "text": "trenger nok informasjon i trailer til å lage innhold",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [
+        "A",
+        "D",
+        "E"
+      ],
+      "caseSection": "6.1.1 og 6.2",
+      "interpretiveWarning": "E-posten gir første bilde av spillet, men koder om lenker til Steam dokumenterer ikke i seg selv e-postens fulle prosjektinformasjon."
+    },
+    {
+      "id": "prosjektgrunnlag__trailer",
+      "vurderingsmoment": "Prosjektgrunnlag",
+      "paratekst": "Trailer",
+      "classification": "clear",
+      "primaryCodes": [
+        {
+          "codeId": "B5-087",
+          "informant": "C",
+          "text": "foretrekker at spill har video/trailer",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-088",
+          "informant": "A",
+          "text": "ser på alle trailere som er utvalgt av engasjerte følgere",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-089",
+          "informant": "D",
+          "text": "vurderer spill ut fra trailer",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-090",
+          "informant": "B",
+          "text": "mangler trailer og lignende er ikke avgjørende røde flagg",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-091",
+          "informant": "B",
+          "text": "lager opinion/news fra trailerens potensial",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-092",
+          "informant": "A",
+          "text": "vurderer teknisk- og generell kvalitet gjennom trailer",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-093",
+          "informant": "A",
+          "text": "bruker trailer som informasjonsgrunnlag",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-094",
+          "informant": "A",
+          "text": "vektlegger visuell stemning i trailer",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-095",
+          "informant": "B",
+          "text": "trenger nok informasjon i trailer til å lage innhold",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-096",
+          "informant": "B",
+          "text": "kan dekke spill basert på sterk trailer alene",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-097",
+          "informant": "A",
+          "text": "lager feature av mange spill kun ut fra trailer",
+          "evidenceRole": "direct_or_nearest"
+        }
+      ],
+      "contextCodes": [
+        {
+          "codeId": "B5-098",
+          "informant": "A",
+          "text": "vurderer spill gjennom visuelt førsteinntrykk",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-099",
+          "informant": "A",
+          "text": "stopper ved svakt visuelt inntrykk",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-100",
+          "informant": "A",
+          "text": "bruker visuelt uttrykk som kvalitetssignal",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-101",
+          "informant": "A",
+          "text": "vektlegger visuell appell høyt, særlig i puzzle spill",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-102",
+          "informant": "A",
+          "text": "verdsetter stemningsbærende kunststil framfor kompleks grafikk",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-103",
+          "informant": "B",
+          "text": "ser etter om spillet virker polert nok til utgivelse",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-104",
+          "informant": "C",
+          "text": "tiltrekkes av spill som er merkelige og visuelt slående",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "caseSection": "5.2.2 og 6.2.1",
+      "interpretiveWarning": "Visuell appell-kodene gjelder ikke alltid trailer spesifikt; vis dem separat som kontekst, ikke som direkte trailerkoder."
+    },
+    {
+      "id": "prosjektgrunnlag__steam",
+      "vurderingsmoment": "Prosjektgrunnlag",
+      "paratekst": "Steam-side",
+      "classification": "clear",
+      "primaryCodes": [
+        {
+          "codeId": "B5-086",
+          "informant": "E",
+          "text": "går ofte videre til Steam-side hvis spillet består grunnvurderinger (ikke AI, riktig sjanger)",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-111",
+          "informant": "D",
+          "text": "ser på spillets steam-side",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-112",
+          "informant": "D",
+          "text": "vurderer spill ut fra skjermbilder, beskrivelse og lanseringsdato",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-114",
+          "informant": "B",
+          "text": "ser på ufullstendig “About this game” på steam som rødt flagg",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-120",
+          "informant": "E",
+          "text": "vurderer abandonware gjennom Steam-tekst",
+          "evidenceRole": "direct_or_nearest"
+        }
+      ],
+      "contextCodes": [
+        {
+          "codeId": "B5-108",
+          "informant": "A",
+          "text": "hopper over spill med generisk tittel",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-109",
+          "informant": "A",
+          "text": "vurderer spilltittel som første estetiske signal",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-115",
+          "informant": "C",
+          "text": "leser beskrivelse av spillet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-116",
+          "informant": "E",
+          "text": "bruker tekstlig info for å forstå spillet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-119",
+          "informant": "C",
+          "text": "søker mer informasjon ved usikker spillstatus",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-121",
+          "informant": "E",
+          "text": "ser etter tegn på at utviklere vil holde fast ved prosjektet",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [
+        "B",
+        "D",
+        "E"
+      ],
+      "caseSection": "5.2.3 og 6.2.2",
+      "interpretiveWarning": "Generelle koder om beskrivelse/tekst er ikke nødvendigvis spesifikt knyttet til Steam."
+    },
+    {
+      "id": "prosjektgrunnlag__project_site",
+      "vurderingsmoment": "Prosjektgrunnlag",
+      "paratekst": "Prosjektnettside",
+      "classification": "clear",
+      "primaryCodes": [],
+      "contextCodes": [
+        {
+          "codeId": "B5-112",
+          "informant": "D",
+          "text": "vurderer spill ut fra skjermbilder, beskrivelse og lanseringsdato",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-115",
+          "informant": "C",
+          "text": "leser beskrivelse av spillet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-116",
+          "informant": "E",
+          "text": "bruker tekstlig info for å forstå spillet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-093",
+          "informant": "A",
+          "text": "bruker trailer som informasjonsgrunnlag",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-094",
+          "informant": "A",
+          "text": "vektlegger visuell stemning i trailer",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [],
+      "caseSection": "6.2.2",
+      "interpretiveWarning": "Tydelig casetolkning, men null koder som eksplisitt handler om akkurat denne nettsiden. IKKE vis kodeantall som om informantene vurderte den."
+    },
+    {
+      "id": "prosjektgrunnlag__developer_site",
+      "vurderingsmoment": "Prosjektgrunnlag",
+      "paratekst": "Utviklerside",
+      "classification": "none",
+      "primaryCodes": [],
+      "contextCodes": [
+        {
+          "codeId": "B5-132",
+          "informant": "B",
+          "text": "sjekker studiohistorie og team-sammensetning",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-133",
+          "informant": "B",
+          "text": "ønsker info om studio",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-134",
+          "informant": "C",
+          "text": "vil vite mer om utvikleren bak spillet",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [],
+      "caseSection": "6.3.2",
+      "interpretiveWarning": "Utviklerinformasjon hører primært til utviklergrunnlag."
+    },
+    {
+      "id": "prosjektgrunnlag__activity",
+      "vurderingsmoment": "Prosjektgrunnlag",
+      "paratekst": "Synlig aktivitet på utvikling",
+      "classification": "indirect",
+      "primaryCodes": [],
+      "contextCodes": [
+        {
+          "codeId": "B5-142",
+          "informant": "C",
+          "text": "ser etter tegn på aktiv utvikling",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-143",
+          "informant": "D",
+          "text": "krever studio-aktivitet for å vurdere dekning",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-139",
+          "informant": "B",
+          "text": "ønsker lenker til sosiale medier for å se aktivitet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-140",
+          "informant": "B",
+          "text": "ser etter plan for oppdatering og vedlikehold",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-141",
+          "informant": "B",
+          "text": "ønsker roadmap til oppfølging og oppdatering",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-183",
+          "informant": "Z",
+          "text": "mener synliggjøring av prosess og motivasjon bygger troverdighet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-188",
+          "informant": "Z",
+          "text": "kombinerer spillfokusert innhold med humaniserende prosessinnhold",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [],
+      "caseSection": "2.2 og 6.3.4",
+      "interpretiveWarning": "Aktivitet gir tegn på fremdrift; konkret gameplay fra oppdateringer er ikke direkte kartlagt som prosjektgrunnlag i kodene."
+    },
+    {
+      "id": "prosjektgrunnlag__presskit",
+      "vurderingsmoment": "Prosjektgrunnlag",
+      "paratekst": "Pressepakke",
+      "classification": "indirect",
+      "primaryCodes": [
+        {
+          "codeId": "B5-170",
+          "informant": "D",
+          "text": "bruker press kits som informasjonskilde",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-175",
+          "informant": "D",
+          "text": "bruker press kit til å forstå hvordan utvikleren vil presentere spillet",
+          "evidenceRole": "direct_or_nearest"
+        }
+      ],
+      "contextCodes": [
+        {
+          "codeId": "B5-160",
+          "informant": "C",
+          "text": "ser etter skjermbilder/captures",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-168",
+          "informant": "A",
+          "text": "ønsker karakterinformasjon i presskit",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-169",
+          "informant": "B",
+          "text": "ønsker faktaark om spill",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-171",
+          "informant": "D",
+          "text": "ønsker plattform- og distribueringsinformasjon",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-205",
+          "informant": "Z",
+          "text": "sender B-roll, screenshots og annet gjenbrukbart materiale til short-form creators",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-208",
+          "informant": "Z",
+          "text": "ser utvidet press kit som screenshots, logo, copy og B-roll",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [
+        "D"
+      ],
+      "caseSection": "6.4",
+      "interpretiveWarning": "Pressepakken har prosjektinnhold, men er først og fremst definert som arbeidsmateriale."
+    },
+    {
+      "id": "utviklergrunnlag__epost",
+      "vurderingsmoment": "Utviklergrunnlag",
+      "paratekst": "Direkte kontakt (e-post)",
+      "classification": "clear",
+      "primaryCodes": [
+        {
+          "codeId": "B5-051",
+          "informant": "A",
+          "text": "Vurderer utviklerens erfaring gjennom hvordan første kontakt er utformet",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-067",
+          "informant": "A",
+          "text": "opplever at mange utviklere ikke har tenkt nok på første kommunikasjon",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-068",
+          "informant": "A",
+          "text": "reagerer negativt på kontekstløse e-poster",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-069",
+          "informant": "C",
+          "text": "ser feil målretting som rødt flagg",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-070",
+          "informant": "C",
+          "text": "ønsker mer skreddersydd kommunikasjon",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-071",
+          "informant": "C",
+          "text": "verdsetter naturlig og personlig tone",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-073",
+          "informant": "C",
+          "text": "reagerer negativt på dupliserte masseutsendelser",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-074",
+          "informant": "D",
+          "text": "reagerer negativt på e-poster som er sendt til bedriften, og ikke mot en spesifikk person",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-075",
+          "informant": "D",
+          "text": "reagerer negativt på åpenbar masseutsendelse",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-076",
+          "informant": "D",
+          "text": "reagerer negativt på lite informasjon i e-post",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-078",
+          "informant": "D",
+          "text": "e-post med manglende info svekker inntrykket",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-082",
+          "informant": "E",
+          "text": "opplever at utviklere tar kontakt når spillet er klart til å vises (Drøfting: som kan si at hvis de blir kontaktet av spill som ikke er det, så sender det signal om at utviklerne har lav standard, og er useriøse)",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-083",
+          "informant": "E",
+          "text": "mener indieutviklere har blitt bedre på e-poster",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-085",
+          "informant": "E",
+          "text": "e-postkvalitet påvirker inntrykket av spillet",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-151",
+          "informant": "A",
+          "text": "vurderer utviklerens erfaring gjennom hvordan første kontakt er utformet",
+          "evidenceRole": "direct_or_nearest"
+        }
+      ],
+      "contextCodes": [
+        {
+          "codeId": "B5-063",
+          "informant": "A",
+          "text": "reagerer negativt på antatt interesse",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-072",
+          "informant": "E",
+          "text": "bryr seg ikke om personlig tilpasset e-post",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-080",
+          "informant": "B",
+          "text": "ignorerer e-poster, fra tidligere prosjekter, med lite å dekke",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-084",
+          "informant": "E",
+          "text": "avgjør på rundt 10 sekunder om spillet passer",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-086",
+          "informant": "E",
+          "text": "går ofte videre til Steam-side hvis spillet består grunnvurderinger (ikke AI, riktig sjanger)",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [
+        "A",
+        "C",
+        "D",
+        "E"
+      ],
+      "caseSection": "5.3.1 og 6.3.1",
+      "interpretiveWarning": "Kodene om negative signaler beskriver mulige risikotegn. Drøftingsparentesen i kode 81 er forskerens hypotese, ikke E-sitat."
+    },
+    {
+      "id": "utviklergrunnlag__trailer",
+      "vurderingsmoment": "Utviklergrunnlag",
+      "paratekst": "Trailer",
+      "classification": "none",
+      "primaryCodes": [],
+      "contextCodes": [
+        {
+          "codeId": "B5-090",
+          "informant": "B",
+          "text": "mangler trailer og lignende er ikke avgjørende røde flagg",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-092",
+          "informant": "A",
+          "text": "vurderer teknisk- og generell kvalitet gjennom trailer",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-093",
+          "informant": "A",
+          "text": "bruker trailer som informasjonsgrunnlag",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-100",
+          "informant": "A",
+          "text": "bruker visuelt uttrykk som kvalitetssignal",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-103",
+          "informant": "B",
+          "text": "ser etter om spillet virker polert nok til utgivelse",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-181",
+          "informant": "Z",
+          "text": "mener screenshots alene gir begrenset troverdighet",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [],
+      "caseSection": "6.2.1",
+      "interpretiveWarning": "Mulig kvalitetssignal, men fravær av trailer som utviklersignal støttes hovedsakelig av bransjekilder og praksistolkning."
+    },
+    {
+      "id": "utviklergrunnlag__steam",
+      "vurderingsmoment": "Utviklergrunnlag",
+      "paratekst": "Steam-side",
+      "classification": "indirect",
+      "primaryCodes": [
+        {
+          "codeId": "B5-120",
+          "informant": "E",
+          "text": "vurderer abandonware gjennom Steam-tekst",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-121",
+          "informant": "E",
+          "text": "ser etter tegn på at utviklere vil holde fast ved prosjektet",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-148",
+          "informant": "E",
+          "text": "sjekker Steam-diskusjoner og community hub",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-149",
+          "informant": "E",
+          "text": "bruker utviklersvar som vurderingsgrunnlag",
+          "evidenceRole": "direct_or_nearest"
+        }
+      ],
+      "contextCodes": [
+        {
+          "codeId": "B5-114",
+          "informant": "B",
+          "text": "ser på ufullstendig “About this game” på steam som rødt flagg",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-119",
+          "informant": "C",
+          "text": "søker mer informasjon ved usikker spillstatus",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-122",
+          "informant": "E",
+          "text": "ser abandonware som risikable å dele for publikum og egen troverdighet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-123",
+          "informant": "E",
+          "text": "unngår å dekke early access-spill som kan bli droppet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-132",
+          "informant": "B",
+          "text": "sjekker studiohistorie og team-sammensetning",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-133",
+          "informant": "B",
+          "text": "ønsker info om studio",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [
+        "E"
+      ],
+      "caseSection": "6.3.2 og 6.3.3",
+      "interpretiveWarning": "Steam-tekst og community kan vise oppfølging, men dette er ikke det samme som faktisk bruk av Steam-utviklerside."
+    },
+    {
+      "id": "utviklergrunnlag__project_site",
+      "vurderingsmoment": "Utviklergrunnlag",
+      "paratekst": "Prosjektnettside",
+      "classification": "indirect",
+      "primaryCodes": [
+        {
+          "codeId": "B5-135",
+          "informant": "D",
+          "text": "sjekker utviklerens sosiale medier og nettside",
+          "evidenceRole": "direct_or_nearest"
+        }
+      ],
+      "contextCodes": [
+        {
+          "codeId": "B5-132",
+          "informant": "B",
+          "text": "sjekker studiohistorie og team-sammensetning",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-133",
+          "informant": "B",
+          "text": "ønsker info om studio",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-134",
+          "informant": "C",
+          "text": "vil vite mer om utvikleren bak spillet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-136",
+          "informant": "E",
+          "text": "undersøker utviklerne før dekning",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-137",
+          "informant": "A",
+          "text": "blir mistenksom ved lite studioinfo",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-138",
+          "informant": "D",
+          "text": "ser ikke kort studiohistorikk som problem hos indieutviklere",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-147",
+          "informant": "C",
+          "text": "undersøker utviklers sosiale medier, blogg eller utviklerutsagn",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-183",
+          "informant": "Z",
+          "text": "mener synliggjøring av prosess og motivasjon bygger troverdighet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-184",
+          "informant": "Z",
+          "text": "mener synlig team og humanisering av prosjektet styrker inntrykket og troverdigheten",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [
+        "D"
+      ],
+      "caseSection": "6.3.2 og 6.3.3",
+      "interpretiveWarning": "Nettside-koden gjelder utviklerens nettsted generelt, ikke prosjektundersiden separat; funksjonen avhenger særlig av lenker videre."
+    },
+    {
+      "id": "utviklergrunnlag__developer_site",
+      "vurderingsmoment": "Utviklergrunnlag",
+      "paratekst": "Utviklerside",
+      "classification": "clear",
+      "primaryCodes": [
+        {
+          "codeId": "B5-132",
+          "informant": "B",
+          "text": "sjekker studiohistorie og team-sammensetning",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-133",
+          "informant": "B",
+          "text": "ønsker info om studio",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-134",
+          "informant": "C",
+          "text": "vil vite mer om utvikleren bak spillet",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-135",
+          "informant": "D",
+          "text": "sjekker utviklerens sosiale medier og nettside",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-136",
+          "informant": "E",
+          "text": "undersøker utviklerne før dekning",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-137",
+          "informant": "A",
+          "text": "blir mistenksom ved lite studioinfo",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-138",
+          "informant": "D",
+          "text": "ser ikke kort studiohistorikk som problem hos indieutviklere",
+          "evidenceRole": "direct_or_nearest"
+        }
+      ],
+      "contextCodes": [
+        {
+          "codeId": "B5-150",
+          "informant": "A",
+          "text": "vektlegger utvikler- eller utgivers troverdighet/kredibilitet før omtale",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-152",
+          "informant": "A",
+          "text": "unngår å promotere problematiske utviklere",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-183",
+          "informant": "Z",
+          "text": "mener synliggjøring av prosess og motivasjon bygger troverdighet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-184",
+          "informant": "Z",
+          "text": "mener synlig team og humanisering av prosjektet styrker inntrykket og troverdigheten",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-185",
+          "informant": "Z",
+          "text": "knytter vaporwaremistanke til anonyme og ansiktsløse utviklere",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-187",
+          "informant": "Z",
+          "text": "mener åpenhet fra utvikler om prosess kan bygge tillit uten fullt navn eller ansikt",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "caseSection": "6.3.2",
+      "interpretiveWarning": "Kodene beskriver informasjonsbehov og vurdering av utviklere generelt; ingen har vurdert casets konkrete utviklerside."
+    },
+    {
+      "id": "utviklergrunnlag__activity",
+      "vurderingsmoment": "Utviklergrunnlag",
+      "paratekst": "Synlig aktivitet på utvikling",
+      "classification": "clear",
+      "primaryCodes": [
+        {
+          "codeId": "B5-139",
+          "informant": "B",
+          "text": "ønsker lenker til sosiale medier for å se aktivitet",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-140",
+          "informant": "B",
+          "text": "ser etter plan for oppdatering og vedlikehold",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-141",
+          "informant": "B",
+          "text": "ønsker roadmap til oppfølging og oppdatering",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-142",
+          "informant": "C",
+          "text": "ser etter tegn på aktiv utvikling",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-143",
+          "informant": "D",
+          "text": "krever studio-aktivitet for å vurdere dekning",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-144",
+          "informant": "E",
+          "text": "ser på oppfølging av community som indikator på oppfølging av spillets utvikling",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-145",
+          "informant": "B",
+          "text": "vurderer signaler fra Discord og community-engasjement",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-146",
+          "informant": "B",
+          "text": "ønsker lenker til sosiale medier",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-147",
+          "informant": "C",
+          "text": "undersøker utviklers sosiale medier, blogg eller utviklerutsagn",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-148",
+          "informant": "E",
+          "text": "sjekker Steam-diskusjoner og community hub",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-149",
+          "informant": "E",
+          "text": "bruker utviklersvar som vurderingsgrunnlag",
+          "evidenceRole": "direct_or_nearest"
+        }
+      ],
+      "contextCodes": [
+        {
+          "codeId": "B5-118",
+          "informant": "E",
+          "text": "mener tidlige prosjekter ofte blir forlatt",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-119",
+          "informant": "C",
+          "text": "søker mer informasjon ved usikker spillstatus",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-120",
+          "informant": "E",
+          "text": "vurderer abandonware gjennom Steam-tekst",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-121",
+          "informant": "E",
+          "text": "ser etter tegn på at utviklere vil holde fast ved prosjektet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-122",
+          "informant": "E",
+          "text": "ser abandonware som risikable å dele for publikum og egen troverdighet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-123",
+          "informant": "E",
+          "text": "unngår å dekke early access-spill som kan bli droppet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-182",
+          "informant": "Z",
+          "text": "mener rene devlogs alene ofte ikke engasjerer publikum",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-183",
+          "informant": "Z",
+          "text": "mener synliggjøring av prosess og motivasjon bygger troverdighet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-187",
+          "informant": "Z",
+          "text": "mener åpenhet fra utvikler om prosess kan bygge tillit uten fullt navn eller ansikt",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-188",
+          "informant": "Z",
+          "text": "kombinerer spillfokusert innhold med humaniserende prosessinnhold",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-189",
+          "informant": "Z",
+          "text": "mener vaporware-skepsis/frykt ikke er et stort eller daglig problem i dag",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "caseSection": "5.3 og 6.3.4",
+      "interpretiveWarning": "Sterk empirisk støtte for signaltypen, men oppgaven sier at denne aktiviteten er foreløpig begrenset i caset."
+    },
+    {
+      "id": "utviklergrunnlag__presskit",
+      "vurderingsmoment": "Utviklergrunnlag",
+      "paratekst": "Pressepakke",
+      "classification": "none",
+      "primaryCodes": [],
+      "contextCodes": [
+        {
+          "codeId": "B5-175",
+          "informant": "D",
+          "text": "bruker press kit til å forstå hvordan utvikleren vil presentere spillet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-176",
+          "informant": "D",
+          "text": "Konsekvens av mangler i press-kit er merarbeid for spillformidleren, og dårlig muligheter for representasjon",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-209",
+          "informant": "Z",
+          "text": "mener mottakere vil ha rask og enkel tilgang til materiell",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [],
+      "caseSection": "6.4",
+      "interpretiveWarning": "Tilgjengelig og ordnet pakke kan tolkes som profesjonalitet, men det er ikke et tydelig selvstendig utviklergrunnlag."
+    },
+    {
+      "id": "pressemateriale__epost",
+      "vurderingsmoment": "Pressemateriale",
+      "paratekst": "Direkte kontakt (e-post)",
+      "classification": "indirect",
+      "primaryCodes": [
+        {
+          "codeId": "B5-062",
+          "informant": "C",
+          "text": "foretrekker godt strukturert presskit i e-post",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-077",
+          "informant": "D",
+          "text": "forventer lenker til nettside eller steam-side",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-079",
+          "informant": "E",
+          "text": "ønsker lenke til Steam-side og andre relevante lenker, vurderer tidsbesparing",
+          "evidenceRole": "direct_or_nearest"
+        }
+      ],
+      "contextCodes": [
+        {
+          "codeId": "B5-172",
+          "informant": "A",
+          "text": "verdsetter materiell som sparer arbeidstid",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-173",
+          "informant": "C",
+          "text": "vil ha tilgang til presskit",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-176",
+          "informant": "D",
+          "text": "Konsekvens av mangler i press-kit er merarbeid for spillformidleren, og dårlig muligheter for representasjon",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-209",
+          "informant": "Z",
+          "text": "mener mottakere vil ha rask og enkel tilgang til materiell",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [
+        "C",
+        "D",
+        "E"
+      ],
+      "caseSection": "6.1.1 og 6.4",
+      "interpretiveWarning": "E-posten formidler lenker/tilgang, den er ikke i seg selv hovedlageret for produksjonsmateriale."
+    },
+    {
+      "id": "pressemateriale__trailer",
+      "vurderingsmoment": "Pressemateriale",
+      "paratekst": "Trailer",
+      "classification": "clear",
+      "primaryCodes": [
+        {
+          "codeId": "B5-091",
+          "informant": "B",
+          "text": "lager opinion/news fra trailerens potensial",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-095",
+          "informant": "B",
+          "text": "trenger nok informasjon i trailer til å lage innhold",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-096",
+          "informant": "B",
+          "text": "kan dekke spill basert på sterk trailer alene",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-097",
+          "informant": "A",
+          "text": "lager feature av mange spill kun ut fra trailer",
+          "evidenceRole": "direct_or_nearest"
+        }
+      ],
+      "contextCodes": [
+        {
+          "codeId": "B5-165",
+          "informant": "A",
+          "text": "ønsker høyoppløst B-roll",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-166",
+          "informant": "A",
+          "text": "ser B-roll som essensielt for videoomtale",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-163",
+          "informant": "E",
+          "text": "henter bilder og video direkte fra Steam-siden (Drøfting: interessant opp mot en informant som mente at det kunne gi dårlig materiale og dårlig representasjon av spillet. Konsekvens utviklere må være klar over)",
+          "evidenceRole": "contextual_not_cell_direct",
+          "sourceCodeIds": [
+            "B5-163",
+            "B5-167"
+          ],
+          "sourceObservationIds": [
+            "OBS-0173",
+            "OBS-0177"
+          ]
+        },
+        {
+          "codeId": "B5-205",
+          "informant": "Z",
+          "text": "sender B-roll, screenshots og annet gjenbrukbart materiale til short-form creators",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-206",
+          "informant": "Z",
+          "text": "prioriterer å ha B-roll tilgjengelig tidlig, grunnlag for creator innholdsproduksjon",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-207",
+          "informant": "Z",
+          "text": "sørger for at B-roll er rent og av høy kvalitet",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [
+        "A",
+        "B"
+      ],
+      "caseSection": "3.2.3 og 5.4.1",
+      "interpretiveWarning": "Skille mellom ferdig trailer som gjenbrukbar video og B-roll som redaksjonelt råmateriale; disse er ikke identiske."
+    },
+    {
+      "id": "pressemateriale__steam",
+      "vurderingsmoment": "Pressemateriale",
+      "paratekst": "Steam-side",
+      "classification": "indirect",
+      "primaryCodes": [
+        {
+          "codeId": "B5-163",
+          "informant": "E",
+          "text": "henter bilder og video direkte fra Steam-siden (Drøfting: interessant opp mot en informant som mente at det kunne gi dårlig materiale og dårlig representasjon av spillet. Konsekvens utviklere må være klar over)",
+          "evidenceRole": "direct_or_nearest",
+          "sourceCodeIds": [
+            "B5-163",
+            "B5-167"
+          ],
+          "sourceObservationIds": [
+            "OBS-0173",
+            "OBS-0177"
+          ]
+        }
+      ],
+      "contextCodes": [
+        {
+          "codeId": "B5-177",
+          "informant": "E",
+          "text": "bruker sjelden press kits",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [
+        "E"
+      ],
+      "caseSection": "5.4.3 og 6.4",
+      "interpretiveWarning": "E henter bilder/video fra Steam; annen informant påpeker at alternative kilder kan gi svak kvalitet."
+    },
+    {
+      "id": "pressemateriale__project_site",
+      "vurderingsmoment": "Pressemateriale",
+      "paratekst": "Prosjektnettside",
+      "classification": "indirect",
+      "primaryCodes": [],
+      "contextCodes": [
+        {
+          "codeId": "B5-062",
+          "informant": "C",
+          "text": "foretrekker godt strukturert presskit i e-post",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-173",
+          "informant": "C",
+          "text": "vil ha tilgang til presskit",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-174",
+          "informant": "D",
+          "text": "ser press kits som svært nyttige",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-176",
+          "informant": "D",
+          "text": "Konsekvens av mangler i press-kit er merarbeid for spillformidleren, og dårlig muligheter for representasjon",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-209",
+          "informant": "Z",
+          "text": "mener mottakere vil ha rask og enkel tilgang til materiell",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [],
+      "caseSection": "6.4",
+      "interpretiveWarning": "Nettsiden gir lenke videre til pressepakken; ingen direkte informantkoder om prosjektnettsiden."
+    },
+    {
+      "id": "pressemateriale__developer_site",
+      "vurderingsmoment": "Pressemateriale",
+      "paratekst": "Utviklerside",
+      "classification": "none",
+      "primaryCodes": [],
+      "contextCodes": [],
+      "uniquePrimaryInformants": [],
+      "caseSection": "6.3.2",
+      "interpretiveWarning": "Ingen dokumentert sentral funksjon som arbeidsmateriale."
+    },
+    {
+      "id": "pressemateriale__activity",
+      "vurderingsmoment": "Pressemateriale",
+      "paratekst": "Synlig aktivitet på utvikling",
+      "classification": "none",
+      "primaryCodes": [],
+      "contextCodes": [
+        {
+          "codeId": "B5-205",
+          "informant": "Z",
+          "text": "sender B-roll, screenshots og annet gjenbrukbart materiale til short-form creators",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-206",
+          "informant": "Z",
+          "text": "prioriterer å ha B-roll tilgjengelig tidlig, grunnlag for creator innholdsproduksjon",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-207",
+          "informant": "Z",
+          "text": "sørger for at B-roll er rent og av høy kvalitet",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [],
+      "caseSection": "6.3.4",
+      "interpretiveWarning": "Synlige utviklingsoppdateringer er ikke nødvendigvis nedlastbart, publiserbart pressemateriale."
+    },
+    {
+      "id": "pressemateriale__presskit",
+      "vurderingsmoment": "Pressemateriale",
+      "paratekst": "Pressepakke",
+      "classification": "clear",
+      "primaryCodes": [
+        {
+          "codeId": "B5-062",
+          "informant": "C",
+          "text": "foretrekker godt strukturert presskit i e-post",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-153",
+          "informant": "E",
+          "text": "vurderer dekkbarhet gjennom thumbnail-potensial",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-154",
+          "informant": "E",
+          "text": "foretrekker art fremfor skjermbilder pga. thumbnail potensialet",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-155",
+          "informant": "E",
+          "text": "foretrekker bilder med lite visuelt kaos og tydelig motiv",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-156",
+          "informant": "A",
+          "text": "ønsker isolerte logoer til thumbnails",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-157",
+          "informant": "A",
+          "text": "ønsker frilagte karakterbilder",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-158",
+          "informant": "B",
+          "text": "ønsker branding kit",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-159",
+          "informant": "B",
+          "text": "ønsker logoer og key art i brukbare formater",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-160",
+          "informant": "C",
+          "text": "ser etter skjermbilder/captures",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-161",
+          "informant": "D",
+          "text": "ønsker bilder i god kvalitet og størrelse",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-162",
+          "informant": "D",
+          "text": "trenger cover art til all dekning",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-164",
+          "informant": "E",
+          "text": "liker flyttbare PNG-elementer",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-165",
+          "informant": "A",
+          "text": "ønsker høyoppløst B-roll",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-166",
+          "informant": "A",
+          "text": "ser B-roll som essensielt for videoomtale",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-168",
+          "informant": "A",
+          "text": "ønsker karakterinformasjon i presskit",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-169",
+          "informant": "B",
+          "text": "ønsker faktaark om spill",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-170",
+          "informant": "D",
+          "text": "bruker press kits som informasjonskilde",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-171",
+          "informant": "D",
+          "text": "ønsker plattform- og distribueringsinformasjon",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-172",
+          "informant": "A",
+          "text": "verdsetter materiell som sparer arbeidstid",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-173",
+          "informant": "C",
+          "text": "vil ha tilgang til presskit",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-174",
+          "informant": "D",
+          "text": "ser press kits som svært nyttige",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-175",
+          "informant": "D",
+          "text": "bruker press kit til å forstå hvordan utvikleren vil presentere spillet",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-176",
+          "informant": "D",
+          "text": "Konsekvens av mangler i press-kit er merarbeid for spillformidleren, og dårlig muligheter for representasjon",
+          "evidenceRole": "direct_or_nearest"
+        },
+        {
+          "codeId": "B5-177",
+          "informant": "E",
+          "text": "bruker sjelden press kits",
+          "evidenceRole": "direct_or_nearest"
+        }
+      ],
+      "contextCodes": [
+        {
+          "codeId": "B5-163",
+          "informant": "E",
+          "text": "henter bilder og video direkte fra Steam-siden (Drøfting: interessant opp mot en informant som mente at det kunne gi dårlig materiale og dårlig representasjon av spillet. Konsekvens utviklere må være klar over)",
+          "evidenceRole": "contextual_not_cell_direct",
+          "sourceCodeIds": [
+            "B5-163",
+            "B5-167"
+          ],
+          "sourceObservationIds": [
+            "OBS-0173",
+            "OBS-0177"
+          ]
+        },
+        {
+          "codeId": "B5-205",
+          "informant": "Z",
+          "text": "sender B-roll, screenshots og annet gjenbrukbart materiale til short-form creators",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-206",
+          "informant": "Z",
+          "text": "prioriterer å ha B-roll tilgjengelig tidlig, grunnlag for creator innholdsproduksjon",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-207",
+          "informant": "Z",
+          "text": "sørger for at B-roll er rent og av høy kvalitet",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-208",
+          "informant": "Z",
+          "text": "ser utvidet press kit som screenshots, logo, copy og B-roll",
+          "evidenceRole": "contextual_not_cell_direct"
+        },
+        {
+          "codeId": "B5-209",
+          "informant": "Z",
+          "text": "mener mottakere vil ha rask og enkel tilgang til materiell",
+          "evidenceRole": "contextual_not_cell_direct"
+        }
+      ],
+      "uniquePrimaryInformants": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "caseSection": "5.4 og 6.4",
+      "interpretiveWarning": "E bruker presskit sjelden; ikke alle ønsker samme materiale. Steam-alternativer ligger som kontekst, ikke som bevis for pressepakken."
+    }
+  ]
+}
