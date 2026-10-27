@@ -251,7 +251,7 @@ h2 {
   padding: 0.5rem 0.7rem;
   font-family: "Archivo", sans-serif;
   font-size: 1.1rem;
-  font-weight: 800;
+  font-weight: 400;
   line-height: 1.05;
   background:
     linear-gradient(currentColor, currentColor) 0 0 / calc(100% - var(--identity-stroke)) var(--identity-stroke) no-repeat,
