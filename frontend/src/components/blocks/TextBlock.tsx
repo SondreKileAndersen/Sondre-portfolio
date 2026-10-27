@@ -108,7 +108,6 @@ export function TextBlock({ heading, paragraphs, items, variant = 'default', eye
       setSequenceComplete(true)
       return
     }
-    setTitleRevealed(true)
   }, [hasIntroSequence, portraitReady])
 
   if (variant === 'principles') {
@@ -117,7 +116,9 @@ export function TextBlock({ heading, paragraphs, items, variant = 'default', eye
         <header>
           {leadImage && <div ref={portraitStageRef} className="principles-block__portrait-stage">
             {hasIntroSequence && <span className="principles-block__loader" aria-hidden="true" />}
-            <div className="principles-block__portrait">
+            <div className="principles-block__portrait" onAnimationEnd={event => {
+              if (event.target === event.currentTarget && event.animationName === 'principles-portrait-arrive') setTitleRevealed(true)
+            }}>
               <img ref={portraitRef} src={leadImage.src} alt={leadImage.alt} width={leadImage.width} height={leadImage.height} loading="eager" fetchPriority={leadImage.fetchPriority} decoding="async" onLoad={(event) => { void markPortraitReady(event.currentTarget) }} onError={() => setPortraitReady(true)} style={{ transform: `translate(${leadImage.positionX ?? 0}%, ${leadImage.positionY ?? 0}%) scale(${Math.max(0.01, leadImage.zoom ?? 1)}) scaleX(${leadImage.flipHorizontal ? -1 : 1})` }} />
             </div>
           </div>}

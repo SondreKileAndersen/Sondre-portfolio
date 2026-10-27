@@ -66,7 +66,7 @@
   right: 0;
   display: grid;
   gap: .35rem;
-  background: var(--rendered-section-background);
+  background: transparent;
 }
 .principles-block__items li:nth-child(even) .principles-block__feature-copy {
   top: auto;
