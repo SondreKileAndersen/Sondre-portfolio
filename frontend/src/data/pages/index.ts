@@ -93,7 +93,15 @@ export function getPages(language: Language): PortfolioPage[] {
     if (!source) throw new Error(`Missing project source: ${definition.sourcePageId}/${definition.sourceSectionId}`)
     return { ...createProjectPage(definition, source), theme: sourcePage?.theme }
   })
-  const pages = [...basePages, ...projectPages]
+  // The home cards are the canonical, localized navigation shown above every footer.
+  const navigation = basePages.find(page => page.id === 'home')?.sections.find(
+    section => section.type === 'navigationCards',
+  )
+  if (!navigation) throw new Error('Missing shared navigation cards on home page')
+  const pages = [...basePages, ...projectPages].map(page => ({
+    ...page,
+    sections: [...page.sections.filter(section => section.id !== navigation.id), navigation],
+  }))
   pageCache.set(language, pages)
   return pages
 }

@@ -36,6 +36,7 @@ export function createProjectPage(
         alt: source.imageAlt,
         caption: source.caption ?? '',
         imageFit: source.imageFit,
+        objectPosition: source.objectPosition,
       }
 
   if (!previewImage) {

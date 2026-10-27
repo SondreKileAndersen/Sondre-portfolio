@@ -12,7 +12,7 @@ export function DevelopmentTimelineBlock({ id, heading, labels, stages }: Develo
         <h3>{label.label}</h3>
       </div>)}</div>
       <ol className="development-timeline__stages">{stages.map(stage => <li key={stage.id}>
-        <h3>{stage.note && <small className="development-timeline__stage-note">{stage.note}</small>}{stage.label}</h3>
+        <h3><span className="development-timeline__stage-label">{stage.label}</span>{stage.note && <small className="development-timeline__stage-note">{stage.note}</small>}</h3>
         <div className="development-timeline__milestone">
           <img src={stage.src} alt={stage.alt} loading="lazy" />
           {stage.caption && <span className="development-timeline__caption">{stage.caption}</span>}

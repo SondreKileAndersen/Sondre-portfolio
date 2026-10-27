@@ -37,7 +37,14 @@ export const no = {
     unclassified: 'Ikke klassifisert', network: 'Nettverk', upset: 'Koblingsoversikt', view: 'Visning',
     perParatext: 'Vurderingsmomenter og paratekster',
     assessmentMoments: 'VURDERINGSMOMENTER',
+    assessmentMomentsAxis: 'VURDERINGS-\nMOMENTER',
     withParatexts: 'PARATEKSTER',
+    momentHeadings: {
+      M_FORM: 'Formidlings-\nrammer',
+      M_PROJ: 'Prosjekt-\ngrunnlag',
+      M_DEV: 'Utvikler-\ngrunnlag',
+      M_PRESS: 'Presse-\nmateriale',
+    },
     sourceHeadings: {
       P_EMAIL: 'Direkte kontakt (E-post)',
       P_ACTIVITY: 'Synlig aktivitet på utvikling',
@@ -96,6 +103,7 @@ export const no = {
     references: 'Referanser oppgis ved forespørsel.',
   },
   accessibility: {
+    pageNavigation: 'Veier videre',
     goHome: 'Gå til forsiden',
     mainContent: 'Hovedinnhold',
     mainNavigation: 'Hovednavigasjon',
@@ -103,6 +111,7 @@ export const no = {
     toggleMenu: '{{action}} {{title}}-menyen',
   },
   actions: {
+    backToTop: 'Til toppen',
     close: 'Lukk',
     open: 'Åpne',
   },

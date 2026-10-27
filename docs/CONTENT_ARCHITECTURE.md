@@ -1,5 +1,16 @@
 # Content Architecture
 
+When responsive sections switch to one column, copy precedes images or galleries.
+This applies to split/gallery blocks, teaching introductions and research cover
+introductions at their existing layout breakpoints. The home hero deliberately
+keeps its portrait before the copy, following its mobile reference layout.
+
+Hero sections may set `paragraphLayout: 'equalWidthLines'` to display each
+localized paragraph as an editorial line of equal width. `EqualWidthLines`
+uses SVG `textLength` with `lengthAdjust="spacing"` to adjust character spacing
+without stretching letters. The research introduction supplies an example;
+its two lines remain in `forskning/no.ts`, and the layout choice stays in structure.
+
 `developmentTimeline` renders a responsive development timeline through
 `DevelopmentTimelineBlock` and `SectionRenderer`. The research page provides
 an example: `{ id: 'timeline', type: 'developmentTimeline', heading: text('timeline.heading'),
@@ -180,9 +191,11 @@ background-colored. Opacity, background-color and shadow fade as cards move.
 When focus changes, `useGalleryDepartingCopy` temporarily mirrors the outgoing
 card above the stack, following its computed geometry and tint each frame.
 The copy fades out while the real card fades into its new background position,
-including its shadow. Both the gallery and floating teaching cards use
-`lib/crossfadeLayers.ts` with a shared animation clock and reduced-motion
-handling. Gallery copy timing is configurable in `researchGallerySettings.css`;
+including its shadow. The gallery uses `lib/crossfadeLayers.ts` with a shared
+animation clock and reduced-motion handling. Floating teaching cards promote
+their original DOM node before paint, without opacity fades or duplicate-card
+handoffs; their existing scale transition remains. Gallery copy timing is
+configurable in `researchGallerySettings.css`;
 all gallery timing derives from `--research-gallery-duration` (400ms by default).
 Movement, scaling, masking and tint use the full duration; preview fade uses
 62.5%, copy fade-in 75%, copy fade-out delay 50% and fade-out duration 25%.
@@ -652,16 +665,6 @@ heading accents in shared page structure.
 The rule is anchored above the complete content column, including any eyebrow,
 rather than to the heading itself, so it cannot cross the eyebrow text.
 
-`StickyBrandMark` progressively captures scroll movement with a quadratic curve.
-`--brand-follow-distance` sets how many pixels before the normal sticky top
-position capture begins (400px). Set it to `0px` for ordinary CSS sticky
-behavior without an extra capture distance. The value is read as pixels.
-The `.sticky-brand` CSS `top` sets the final pinned position (12vh,
-clamped to 4–8rem; mobile uses 10vh, clamped to 3–6rem). The transition starts
-at normal scroll velocity and gradually reaches zero viewport velocity. The
-same curve applies in reverse and clamps to the brand rail's lower boundary.
-Reduced motion retains ordinary CSS sticky positioning.
-
 Showcase split sections center media against the text content, excluding the
 decorative rule above the heading. Single-image showcases follow `imagePosition`.
 All logical sections use `--section-gap` in `styles.css`: 48px on small
@@ -727,7 +730,7 @@ and order in shared data and alt text in the locale file.
 Every logical page section alternates light/dark by its position in the shared
 `sections` array, starting with `startTone: 'light' | 'dark'` in that page's
 shared structure (light if omitted). `sectionTone.ts`, `App`, and `SectionRenderer`
-apply the one sequence across every block type and through sticky brand groups.
+apply the one sequence across every block type and through case-study groups.
 Group wrappers and development tracing wrappers do not count as sections.
 Image/text positioning has its own case-study sequence and does not determine
 background color. Palette colors are controlled by `--palette-*` in styles.css.
@@ -739,7 +742,7 @@ to journey blocks and shared case-study surfaces. Content retains its shared
 maximum width and internal horizontal padding.
 Footers retain full-width backgrounds. Text sections can set `surface: 'full'`
 to retain a full-width background, as in the resource-coordination intro.
-Branded case-study groups can set `brand.sharedSurface: true` to share one
+Case-study groups can set `caseStudyGroup.sharedSurface: true` to share one
 surface and the first section's tone across the group. The three Kuben cases
 use this with `tone: 'light'`; their content remains separate reusable sections.
 The teaching-resource library uses one dark surface for its introduction and
@@ -813,12 +816,11 @@ content-driven data shape. The resource-coordination page uses:
 - `TextBlock` with `variant: "principles"` for a feature flow with line
   icons, and `variant: "cta"` for a closing section.
 - `GalleryBlock` and `SplitBlock` with `variant: "caseStudy"` for portfolio
-  cases. `tone`, `eyebrow`, `note`, and an optional `brand` remain page data.
+  cases. `tone`, `eyebrow`, `note`, and optional `caseStudyGroup` settings remain page data.
 
 Line icons use stable names from `LineIconName` and render through the shared
 `components/ui/LineIcon.tsx` component. Consecutive cases with the same
-`brand.groupId` are grouped by `CaseStudyGroup`, giving them one sticky company
-logo that stops when the next brand group starts. Institution logos are stored
+`caseStudyGroup.id` are grouped by `CaseStudyGroup` to share surfaces and layout sequencing. Institution logos are stored
 in `src/media/Institusjoner logo/` and render without a frame, background, or visual
 effect. Add content in page data; do not duplicate these layouts inside page
 JSX.
@@ -1037,3 +1039,10 @@ research study's `variant: 'cover'`. Both use a left-aligned 15rem image,
 full-width copy beside it, centered vertical alignment and the same responsive
 stacking. Backgrounds remain section data. The PhotoFake introduction is the
 example; image choice and copy remain in shared structure and locale content.
+`nProcess step images support optional `mobileSrc` for an alternate crop below 650px. Example: `image: { src: desktopImage, mobileSrc: mobileImage, alt: text('image.alt') }`. The research survey step uses this for its logo-free mobile image.
+
+Split sections support an optional objectPosition crop anchor, for example objectPosition: 'right top'. The OsloMet purchasing image uses it; generated project previews retain the same anchor.
+
+Normal split and gallery sections share the stacking breakpoint in frontend/src/sectionLayout.css: @media (max-width: 760px). Edit this one value to control when media moves below copy. Columns remain flexible above it; cover images retain object-fit cropping and their configured objectPosition. Deliberately stacked layouts and cover introductions retain their own behavior.
+
+The home page's localized navigationCards section is the canonical footer navigation. getPages appends that same resolved section exactly once at the end of every page, including generated project pages. It always renders through SectionRenderer and NavigationCardsBlock. Update the cards in hjem/structure.ts and hjem/no.ts to change them everywhere.

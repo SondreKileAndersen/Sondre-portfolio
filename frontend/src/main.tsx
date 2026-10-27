@@ -6,6 +6,8 @@ import './styles.css'
 import './researchGallerySettings.css'
 import './principlesFlow.css'
 import './sectionSpacing.css'
+import './homeMobile.css'
+import './sectionLayout.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

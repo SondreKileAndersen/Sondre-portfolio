@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { SectionRenderer } from './components/SectionRenderer'
 import {
   CaseStudyGroup,
-  type BrandedCaseStudySection,
+  type GroupedCaseStudySection,
 } from './components/CaseStudyGroup'
 import { Header } from './components/layout/Header'
 import { Footer } from './components/layout/Footer'
@@ -42,12 +42,12 @@ function setMeta(selector: string, attribute: 'name' | 'property', value: string
   element.content = value
 }
 
-const isBrandedCaseStudy = (
+const isGroupedCaseStudy = (
   section: PageSection,
-): section is BrandedCaseStudySection =>
+): section is GroupedCaseStudySection =>
   (section.type === 'gallery' || section.type === 'split') &&
   section.variant === 'caseStudy' &&
-  Boolean(section.brand)
+  Boolean(section.caseStudyGroup)
 
 function renderSections(sections: PageSection[], startTone: 'light' | 'dark' = 'light') {
   const renderedSections = []
@@ -78,18 +78,18 @@ function renderSections(sections: PageSection[], startTone: 'light' | 'dark' = '
       continue
     }
 
-    if (section && isBrandedCaseStudy(section)) {
+    if (section && isGroupedCaseStudy(section)) {
       const startSectionIndex = index
-      const groupId = section.brand.groupId
-      const group: BrandedCaseStudySection[] = []
+      const groupId = section.caseStudyGroup.id
+      const group: GroupedCaseStudySection[] = []
 
       while (index < sections.length) {
         const candidate = sections[index]
 
         if (
           !candidate ||
-          !isBrandedCaseStudy(candidate) ||
-          candidate.brand.groupId !== groupId
+          !isGroupedCaseStudy(candidate) ||
+          candidate.caseStudyGroup.id !== groupId
         ) break
 
         group.push(candidate)

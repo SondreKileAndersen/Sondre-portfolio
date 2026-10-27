@@ -1,6 +1,7 @@
 import profileImage from "../../../media/hjem/Sondre_Caps.jpg"
 import gameDevelopmentImage from '../../../media/pedagogikk/F21-Green-screen.png'
 import resourceCoordinationImage from '../../../media/logistikk/Lager 1.jpg'
+import researchImage from '../../../media/forskning/Datavisualisering Landscape.jpg'
 import { text, paragraphs } from '../../../lib/pageContent'
 import type { ContentFor, PageStructure } from '../../../lib/pageContent'
 
@@ -28,7 +29,7 @@ export const structure = {
       cards: [
         { id: 'teaching', imageSrc: gameDevelopmentImage, title: text('sections.home-navigation.cards.teaching.title'), description: text('sections.home-navigation.cards.teaching.description'), href: text('sections.home-navigation.cards.teaching.href') },
         { id: 'resource-coordination', imageSrc: resourceCoordinationImage, title: text('sections.home-navigation.cards.resource-coordination.title'), description: text('sections.home-navigation.cards.resource-coordination.description'), href: text('sections.home-navigation.cards.resource-coordination.href') },
-        {id:'research',imageSrc:'',title:text('research.title'),description:text('research.description'),href:text('research.href')},
+        {id:'research',imageSrc:researchImage,title:text('research.title'),description:text('research.description'),href:text('research.href')},
       ],
     },
   ],

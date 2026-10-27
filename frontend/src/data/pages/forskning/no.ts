@@ -42,9 +42,9 @@ export const no = {
   "navTitle": "Forskning",
   "title": "Forskning",
   "intro.heading": "Forskning",
-  'intro.imageAlt': 'Visualisering av forskningsdata',
   "intro.paragraphs": [
-    "Jeg har jobbet med forskning som assistent i forskningsprosjektet PhotoFake, og i min egen masteroppgave."
+    "Jeg har erfaring med forskning både som assistent",
+    "i PhotoFake-prosjektet og gjennom min masteroppgave."
   ],
   "intro.photofake": "PhotoFake",
   "intro.photofakeHref": "#photofake",
@@ -53,7 +53,7 @@ export const no = {
   "photofake.heading": "PhotoFake",
   "photofake.imageAlt": "Bearbeidet filmstillbilde med Brian Monarch fra PhotoFake-materialet",
   "photofake.paragraphs": [
-    "Prosjektet PHOTOFAKE - Visual Disinformation, the Digital Economy and the Epistemology of the Camera Image utforsker visuelle aspekter av dagens desinformasjonskrise, en krise som er forsterket av visuelt materiale som er endret eller generert av kunstig intelligens slik at det fremstår som fotografisk. "
+    "Prosjektet *PHOTOFAKE - Visual Disinformation, the Digital Economy and the Epistemology of the Camera Image* utforsker visuelle aspekter av dagens desinformasjonskrise, en krise som er forsterket av visuelt materiale som er endret eller generert av kunstig intelligens slik at det fremstår som fotografisk. "
   ],
   "photofake.actionLabel": "Les mer om prosjektet ↗",
   "photofake.actionHref": "https://www.hf.uio.no/imk/english/research/projects/photofake/",
@@ -99,7 +99,7 @@ export const no = {
   "work1.description": "Jeg jobbet systematisk med datasett og bidro til statistisk behandling i SPSS, også med kvantitativ kvalitetssjekk.",
   "work2.label": "Spørreundersøkelse",
   "work2.description": "Jeg har vært med på utvikling og bearbeiding av en spørreundersøkelse for Norsk Redaktørforening om bruk av KI i journalistikk, blant annet ved å videreutvikle spørsmål og struktur og forbedre brukervennlighet i materialet.",
-  "work3.label": "Visualisering",
+  "work3.label": "Datavisualisering",
   "work3.description": "Jeg utviklet tabeller og grafiske elementer som gjorde forskningen enklere å forstå, og som kunne brukes i artiklene.",
   "work4.label": "Formatering og publiseringsklargjøring",
   "work4.description": "Jeg formaterte materialet og klargjorde artiklene for fagfellevurdering. Jeg dokumenterte fremdrift og valg underveis, slik at arbeidet var lett å ettergå for andre.",
@@ -130,7 +130,7 @@ export const no = {
   "master.method.label": "Hva jeg gjorde",
   "master.method.heading": "Hva jeg gjorde",
   'master.method.paragraphs': [
-    'Jeg planla og gjennomførte en kvalitativ studie med internasjonale informanter fra ulike deler av spillformidling og spillmarkedsføring. Gjennom semistrukturerte intervjuer undersøkte jeg hvordan de vurderer ukjente spill i tidlig utviklingsfase. Datamaterialet ble transkribert, kontrollert og anonymisert før jeg analyserte det i flere runder med systematisk koding, analytiske notater og en gjennomgang av utsagn som utfordret hovedfunnene.',
+    'Jeg planla og gjennomførte en kvalitativ studie med internasjonale informanter innenfor spillformidling og spillmarkedsføring. Gjennom semistrukturerte intervjuer undersøkte jeg hvordan de vurderer ukjente spill i tidlig utviklingsfase. Datamaterialet ble transkribert, kontrollert og anonymisert før jeg analyserte det i flere runder med systematisk koding, analytiske notater og en gjennomgang av utsagn som utfordret hovedfunnene.',
   ],
   'master.fact.design': 'Kvalitativt forskningsdesign',
   'master.fact.literature': 'Litteraturgjennomgang',

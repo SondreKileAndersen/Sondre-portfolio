@@ -2,9 +2,9 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProp
 import type { LearningJourneyClosingSection, LearningJourneyIntroSection, LearningJourneyStepSection } from '../../types/page'
 import { FeatureImageMosaic } from '../ui/FeatureImageMosaic'
 import { LineIcon } from '../ui/LineIcon'
+import { MediaExampleLabel } from '../ui/MediaExampleLabel'
 import { TeachingResourceCard, ResourceFilesDialog } from './TeachingResourcesBlock'
 import type { TeachingResource } from '../../types/teachingResource'
-import { crossfadeLayers } from '../../lib/crossfadeLayers'
 
 export function LearningJourneyIntroBlock({ eyebrow, heading, paragraphs, specializationsLabel, specializations, imageSrc, imageAlt }: LearningJourneyIntroSection) {
   return <section className="learning-journey-intro">
@@ -69,6 +69,9 @@ function StarterCardsVisual({ step, highlightedId, expandedId, onHighlight, onTo
             + Math.max(0, card.offsetHeight * Math.cos(angle)))
         }
         bottom = Math.max(bottom, collapsedBottoms.get(card) ?? 0)
+        if (window.matchMedia('(max-width: 800px)').matches && card.classList.contains('learning-journey__starter-card--expanded')) {
+          bottom = Math.max(bottom, card.offsetHeight + 16)
+        }
       }
       visual.style.setProperty('--starter-stack-overflow', `${Math.ceil(bottom - stack.offsetHeight)}px`)
       const centerY = layoutTop(section) + section.offsetHeight / 2 - layoutTop(stack)
@@ -88,7 +91,6 @@ function StarterCardsVisual({ step, highlightedId, expandedId, onHighlight, onTo
       cancelAnimationFrame(measureFrame)
     }
   }, [])
-  const overlayRef = useRef<HTMLDivElement>(null)
   const [frontCardId, setFrontCardId] = useState<string | null>(null)
   const [cardOrder, setCardOrder] = useState(() =>
     [...(step.cards ?? [])]
@@ -99,39 +101,30 @@ function StarterCardsVisual({ step, highlightedId, expandedId, onHighlight, onTo
     setFrontCardId(id)
     setCardOrder(current => [...current.filter(cardId => cardId !== id), id])
   }, [])
-  const [fadeCardId, setFadeCardId] = useState<string | null>(null)
   const resolveResource = (card: NonNullable<LearningJourneyStepSection['cards']>[number]) => {
     const resource = step.resources?.find(item => item.id === card.resourceId)
     return resource && card.imageSrc ? { ...resource, thumbnailSrc: card.imageSrc, thumbnailAlt: card.imageAlt ?? resource.thumbnailAlt } : resource
   }
-  useEffect(() => {
-    if (highlightedId && highlightedId !== frontCardId && highlightedId !== expandedId) setFadeCardId(highlightedId)
-  }, [highlightedId, frontCardId, expandedId])
-  const highlightedCard = step.cards?.find(card => card.id === fadeCardId)
-  const highlightedResource = highlightedCard && resolveResource(highlightedCard)
+  // Promote the original card before paint. Swapping a fading duplicate back
+  // to its source could briefly reveal the old stacking order or an empty image.
   useLayoutEffect(() => {
-    const copy = overlayRef.current
-    const source = stackRef.current?.querySelector<HTMLElement>(`[data-starter-card="${fadeCardId}"]`)
-    if (!copy || !source || !fadeCardId) return
-    copy.querySelectorAll('button, a').forEach(element => {
-      element.setAttribute('tabindex', '-1')
-      element.removeAttribute('aria-controls')
-    })
-    const synchronize = () => {
-      const style = getComputedStyle(source)
-      // Mirror the rendered geometry, including entrance, scale and float.
-      for (const property of ['top', 'left', 'right', 'width', 'height', 'transform', 'transform-origin', 'translate', 'rotate', 'scale']) {
-        copy.style.setProperty(property, style.getPropertyValue(property))
-      }
-    }
-    return crossfadeLayers({
-      incoming: copy, outgoing: source, styleSource: source, synchronize,
-      onFinish: () => { promoteCard(fadeCardId); setFadeCardId(null) },
-    })
-  }, [fadeCardId, expandedId, promoteCard])
+    if (highlightedId && highlightedId !== frontCardId && highlightedId !== expandedId) promoteCard(highlightedId)
+  }, [highlightedId, frontCardId, expandedId, promoteCard])
   useEffect(() => {
     openingUntil.current = performance.now() + 400
   }, [expandedId])
+  useEffect(() => {
+    if (!expandedId || selectedResource) return
+    const outside = (event: PointerEvent) => {
+      if (!(event.target instanceof Element)) return
+      if (event.target.closest('.learning-journey__starter-card--expanded, .learning-journey-step__inline-action, dialog')) return
+      onClose(expandedId)
+    }
+    const escape = (event: KeyboardEvent) => { if (event.key === 'Escape') onClose(expandedId) }
+    document.addEventListener('pointerdown', outside)
+    document.addEventListener('keydown', escape)
+    return () => { document.removeEventListener('pointerdown', outside); document.removeEventListener('keydown', escape) }
+  }, [expandedId, selectedResource, onClose])
   useEffect(() => {
     const libraryCard = document.querySelector<HTMLElement>('.teaching-resources__grid .teaching-resource-card')
     if (!libraryCard) return
@@ -154,11 +147,10 @@ function StarterCardsVisual({ step, highlightedId, expandedId, onHighlight, onTo
         style={{ '--card-stack-z': cardOrder.indexOf(card.id) + 1, '--card-enter-delay': card.enterDelay !== undefined ? `${card.enterDelay}ms` : undefined } as CSSProperties}
         className={`learning-journey__starter-card learning-journey__starter-card--${card.id}${highlighted ? ' learning-journey__starter-card--on-top' : ''}${frontCardId === card.id ? ' learning-journey__starter-card--front' : ''}${expanded ? ' learning-journey__starter-card--expanded' : ''}`}
         onMouseEnter={() => { pointerCardId.current = card.id; onHighlight(card.id) }}
-        onMouseLeave={(event) => {
-          if (event.relatedTarget instanceof Element && event.relatedTarget.closest(`[data-starter-overlay="${card.id}"]`)) return
+        onMouseLeave={() => {
           // Repositioning beneath a stationary pointer can itself emit leave.
           // Allow the opening transition to finish before interpreting exits.
-          if (pointerCardId.current === card.id && expanded && !selectedResource && performance.now() >= openingUntil.current) onClose(card.id)
+          if (!window.matchMedia('(max-width: 800px)').matches && pointerCardId.current === card.id && expanded && !selectedResource && performance.now() >= openingUntil.current) onClose(card.id)
           pointerCardId.current = null
           onHighlight(null)
         }}
@@ -167,21 +159,6 @@ function StarterCardsVisual({ step, highlightedId, expandedId, onHighlight, onTo
       >
         <TeachingResourceCard resource={resource} plainMedia={card.plainMedia} expanded={expanded} onToggle={() => onToggle(card.id)} detailsId={`${step.id}-${card.id}-details`} onChooseFiles={setSelectedResource} />
       </div>})}
-      {fadeCardId && fadeCardId !== expandedId && highlightedResource && <div
-        key={`overlay-${fadeCardId}`}
-        ref={overlayRef}
-        className={`learning-journey__starter-card learning-journey__starter-card--${fadeCardId} learning-journey__starter-card--overlay`}
-        data-starter-overlay={fadeCardId}
-        aria-hidden="true"
-        onMouseEnter={() => { pointerCardId.current = fadeCardId; onHighlight(fadeCardId) }}
-        onMouseLeave={event => {
-          if (event.relatedTarget instanceof Element && event.relatedTarget.closest(`[data-starter-card="${fadeCardId}"]`)) return
-          pointerCardId.current = null
-          onHighlight(null)
-        }}
-      >
-        <TeachingResourceCard resource={highlightedResource} plainMedia={highlightedCard?.plainMedia} expanded={false} onToggle={() => { promoteCard(fadeCardId); setFadeCardId(null); onToggle(fadeCardId) }} onChooseFiles={setSelectedResource} />
-      </div>}
     </div>
     <ResourceFilesDialog resource={selectedResource} onClose={() => setSelectedResource(null)} />
   </div>
@@ -231,8 +208,7 @@ export function LearningJourneyStepBlock(step: LearningJourneyStepSection) {
     }
     if (nextId) {
       const card = section?.querySelector<HTMLElement>(`[data-starter-card="${CSS.escape(nextId)}"]`)
-      const visibleCard = section?.querySelector<HTMLElement>(`[data-starter-overlay="${CSS.escape(nextId)}"]`) ?? card
-      if (visibleCard) transitions.push({ id: nextId, start: readExpansionFrame(visibleCard) })
+      if (card) transitions.push({ id: nextId, start: readExpansionFrame(card) })
       // Once opened, this card must never replay its entrance from scale zero.
       card?.setAttribute('data-card-entered', '')
     }
@@ -279,7 +255,7 @@ export function LearningJourneyStepBlock(step: LearningJourneyStepSection) {
         ? <strong key={part.id} className="learning-journey__inline-emphasis" data-category={part.categoryId}>{part.text}</strong>
         : part.emphasis ? <strong key={part.id}>{part.text}</strong>
         : <span key={part.id}>{part.text}</span>)}</p>)}
-      {step.highlights && <div className="learning-journey-step__highlights">{step.highlights.map((item) => <div key={item.id} className={item.variant === 'callout' ? 'content-callout' : undefined}><div className="learning-journey-step__highlight-header"><strong>{item.heading}</strong>{item.label && <span className="split-block__callout-label">{item.label}</span>}</div><p>{item.descriptionParts ? item.descriptionParts.map(part => part.resourceId
+      {step.highlights && <div className="learning-journey-step__highlights">{step.highlights.map((item) => <div key={item.id} className={item.variant === 'callout' ? 'content-callout' : undefined}><div className="learning-journey-step__highlight-header"><strong>{item.heading}</strong>{item.label && <span className="split-block__callout-label"><MediaExampleLabel label={item.label} /></span>}</div><p>{item.descriptionParts ? item.descriptionParts.map(part => part.resourceId
         ? <ResourcePreviewLink key={part.id} resource={step.resources?.find(resource => resource.id === part.resourceId)} className="learning-journey-step__inline-preview">{part.text}</ResourcePreviewLink>
         : <span key={part.id}>{part.text}</span>) : item.description}</p></div>)}</div>}
       {step.examples?.length && <div className="learning-journey-step__examples">
@@ -296,7 +272,7 @@ export function LearningJourneyStepBlock(step: LearningJourneyStepSection) {
           <span>{example.description}</span>
         </li>)}</ol>
       </div>}
-      {step.ctaLabel && <a className="learning-journey-step__cta" href="#teaching-resources-library">{step.ctaLabel}</a>}
+      {step.ctaLabel && <a className={`learning-journey-step__cta${step.visual === 'starterCards' ? ' learning-journey-step__cta--beside-cards' : ''}`} href="#teaching-resources-library">{step.ctaLabel}</a>}
     </div>
     <div className="learning-journey-step__visual"><JourneyVisual step={step} highlightedId={highlightedId} expandedId={expandedId} onHighlight={setHighlightedId} onToggle={toggleCard} onClose={closeCard} /></div>
   </section>

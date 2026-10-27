@@ -12,6 +12,68 @@ export function TextBlock({ heading, paragraphs, items, variant = 'default', eye
   const [titleRevealed, setTitleRevealed] = useState(!hasIntroSequence)
   const [sequenceComplete, setSequenceComplete] = useState(!hasIntroSequence)
 
+  useLayoutEffect(() => {
+    const section = principlesRef.current
+    const list = section?.querySelector<HTMLElement>('.principles-block__items')
+    if (!list || !introSequence) return
+    const cards = [...list.querySelectorAll<HTMLElement>(':scope > li')]
+    const media = matchMedia('(max-width: 1200px) and (prefers-reduced-motion: no-preference)')
+    let observer: IntersectionObserver | undefined
+    let animations: Animation[] = []
+    const reset = () => {
+      observer?.disconnect()
+      animations.forEach(animation => animation.cancel())
+      animations = []
+      cards.forEach(card => card.classList.remove('principles-card--pending', 'principles-card--revealed'))
+    }
+    const update = () => {
+      reset()
+      if (!media.matches) return
+      cards.forEach((card, index) => {
+        card.style.setProperty('--principles-card-layer', String(cards.length - index))
+        card.classList.add('principles-card--pending')
+      })
+      if (!sequenceComplete) return
+      observer = new IntersectionObserver(entries => {
+        if (!entries.some(entry => entry.isIntersecting)) return
+        observer?.disconnect()
+        const first = cards[0]
+        if (!first) return
+        const origin = first.offsetTop
+        const entryDistance = first.offsetHeight + 16
+        const ease = 'cubic-bezier(.16, 1, .3, 1)'
+        const positions = cards.map(card => card.offsetTop - origin)
+        const stepDuration = 1100
+        cards.forEach((card, index) => {
+          const distance = positions[index]
+          const duration = (index + 1) * stepDuration
+          const frames: Keyframe[] = [
+            { '--principles-card-offset': (-distance - entryDistance) + 'px', offset: 0, easing: ease },
+          ]
+          // Each remaining stack travels together to the next card's resting place.
+          // A stops after step one, B after step two, and C after step three.
+          for (let step = 0; step <= index; step += 1) {
+            frames.push({
+              '--principles-card-offset': (positions[step] - distance) + 'px',
+              offset: (step + 1) * stepDuration / duration,
+              easing: ease,
+            })
+          }
+          animations.push(card.animate(frames, { duration, delay: 500, fill: 'both' }))
+          card.classList.add('principles-card--revealed')
+        })
+      }, { threshold: 0 })
+      observer.observe(list)
+    }
+    update()
+    media.addEventListener('change', update)
+    return () => {
+      reset()
+      media.removeEventListener('change', update)
+      cards.forEach(card => card.style.removeProperty('--principles-card-layer'))
+    }
+  }, [introSequence, sequenceComplete, features])
+
   const markPortraitReady = useCallback(async (image: HTMLImageElement) => {
     try {
       await image.decode()
@@ -46,8 +108,7 @@ export function TextBlock({ heading, paragraphs, items, variant = 'default', eye
       setSequenceComplete(true)
       return
     }
-    const timer = window.setTimeout(() => setTitleRevealed(true), 1400)
-    return () => window.clearTimeout(timer)
+    setTitleRevealed(true)
   }, [hasIntroSequence, portraitReady])
 
   if (variant === 'principles') {

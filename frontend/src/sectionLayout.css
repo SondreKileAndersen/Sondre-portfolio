@@ -1,0 +1,25 @@
+/* Text/image stacking breakpoint: change 760px below to choose when images
+   move below the text. Smaller value = keep columns on narrower screens.
+   Deliberately stacked layouts and cover introductions keep their own layout. */
+.split-block > :is(.split-block__media, .split-block__content),
+.gallery-block > :is(.gallery-block__images, .gallery-block__content) {
+  min-width: 0;
+}
+
+/* Both columns can shrink; cover images crop instead of widening the page. */
+.split-block__media { overflow: hidden; }
+
+@media (max-width: 760px) {
+  .split-block:not(.split-block--layout-stacked):not(.split-block--layout-coverIntro),
+  .gallery-block {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .split-block:not(.split-block--layout-coverIntro) .split-block__content,
+  .gallery-block .gallery-block__content { order: 1; }
+  .split-block:not(.split-block--layout-coverIntro) .split-block__media,
+  .split-block--layout-showcase.split-block--image-left .split-block__media:not(.split-block__media--strip),
+  .gallery-block .gallery-block__images { order: 2; }
+  .gallery-block .case-study__note { order: 3; }
+  .split-block:not(.split-block--layout-coverIntro) .media-example-arrow { rotate: 90deg; }
+  .split-block--layout-showcase .split-block__media--strip { height: clamp(23rem, 58vw, 33rem); }
+}

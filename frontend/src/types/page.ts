@@ -44,13 +44,9 @@ export type LineIconName =
   | 'camera'
   | 'settings'
 
-export type BrandMark = {
-  groupId: string
+export type CaseStudyGroupSettings = {
+  id: string
   sharedSurface?: boolean
-  badgeColor?: string
-  src: string
-  alt: string
-  crop?: 'none' | 'oslomet-symbol'
 }
 
 export type ToolLogo = {
@@ -65,6 +61,7 @@ export type HeroSection = {
   tone?: 'light' | 'dark'
   heading: string
   headingHighlight?: string
+  paragraphLayout?: 'equalWidthLines'
   subtitle?: string
   imageSrc?: string
   imageAlt?: string
@@ -93,6 +90,7 @@ export type SplitSection = {
   caption?: string
   imagePosition?: 'left' | 'right'
   imageFit?: 'cover' | 'contain'
+  objectPosition?: string
   secondaryImageSrc?: string
   secondaryImageAlt?: string
   imageStrip?: Array<{ id: string; src: string; alt: string; objectPosition?: string }>
@@ -105,7 +103,7 @@ export type SplitSection = {
   actionExternal?: boolean
   actionAfterParagraph?: number
   actions?: Array<{ id: string; label: string; href: string; external?: boolean }>
-  brand?: BrandMark
+  caseStudyGroup?: CaseStudyGroupSettings
   toolLogos?: ToolLogo[]
   outcome?: string
 }
@@ -180,7 +178,7 @@ export type GallerySection = {
   note?: string
   actionLabel?: string
   actionHref?: string
-  brand?: BrandMark
+  caseStudyGroup?: CaseStudyGroupSettings
   toolLogos?: ToolLogo[]
   outcome?: string
 }
@@ -355,7 +353,7 @@ export type ProcessStep = {
   columnSpan?: number
   label: string
   description: string
-  image?: { src: string; alt: string; overlay?: { src: string; alt: string } }
+  image?: { src: string; alt: string; mobileSrc?: string; overlay?: { src: string; alt: string } }
 }
 
 export type ProcessSection = {

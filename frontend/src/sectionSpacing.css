@@ -33,22 +33,33 @@
   padding: 0 0 1rem;
 }
 
+/* Keep this heading's lead-in stable instead of centering it against a
+   gallery whose height changes with viewport width. */
+#oslomet-teacher-education .split-block__content {
+  align-self: start;
+  margin-top: 4rem;
+}
+@media (max-width: 1000px) {
+  .split-block--caseStudy.split-block--layout-showcase .split-block__media--strip {
+    /* Match the inset used by the copy and callout above the gallery. */
+    padding-inline: clamp(0rem, 2vw, 2rem);
+    min-width: 0;
+    width: 100%;
+  }
+}
+
 /* The library heading is internal content, so it adds no section padding. */
 :root body main .teaching-resources__header {
   padding-block: 0;
   margin-block: 0;
 }
 
-.case-study-group__brand-rail {
-  padding-top: calc(var(--section-gap) / 2);
-  bottom: calc(var(--section-gap) / 2);
-}
 
 /* Reserve the overlaid header only at the start of a page. */
 :root body main > .section-tone-boundary:first-child > :is(section, h1),
 :root body main > .section-tone-boundary:first-child > .content-source-boundary > :is(section, h1),
-:root body main > .case-study-group:first-child > .section-tone-boundary:nth-child(2) > section,
-:root body main > .case-study-group:first-child > .section-tone-boundary:nth-child(2) > .content-source-boundary > section {
+:root body main > .case-study-group:first-child > .section-tone-boundary:first-child > section,
+:root body main > .case-study-group:first-child > .section-tone-boundary:first-child > .content-source-boundary > section {
   padding-top: calc(var(--site-header-overlay-height, 6rem) + var(--section-gap) / 2);
 }
 
@@ -62,3 +73,23 @@
   padding-top:calc(var(--section-gap) / 2);
 }
 #master-connection-overview > .research-viz__figure { margin-top:0; }
+
+/* Match the intro image's 3rem upper gap with the combined spacing below it. */
+@media (max-width: 800px) {
+  :root body main .section-tone-boundary[data-section-id='pedagogy-intro'] > section,
+  :root body main .section-tone-boundary[data-section-id='pedagogy-intro'] > .content-source-boundary > section {
+    padding-bottom: 1.5rem;
+  }
+  :root body main .section-tone-boundary[data-section-id='teaching-institutions'] > section,
+  :root body main .section-tone-boundary[data-section-id='teaching-institutions'] > .content-source-boundary > section {
+    padding-top: 1.5rem;
+  }
+}
+
+/* Gallery controls must override the shared section rhythm in both render modes.
+   Compensate for translation so the visible gallery edges retain their spacing. */
+:root body main .section-tone-boundary[data-section-id='research-image-comparisons'] > section,
+:root body main .section-tone-boundary[data-section-id='research-image-comparisons'] > .content-source-boundary > section {
+  padding-block-start: max(0px, calc(var(--section-gap) / 2 - var(--research-gallery-offset-y, 0rem) + var(--research-gallery-spacing-top, 0rem)));
+  padding-block-end: max(0px, calc(var(--section-gap) / 2 + var(--research-gallery-offset-y, 0rem) + var(--research-gallery-spacing-bottom, 0rem)));
+}

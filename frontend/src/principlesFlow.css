@@ -122,24 +122,56 @@
   }
 }
 @media (max-width: 900px) {
+  /* Retain the measured path and reveal timing in the vertical layout. */
+  .principles-block svg.principles-block__path { visibility: hidden; }
+  .principles-block { --principles-mobile-icon-size: clamp(3.5rem, 14vw, 5.5rem); row-gap: 4.5rem; }
+  .principles-block.principles-block--with-portrait > header {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  .principles-block__portrait-stage { width: clamp(8rem, 31vw, 12rem); }
+  .principles-block .principles-block__heading h2 { font-size: clamp(2rem, 7.8vw, 3.5rem); line-height: 1.12; }
   .principles-block__items {
     grid-template-columns: minmax(0, 1fr);
-    gap: 2rem;
-    padding-block: 1rem;
+    width: min(72vw, 38rem);
+    margin-inline: auto;
+    gap: clamp(3.5rem, 9vw, 5rem);
+    padding: 0;
+    justify-content: stretch;
   }
   .principles-block .principles-block__items li {
     height: auto;
     min-height: 8rem;
+    display: grid;
+    align-items: start;
+    padding: 0;
+    border: 0;
   }
   .principles-block .principles-block__items li > svg {
-    top: 1.5rem;
-    left: 1.5rem;
+    top: calc(var(--principles-mobile-icon-size) / 2);
+    left: calc(var(--principles-mobile-icon-size) / 2);
+    width: var(--principles-mobile-icon-size);
+    height: var(--principles-mobile-icon-size);
+    box-sizing: border-box;
+    padding: calc(var(--principles-mobile-icon-size) * .23);
+  }
+  .principles-block .principles-block__items li:nth-child(even) > svg {
+    left: calc(100% - var(--principles-mobile-icon-size) / 2);
   }
   .principles-block .principles-block__items li .principles-block__feature-copy {
     position: relative;
     inset: auto;
-    margin-left: 4.5rem;
-    padding-top: .25rem;
+    max-width: none;
+    margin: 0 0 0 calc(var(--principles-mobile-icon-size) + 7vw);
+    padding: 0;
     text-align: left;
+    gap: .5rem;
   }
+  .principles-block .principles-block__items li:nth-child(even) .principles-block__feature-copy {
+    margin: 0 calc(var(--principles-mobile-icon-size) + 7vw) 0 0;
+  }
+  .principles-block .principles-block__feature-copy strong { font-family: var(--font-body); font-size: clamp(1.05rem, 4.3vw, 2rem); font-weight: 700; line-height: 1.2; }
+  :root body main .principles-block .principles-block__feature-copy p { font-size: var(--body-font-size); line-height: var(--body-line-height); }
 }

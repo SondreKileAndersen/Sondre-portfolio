@@ -86,7 +86,11 @@ const { getPages } = load(path.join(root, 'src/data/pages/index.ts'))
 const pages = JSON.parse(JSON.stringify(getPages('no')))
 assert.equal(new Set(pages.map(page => page.id)).size, pages.length)
 assert.equal(new Set(pages.map(page => page.path)).size, pages.length)
+const sharedNavigation = pages.find(page => page.id === 'home').sections.at(-1)
+assert.equal(sharedNavigation.type, 'navigationCards')
 for (const page of pages) {
+  assert.deepEqual(page.sections.at(-1), sharedNavigation, `${page.id}: shared navigation must precede the footer`)
+  assert.equal(page.sections.filter(section => section.id === sharedNavigation.id).length, 1)
   assert.equal(new Set(page.sections.map(section => section.id)).size, page.sections.length)
   if (page.parentId) assert.ok(pages.some(parent => parent.id === page.parentId))
   for (const section of page.sections) {

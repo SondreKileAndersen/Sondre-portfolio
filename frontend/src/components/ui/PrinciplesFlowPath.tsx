@@ -49,10 +49,14 @@ export function PrinciplesFlowPath({ sectionRef, ready }: {
         return [{ x: rect.left + rect.width / 2 - bounds.left, y: rect.top + rect.height / 2 - bounds.top }]
       })
       if (!points.length) return
-      const stacked = points.length > 1 && Math.abs(points[0].x - points[1].x) < 1
+      const stacked = window.matchMedia('(max-width: 900px)').matches
       let previous: Point = stacked
         ? { x: points[0].x, y: points[0].y - 35 }
         : { x: points[0].x - 45, y: points[0].y + 45 }
+      if (title && stacked) {
+        const titleBounds = title.getBoundingClientRect()
+        previous = { x: titleBounds.left + titleBounds.width / 2 - bounds.left, y: titleBounds.bottom + 12 - bounds.top }
+      }
       if (title && !stacked) {
         const walker = document.createTreeWalker(title, NodeFilter.SHOW_TEXT)
         let lastText: Text | null = null
@@ -75,8 +79,19 @@ export function PrinciplesFlowPath({ sectionRef, ready }: {
       const handleRatio = 1 - softness * .5
       anchors = points.map((point, index) => {
         if (stacked) {
-          const bend = (point.y - previous.y) / 2
-          d += ` C ${previous.x} ${previous.y + bend}, ${point.x} ${point.y - bend}, ${point.x} ${point.y}`
+          // Turn only in the gap between rows; approach each icon vertically
+          // so the curve never passes through its neighboring feature text.
+          const row = items[index].getBoundingClientRect()
+          const entryY = row.top - bounds.top - 12
+          const exitY = index ? items[index - 1].getBoundingClientRect().bottom - bounds.top + 12 : previous.y
+          const middleY = (exitY + entryY) / 2
+          if (index === 0) {
+            d += ` C ${previous.x} ${middleY}, ${point.x} ${middleY}, ${point.x} ${point.y}`
+          } else {
+            const middleX = (previous.x + point.x) / 2
+            d += ` C ${previous.x} ${middleY}, ${previous.x} ${middleY}, ${middleX} ${middleY}`
+            d += ` C ${point.x} ${middleY}, ${point.x} ${middleY}, ${point.x} ${point.y}`
+          }
         } else {
           const bend = point.x - previous.x
           if (index === 0) {

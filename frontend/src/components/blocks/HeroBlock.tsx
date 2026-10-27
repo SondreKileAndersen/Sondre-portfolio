@@ -1,4 +1,6 @@
 import type { HeroSection } from '../../types/page'
+import { useState, type CSSProperties } from 'react'
+import { EqualWidthLines } from '../ui/EqualWidthLines'
 
 export function HeroBlock({
   heading,
@@ -7,14 +9,16 @@ export function HeroBlock({
   imageSrc,
   imageAlt,
   paragraphs,
+  paragraphLayout,
   actions,
 }: HeroSection) {
+  const [textWidth, setTextWidth] = useState<number>()
   return (
     <section className={`hero${imageSrc ? '' : ' hero--text-only'}`} aria-labelledby="hero-heading">
       {imageSrc && <figure className="hero-portrait">
         <img src={imageSrc} alt={imageAlt} loading="eager" fetchPriority="high" decoding="async" />
       </figure>}
-      <div className="hero-content">
+      <div className="hero-content" style={textWidth ? { '--hero-copy-width': `${textWidth}px` } as CSSProperties : undefined}>
         <header className="hero-heading">
         {subtitle && <p className="hero-heading__subtitle">{subtitle}</p>}
         <h1 id="hero-heading">
@@ -23,7 +27,7 @@ export function HeroBlock({
             : heading}
         </h1>
         </header>
-        {paragraphs.map((paragraph) => (
+        {paragraphLayout === 'equalWidthLines' ? <EqualWidthLines lines={paragraphs} onWidthChange={setTextWidth} /> : paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
         {actions && <div className="hero-actions">

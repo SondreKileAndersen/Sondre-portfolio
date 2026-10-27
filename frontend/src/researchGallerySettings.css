@@ -1,5 +1,12 @@
 /* Alle justerbare verdier for figurgalleriet på forskningssiden. */
 :root {
+  /* Felles farge for overskriftsstrekene i PHOTOFAKE-delen. */
+  --photofake-heading-line-color: #269651;
+  /* Vertikal plassering: negativ verdi flytter opp, positiv verdi flytter ned. */
+  --research-gallery-offset-y: 4rem;
+  /* Ekstra avstand over/under seksjonen. Negative verdier reduserer avstanden. */
+  --research-gallery-spacing-top: -3rem;
+  --research-gallery-spacing-bottom: 0rem;
   --research-figures-background: #fbfdff;
   /* Tid mellom automatiske bytter til høyre. 0ms slår av automatisk bytte. */
   --research-gallery-autoplay-interval: 5000ms;
@@ -15,22 +22,22 @@
      Bakbildene påvirkes ikke av disse verdiene. */
   --research-gallery-focus-figure-1: 1;
   --research-gallery-focus-figure-2: 1;
-  --research-gallery-focus-figure-3: 1.2;
-  --research-gallery-focus-figure-4: 1;
-  --research-gallery-focus-figure-5: 1;
-  --research-gallery-focus-figure-6: 1;
-  --research-gallery-focus-figure-7: 1;
-  --research-gallery-focus-figure-8: 1;
+  --research-gallery-focus-figure-3: 1.6;
+  --research-gallery-focus-figure-4: 1.4;
+  --research-gallery-focus-figure-5: 1.4;
+  --research-gallery-focus-figure-6: 1.4;
+  --research-gallery-focus-figure-7: 1.4;
+  --research-gallery-focus-figure-8: 1.4;
 
   /* Felles grunnformat og høyde på hele galleriområdet. */
-  --research-gallery-frame-width: min(60cqw, 40rem);
-  --research-gallery-frame-height: clamp(17rem, 33cqw, 29rem);
+  --research-gallery-frame-width: min(60cqw, 30rem);
+  --research-gallery-frame-height: min(33cqw, 16.5rem);
   --research-gallery-stage-height: clamp(28rem, 55cqw, 43rem);
   /* Luft til skygger over/under. Galleriet reserverer også plass til før-bildet. */
-  --research-gallery-edge-space: 2rem;
+  --research-gallery-edge-space: min(3cqw, 1.5rem);
 
   /* Før-miniatyr: høyde og andelen som overlapper fokusbildet. */
-  --research-gallery-preview-height: clamp(6rem, 12cqw, 9rem);
+  --research-gallery-preview-height: min(12cqw, 6rem);
   --research-gallery-preview-overlap: 0.35;
 
   /* HOVEDVERDI: total overgangstid. Alle tidene nedenfor følger denne. */
@@ -63,3 +70,16 @@
 .image-compare-carousel__slide[data-figure-id='figure-6'] { --research-gallery-focus-scale: var(--research-gallery-focus-figure-6); }
 .image-compare-carousel__slide[data-figure-id='figure-7'] { --research-gallery-focus-scale: var(--research-gallery-focus-figure-7); }
 .image-compare-carousel__slide[data-figure-id='figure-8'] { --research-gallery-focus-scale: var(--research-gallery-focus-figure-8); }
+
+@media (max-width: 760px) {
+  .image-compare-carousel {
+    --research-gallery-frame-width: 78cqw;
+    --research-gallery-frame-height: 43cqw;
+  }
+  :root body main .image-compare-carousel .image-pair__label {
+    font-size: .5rem;
+    padding: .1rem .25rem;
+    right: .2rem;
+    bottom: .2rem;
+  }
+}

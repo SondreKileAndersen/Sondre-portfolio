@@ -148,6 +148,7 @@ export function RelationRowsFigure({ pairs, inspect, filters, selection }: { sel
         return button.offsetWidth + parseFloat(cell.paddingLeft) + parseFloat(cell.paddingRight)
       }))
       column.style.width = `${Math.ceil(width)}px`
+      table!.style.setProperty('--research-moment-column-width', `${Math.ceil(width)}px`)
     }
     const observer = new ResizeObserver(measure)
     buttons.forEach(button => observer.observe(button))
@@ -168,7 +169,7 @@ export function RelationRowsFigure({ pairs, inspect, filters, selection }: { sel
     return !(cell && overviewCellStatus(cell, filters) === 'clear') || undefined
   }
   return <><div className="research-viz__scroll" tabIndex={0} aria-label={t('research.upset')}>
-    <div className="research-viz__table-stage"><table ref={tableRef} aria-label={t('research.perParatext')} data-focused-moment={activeMoment ?? undefined} className="research-viz__table research-viz__relation-rows">
+    <div className="research-viz__table-stage"><table ref={tableRef} style={{ '--research-source-count':sources.length } as CSSProperties} aria-label={t('research.perParatext')} data-focused-moment={activeMoment ?? undefined} className="research-viz__table research-viz__relation-rows">
 
       <colgroup><col className="research-viz__moment-column" /><col span={sources.length} /></colgroup>
 
@@ -195,7 +196,7 @@ export function RelationRowsFigure({ pairs, inspect, filters, selection }: { sel
             onPointerLeave={() => setHoveredMoment(null)}
             onFocus={event => { if (event.currentTarget.matches(':focus-visible')) { setFocusedMoment(moment) } }}
             onBlur={() => setFocusedMoment(null)}
-            onClick={() => inspect({ label: label(moment), conceptId: moment, relations: pairs.filter(pair => pair.target === moment).flatMap(pair => pair.relations), matrixIds: dataset.matrix.filter(cell => cell.column_id === moment && ['clear','possible'].includes(overviewCellStatus(cell, filters))).map(cell => cell.id), global: true })}><span className="research-viz__stable-label" data-label={label(moment)}><span>{label(moment)}</span></span></button></th>
+            onClick={() => inspect({ label: label(moment), conceptId: moment, relations: pairs.filter(pair => pair.target === moment).flatMap(pair => pair.relations), matrixIds: dataset.matrix.filter(cell => cell.column_id === moment && ['clear','possible'].includes(overviewCellStatus(cell, filters))).map(cell => cell.id), global: true })}><span className="research-viz__stable-label research-viz__moment-label--desktop" data-label={label(moment)}><span>{label(moment)}</span></span><span className="research-viz__stable-label research-viz__moment-label--mobile" data-label={t(`research.momentHeadings.${moment}`, { defaultValue: label(moment) })}><span>{t(`research.momentHeadings.${moment}`, { defaultValue: label(moment) })}</span></span></button></th>
           {sources.map((source, index) => {
             const relations = source.relations.filter(relation => relation.target_id === moment)
             const cell = dataset.matrix.find(cell => cell.row_id === source.id && cell.column_id === moment)!
@@ -207,7 +208,7 @@ export function RelationRowsFigure({ pairs, inspect, filters, selection }: { sel
           })}
         </tr>
       })}</tbody>
-      <tfoot><tr className="research-viz__axis-headings"><th scope="col"><span className="research-viz__paratext-bracket research-viz__moment-bracket"><span>{t('research.assessmentMoments')}</span></span></th><th scope="colgroup" colSpan={sources.length}><span className="research-viz__paratext-bracket"><span>{t('research.withParatexts')}</span></span></th></tr></tfoot>
+      <tfoot><tr className="research-viz__axis-headings"><th scope="col"><span className="research-viz__paratext-bracket research-viz__moment-bracket"><span>{t('research.assessmentMomentsAxis')}</span></span></th><th scope="colgroup" colSpan={sources.length}><span className="research-viz__paratext-bracket"><span>{t('research.withParatexts')}</span></span></th></tr></tfoot>
     </table><OverviewHoverGuide tableRef={tableRef} onTarget={setGuideTarget} enabled={!selection} /></div>
   </div></>
 }

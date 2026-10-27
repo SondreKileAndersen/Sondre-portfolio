@@ -1,4 +1,4 @@
-import type { PageContent } from './structure'
+﻿import type { PageContent } from './structure'
 
 export const no = {
   'research.title': 'Forskning',
@@ -12,7 +12,7 @@ export const no = {
   'sections.home-hero.subtitle': 'Sondre Kile Andersen',
   'sections.home-hero.imageAlt': 'Sondre Kile Andersen',
   'sections.home-hero.paragraphs': [
-    'Jeg gjør det komplekse tydelig og håndterbart. Dette er noe som går igjen i arbeidet mitt, enten det gjelder undervisning, kommunikasjon, medieproduksjon eller utvikling av digitale systemer. Jeg er opptatt av tydelig formidling, god samhandling og å lage løsninger som er praktiske, som varer, og som gir folk oversikt, mestring og motivasjon til å gjøre arbeidet sitt bedre.',
+    'Jeg gjør det komplekse håndterbart og forståelig. Dette er noe som går igjen i arbeidet mitt, enten det gjelder undervisning, kommunikasjon, medieproduksjon eller utvikling av digitale systemer. Jeg er opptatt av tydelig formidling, god samhandling og å lage løsninger som er praktiske. De skal vare, og som gi folk oversikt og mestring.',
   ],
   'sections.home-navigation.cards.teaching.title': 'Undervisning',
   'sections.home-navigation.cards.teaching.description': 'Se hvordan jeg underviser i medieproduksjon, og opplegg jeg har laget.',

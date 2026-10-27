@@ -51,6 +51,8 @@
 .development-timeline__stages { grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:var(--timeline-gap); row-gap:0; list-style:none; padding:0; margin:0; }
 .development-timeline__stages > li { isolation:isolate; text-align:center; grid-template-columns:minmax(0,1fr); }
 .development-timeline__stages > li > h3 { align-self:end; margin-bottom:.75rem; }
+.development-timeline__stages > li > h3 { display:flex; flex-direction:column; }
+.development-timeline__stage-note { order:-1; }
 .development-timeline__stage-note { display:block; max-width:18ch; margin:0 auto .2rem; font-size:.7em; line-height:1.3; font-weight:400; color:#082531; }
 .development-timeline__milestone { position:relative; display:grid; place-items:center; margin-bottom:var(--timeline-connector-gap); }
 .development-timeline__milestone img {
@@ -85,15 +87,50 @@
 .development-timeline__focus-note svg { position:absolute; bottom:100%; left:calc(50% - 3.75rem); width:4rem; height:4rem; overflow:visible; }
 .development-timeline__focus-note path { fill:none; stroke:currentColor; stroke-width:3; stroke-dasharray:6 5; }
 .development-timeline__focus-note > span { display:block; position:relative; left:-25%; width:150%; font-family:'Just Another Hand',cursive; font-size:35.77px; font-weight:400; line-height:1; letter-spacing:.03em; transform:rotate(-18deg); }
-/* Keep the reference composition on phones, using the available width directly. */
-@media(max-width:600px) {
-  .development-timeline__focus-badge { outline-width:2px; outline-offset:.35rem; }
-  .development-timeline__focus-note { margin-top:2rem; }
-  .development-timeline__focus-note svg { width:2.5rem; height:2.5rem; left:calc(50% - 2.25rem); }
-  .development-timeline__focus-note > span { font-size:1.1rem; }
-  .development-timeline__stages { --timeline-gap:.5rem; }
-  .development-timeline { --body-font-size:clamp(.6rem,2.5vw,.9rem); --timeline-label-icon-size:4rem; --timeline-image:4rem; --timeline-connector-gap:1.75rem; }
-  .development-timeline__info { padding:.3rem .15rem; }
-    .development-timeline__info--solid::after { bottom:calc(50% + 1.25rem); }
-  .development-timeline__stages > li + li .development-timeline__milestone::before { width:.35rem; height:.7rem; }
+/* Rotate the relationship between phases and assessment, preserving its cues. */
+@media(max-width:680px) {
+  .development-timeline {
+    /* Vertical figure controls: positive Y values move icons down. */
+    --timeline-mobile-icon-size:7.5rem;
+    --timeline-mobile-icon-y:-.5rem;
+    --timeline-mobile-width:24rem;
+    --timeline-mobile-offset-x:-1rem;
+    --timeline-image:clamp(3.5rem,18vw,5.5rem);
+    --timeline-mobile-gap:2rem;
+    --timeline-mobile-row-height:clamp(7rem,24vw,9rem);
+    --timeline-label-icon-size:var(--timeline-mobile-icon-size);
+    --body-font-size:clamp(.85rem,3vw,1rem);
+  }
+  .development-timeline__layout { display:block; position:relative; max-width:var(--timeline-mobile-width); margin-inline:auto; transform:translateX(var(--timeline-mobile-offset-x)); }
+  .development-timeline__layout::after { display:none; }
+  .development-timeline__labels,
+  .development-timeline__stages > li { grid-template-columns:minmax(0,.588fr) var(--timeline-image) minmax(0,1fr); column-gap:1.5rem; }
+  .development-timeline__labels { display:grid; grid-template-rows:auto; margin-bottom:1.5rem; }
+  .development-timeline__labels > div:first-child { grid-column:1 / 3; grid-row:1; margin:0; }
+  .development-timeline__labels > div:last-child { grid-column:3; grid-row:1; margin:0; }
+  .development-timeline__labels > div { align-items:center; justify-content:center; min-height:4rem; text-align:center; }
+  .development-timeline__labels h3 { max-width:16ch; }
+  .development-timeline__labels > div:first-child h3 { max-width:14ch; }
+  .development-timeline__label-icon { left:50%; top:calc(50% + var(--timeline-mobile-icon-y)); transform:translate(-50%,-50%); max-width:100%; }
+  .development-timeline__stages { display:flex; flex-direction:column-reverse; gap:var(--timeline-mobile-gap); position:relative; }
+  .development-timeline__stages > li { display:grid; grid-template-rows:var(--timeline-mobile-row-height); grid-row:auto; align-items:center; position:relative; }
+  /* The ring extends 5px into the 24px gap; leave 9px on either side of the divider. */
+  .development-timeline__stages > li::after { content:''; position:absolute; grid-column:3; left:calc(-.75rem + 2px); top:calc(var(--timeline-mobile-gap) / -2); bottom:calc(var(--timeline-mobile-gap) / -2); width:1px; background:#d5dfe5; z-index:-1; }
+  .development-timeline__stages > li:first-child::after { bottom:3.5rem; }
+  .development-timeline__stages > li:last-child::after { top:-1rem; }
+  .development-timeline__stages > li > h3 { grid-column:1; grid-row:1; margin:0; align-self:center; justify-self:end; text-align:right; }
+  .development-timeline__stage-note { order:0; margin:.3rem auto 0; width:min-content; text-align:center; }
+  .development-timeline__milestone { grid-column:2; grid-row:1; margin:0; }
+  .development-timeline__milestone img { max-width:100%; }
+  .development-timeline__stages > li + li .development-timeline__milestone::before { top:calc(50% + (var(--timeline-mobile-row-height) + var(--timeline-mobile-gap)) / 2); bottom:auto; left:50%; width:.8rem; height:.45rem; transform:translate(-50%,-50%); clip-path:polygon(50% 0,100% 100%,0 100%); }
+  .development-timeline__info { grid-column:3; grid-row:1; max-width:none; justify-self:stretch; padding:.5rem .2rem; overflow-wrap:anywhere; }
+  .development-timeline__info::after,
+  .development-timeline__info--solid::after { top:50%; bottom:auto; left:calc(-1.5rem + 3px); width:calc(1.5rem - 1px); height:2px; transform:none; }
+  .development-timeline__info--solid::after { width:calc(50% + 1.5rem - 3px); }
+  .development-timeline__focus-badge { width:clamp(2.5rem,10vw,3.5rem); height:clamp(2.5rem,10vw,3.5rem); font-size:clamp(1.8rem,7vw,2.5rem); outline-width:2px; outline-offset:.6rem; position:relative; }
+  .development-timeline__stages > li:first-child { padding-bottom:3.5rem; }
+  .development-timeline__focus-note { position:absolute; grid-column:3; grid-row:1; top:var(--timeline-mobile-row-height); left:0; right:0; margin:0; }
+  .development-timeline__focus-note svg { width:2rem; height:2rem; left:calc(50% - 2rem); bottom:calc(100% - .1rem); }
+  .development-timeline__focus-note path { d:path('M65 3 C25 20 12 38 25 52'); }
+  .development-timeline__focus-note > span { left:0; width:100%; font-size:1.4rem; transform:rotate(-15deg); }
 }

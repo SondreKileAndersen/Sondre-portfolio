@@ -35,7 +35,6 @@ export const no = {
   "sections.resource-coordination-institutions.cards.kuben-experience.highlights.loans.label": "Utlånssystem",
   "sections.resource-coordination-institutions.cards.kuben-experience.highlights.workflow.label": "Arbeidsflyt",
   "sections.equipment-for-learning.eyebrow": "Kuben vgs · Utstyr og læring",
-  "sections.equipment-for-learning.brand.alt": "Kuben videregående skole",
   "sections.equipment-for-learning.actionLabel": "Se prosjektet",
   "sections.equipment-for-learning.actionHref": "/prosjekter/utstyr-for-laering",
   "sections.equipment-for-learning.heading": "Utstyr valgt ut fra hvordan elevene skulle lære",
@@ -43,7 +42,7 @@ export const no = {
     "Kuben vgs skulle utvide studietilbudet til medieproduksjon vg2. Jeg kartla behov, valgte ut og kjøpte inn utstyr, med vekt på praktisk bruk og pedagogisk verdi."
   ],
   "sections.equipment-for-learning.detailParagraphs": [
-    "Ved utvidelsen av medieproduksjon deltok jeg også i vurdering og innkjøp av nytt produksjonsutstyr. Budsjettet måtte fordeles mellom flere behov, og det var derfor viktig å skille mellom utstyr som var interessant, og utstyr som faktisk kunne gi pedagogisk verdi.",
+    "Ved utvidelsen av linjen medieproduksjon deltok jeg også i vurdering og innkjøp av nytt produksjonsutstyr, innenfor budsjettrammene. Det var ulike behov som måtte tas hensyn til, og det var derfor viktig å skille mellom utstyr som var interessant, og utstyr som faktisk kunne gi pedagogisk verdi.",
     "Innkjøpene omfattet blant annet Blackmagic-kameraer til livestudio, bærbare LED-lys, trådløst lydutstyr til reportasjer og mer avansert utstyr til film- og lydproduksjon.",
     "Utstyret skulle være tilgjengelig nok til at elevene kunne utforske og lære gjennom praktisk bruk. Samtidig ønsket vi å ha enkelte mer avanserte løsninger som ga elever med høy kompetanse mulighet til å gjennomføre produksjoner på et mer profesjonelt nivå.",
     "Målet var ikke å kjøpe det mest avanserte utstyret, men å velge utstyr som kunne gi best mulig læring innenfor rammene vi hadde."
@@ -51,7 +50,6 @@ export const no = {
   "sections.equipment-for-learning.imageAlt": "Elever styrer en flerkameraproduksjon fra kontrollrommet",
   "sections.equipment-for-learning.caption": "Elevene fikk erfaring med flerkameraproduksjon og profesjonelle arbeidsflyter i studio.",
   "sections.teaching-studio.eyebrow": "Kuben vgs · Studioutvikling",
-  "sections.teaching-studio.brand.alt": "Kuben videregående skole",
   "sections.teaching-studio.actionLabel": "Se prosjektet",
   "sections.teaching-studio.actionHref": "/prosjekter/lydstudio-for-undervisning",
   "sections.teaching-studio.heading": "Et studio som elevene kunne bruke selv",
@@ -68,12 +66,11 @@ export const no = {
   "sections.teaching-studio.images.yamaha-mixer-guide.alt": "Visuell veiledning for tilkobling og bruk av Yamaha MG12XU lydmikser med OBS",
   "sections.teaching-studio.images.yamaha-mixer-guide.caption": "En visuell brukerveiledning gjorde det enklere å koble Yamaha-mikseren til OBS og kontrollere lydsignalet.",
   "sections.equipment-loan-gallery.eyebrow": "Kuben vgs · System og utlån",
-  "sections.equipment-loan-gallery.brand.alt": "Kuben videregående skole",
   "sections.equipment-loan-gallery.actionLabel": "Se prosjektet",
   "sections.equipment-loan-gallery.actionHref": "/prosjekter/sporbart-utlanssystem",
   "sections.equipment-loan-gallery.heading": "Fra spredt utstyr til et organisert lager- og utlånssystem",
   "sections.equipment-loan-gallery.paragraphs": [
-    "Jeg bygde opp og etablerte systemet på det nye lageret. Jeg innførte AssetTiger som digitalt utstyrssystem, slik at utlån skulle være minst mulig belastende for andre lærere i en travel hverdag."
+    "Jeg bygde opp og etablerte systemet på det nye lageret. Jeg innførte AssetTiger som digitalt utstyrssystem, slik at utlån skulle være minst mulig belastende for lærere i en travel hverdag."
   ],
   "sections.equipment-loan-gallery.toolLogos.assettiger.alt": "AssetTiger",
   "sections.equipment-loan-gallery.toolLogos.tampermonkey.alt": "Tampermonkey",
@@ -90,12 +87,11 @@ export const no = {
   "sections.equipment-loan-gallery.images.loan-station.alt": "Fysisk utlånsstasjon med AssetTiger og strekkodeskanner",
   "sections.equipment-loan-gallery.images.loan-station.caption": "En egen utlånsstasjon samlet registrering, strekkodeskanning og administrasjon på ett sted.",
   "sections.oslomet-purchasing.eyebrow": "OsloMet · Logistikk",
-  "sections.oslomet-purchasing.brand.alt": "OsloMet – storbyuniversitetet",
   "sections.oslomet-purchasing.actionLabel": "Se prosjektet",
   "sections.oslomet-purchasing.actionHref": "/prosjekter/innkjop-og-arbeidsflyt-oslomet",
   "sections.oslomet-purchasing.heading": "Bestiller ved OsloMet",
   "sections.oslomet-purchasing.paragraphs": [
-    "Jeg bidro i innkjøp, leverandørdialog og oppfølging av bestillinge ved Institutt for estetiske fag, med fokus på tydelige rutiner og god kommunikasjon."
+    "Jeg bidro i innkjøp, leverandørdialog og oppfølging av bestillinger ved Institutt for estetiske fag, med fokus på tydelige rutiner og god kommunikasjon."
   ],
   "sections.oslomet-purchasing.detailParagraphs": [
     "Ved Institutt for estetiske fag på OsloMet hadde jeg i omtrent ett år ansvar for innkjøp gjennom Unit4 UBW. Arbeidet besto av bestillinger, leverandørdialog, nødvendige tilpasninger og oppfølging fram til utstyret var kommet fram til riktig fagmiljø.",

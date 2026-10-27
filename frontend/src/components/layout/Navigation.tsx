@@ -3,12 +3,14 @@ import { useTranslation } from 'react-i18next'
 import type { PortfolioPage } from '../../types/page'
 
 type NavigationProps = {
+  id?: string
+  includeHome?: boolean
   pages: PortfolioPage[]
   currentPath: string
   onNavigate: (path: string) => void
 }
 
-export function Navigation({ pages, currentPath, onNavigate }: NavigationProps) {
+export function Navigation({ id, pages, currentPath, onNavigate, includeHome = false }: NavigationProps) {
   const { t } = useTranslation()
   const [openMenu, setOpenMenu] = useState<string | null>(() => {
     const currentPage = pages.find((page) => page.path === currentPath)
@@ -16,7 +18,7 @@ export function Navigation({ pages, currentPath, onNavigate }: NavigationProps) 
   })
 
   const topLevelPages = pages.filter(
-    (page) => page.showInNav !== false && !page.parentId,
+    (page) => (page.showInNav !== false || (includeHome && page.id === 'home')) && !page.parentId,
   )
 
   const pageLink = (page: PortfolioPage) => (
@@ -34,7 +36,7 @@ export function Navigation({ pages, currentPath, onNavigate }: NavigationProps) 
   )
 
   return (
-    <nav aria-label={t('accessibility.mainNavigation')}>
+    <nav id={id} aria-label={t('accessibility.mainNavigation')}>
       <ul>
         {topLevelPages.map((page) => {
           const childPages = pages.filter(

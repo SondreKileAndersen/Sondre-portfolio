@@ -29,7 +29,7 @@ export function ProjectDetailBlock({
       </dl>
 
       {showPreviewImage && <figure className="project-detail__preview">
-        <img src={previewImage.src} alt={previewImage.alt} loading="eager" fetchPriority="high" decoding="async" />
+        <img src={previewImage.src} alt={previewImage.alt} style={previewImage.objectPosition ? { objectPosition: previewImage.objectPosition } : undefined} loading="eager" fetchPriority="high" decoding="async" />
         <figcaption>{previewImage.caption}</figcaption>
       </figure>}
 

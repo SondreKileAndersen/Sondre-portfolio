@@ -195,8 +195,7 @@ export const structure = {
       imageSrc: placeholderImage, imageAlt: text('sections.shared-direction.imageAlt'),
     },
     {
-      id: 'premiere-color-grading-playlist', type: 'youtubePlaylist', tone: 'light',
-      eyebrow: text('sections.premiere-color-grading-playlist.eyebrow'),
+      id: 'premiere-color-grading-playlist', type: 'youtubePlaylist', tone: 'light', headingStyle: 'ruled', headingAccent: 'green',
       heading: text('sections.premiere-color-grading-playlist.heading'),
       introduction: text('sections.premiere-color-grading-playlist.introduction'), playlistId: 'PLVcoQA4TE8eg',
       playlistUrl: text('sections.premiere-color-grading-playlist.playlistUrl'), iframeTitle: text('sections.premiere-color-grading-playlist.iframeTitle'),

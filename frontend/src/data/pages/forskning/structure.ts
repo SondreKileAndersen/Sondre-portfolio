@@ -11,6 +11,7 @@ import figure7 from '../../../media/forskning/Fig 7.jpg'
 import collectionImage from '../../../media/forskning/Innhenting og organisering.jpg'
 import spssAnalysis from '../../../media/forskning/SPSS Fancy.jpg'
 import nettskjemaImage from '../../../media/forskning/Nettskjema.jpg'
+import nettskjemaMobileImage from '../../../media/forskning/Nettskjema uten logo.jpg'
 import visualizationImage from '../../../media/forskning/Datavisualisering.jpg'
 import acrobatComments from '../../../media/forskning/Kommentarer.png'
 import masterCover from '../../../media/forskning/Master Forside.jpg'
@@ -47,21 +48,21 @@ function orderedFigures<const T extends { id: string }>(figures: readonly T[]) {
 // Existing images are temporary and do not depict the research projects.
 export const structure = { id:'research', startTone:'light',slug:text('slug'),path:text('path'),navTitle:text('navTitle'),title:text('title'),
 sections:[
-{id:'research-intro', type:'hero', tone:'light', heading:text("intro.heading"), imageSrc:visualizationImage, imageAlt:text('intro.imageAlt'), paragraphs:paragraphs("intro.paragraphs"), actions:[{id:'photofake',label:text("intro.photofake"),href:text("intro.photofakeHref"),icon:'arrowDown'},{id:'master',label:text("intro.master"),href:text("intro.masterHref"),icon:'arrowDown'}]},
+{id:'research-intro', type:'hero', tone:'light', heading:text("intro.heading"), paragraphLayout:'equalWidthLines', paragraphs:paragraphs("intro.paragraphs"), actions:[{id:'photofake',label:text("intro.photofake"),href:text("intro.photofakeHref"),icon:'arrowDown'},{id:'master',label:text("intro.master"),href:text("intro.masterHref"),icon:'arrowDown'}]},
 {id:'photofake', type:'split', tone:'light', background:'subtle',
   heading:text("photofake.heading"),
   imageSrc:photofakeIntroImage,imageAlt:text("photofake.imageAlt"),imagePosition:'left',imageFit:'contain',layout:'coverIntro',
   paragraphs:paragraphs("photofake.paragraphs"),actionLabel:text("photofake.actionLabel"),actionHref:text("photofake.actionHref"),actionExternal:true,actionAfterParagraph:0},
-{id:'research-work', type:'process',variant:'horizontalCards', tone:'light', background:'subtle',
+{id:'research-work', type:'process',variant:'horizontalCards', tone:'light', background:'subtle', headingStyle:'ruled', headingAccent:'blue',
   heading:text("work.heading"),
   paragraphs:paragraphs('work.paragraphs'),
   steps:[
 {id:'work-0',columnSpan:2,label:text("work0.label"),description:text("work0.description"),image:{src:collectionImage,alt:text('work0.image.alt')}},
 {id:'work-1',columnSpan:2,label:text("work1.label"),description:text("work1.description"),image:{src:spssAnalysis,alt:text('work1.image.alt')}},
 {id:'work-3',columnSpan:2,label:text("work3.label"),description:text("work3.description"),image:{src:visualizationImage,alt:text('work3.image.alt')}},
-{id:'work-2',columnSpan:3,label:text("work2.label"),description:text("work2.description"),image:{src:nettskjemaImage,alt:text('work2.image.alt')}},
+{id:'work-2',columnSpan:3,label:text("work2.label"),description:text("work2.description"),image:{src:nettskjemaImage,mobileSrc:nettskjemaMobileImage,alt:text('work2.image.alt')}},
 {id:'work-4',columnSpan:3,label:text("work4.label"),description:text("work4.description"),image:{src:acrobatComments,alt:text('work4.image.alt')}}]},
-{id:'research-articles', type:'publicationList', tone:'light', background:'subtle',
+{id:'research-articles', type:'publicationList', tone:'light', background:'subtle', headingStyle:'ruled', headingAccent:'blue',
   heading:text("articles.heading"),
   publications: [
     {
@@ -76,7 +77,7 @@ sections:[
     },
   ]},
 {
-  id: 'research-image-comparisons', type: 'imageCompare', tone: 'light', background:'subtle',
+  id: 'research-image-comparisons', type: 'imageCompare', tone: 'light', background:'subtle', headingStyle:'ruled', headingAccent:'blue',
   heading: text('comparison.heading'),
   introduction: text('comparison.introduction'),
   groups: orderedFigures([

@@ -3,6 +3,7 @@ import type { ResearchStudySection } from '../../types/page'
 import { useTranslation } from 'react-i18next'
 import type { CSSProperties } from 'react'
 import { LineIcon } from '../ui/LineIcon'
+import { AbstractDialog } from '../ui/AbstractDialog'
 import { QuestionMarkBadge } from '../ui/QuestionMarkBadge'
 import { InlineText } from '../ui/InlineText'
 import './researchStudy.css'
@@ -52,8 +53,8 @@ export function ResearchStudyBlock({ id, parts }: ResearchStudySection) {
       </div>
       </div>
         {(part.norwegianAbstract || part.abstract) && <div className="research-study__abstracts">
-          {part.norwegianAbstract && <details lang="no"><summary>{part.norwegianAbstract.label}<span aria-hidden="true">→</span></summary><p>{part.norwegianAbstract.text}</p></details>}
-          {part.abstract && <details lang="en"><summary>{part.abstract.label}<span aria-hidden="true">→</span></summary><p>{part.abstract.text}</p></details>}
+          {part.norwegianAbstract && <AbstractDialog language="no" {...part.norwegianAbstract} />}
+          {part.abstract && <AbstractDialog language="en" {...part.abstract} />}
         </div>}
       {part.facts && <ul className={`research-study__facts${part.factsAppearance === 'compact' ? ' research-study__facts--compact' : ''}`}>{part.facts.map(fact => <li key={fact.id}>{part.factsAppearance === 'compact' ? <span>{fact.label}</span> : <><span className="research-study__icon"><LineIcon name={fact.icon} /></span><strong>{fact.label}</strong></>}</li>)}</ul>}
       {part.findings && <ul className="research-study__findings">{part.findings.map(finding => {
